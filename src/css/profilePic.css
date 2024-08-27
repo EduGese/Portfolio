@@ -22,7 +22,7 @@
     object-fit: cover;
     filter: grayscale(50%);
     mix-blend-mode: multiply;
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
     backface-visibility: hidden;
     transition: transform 0.6s;
   }
