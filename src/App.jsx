@@ -4,6 +4,7 @@ import logo from './assets/logo_transparent.png';
 import profilePicture from './assets/profile-picture.png';
 import { LogoContainer } from './components/LogoContainer';
 import { NavBar } from './components/NavBar';
+import { ProfilePicture } from './components/ProfilePic';
 import { logosLanguages, logosFrameworks, logosDatabase } from './constants/logo';
 import { downloadFile } from './logic/logic';
 
@@ -17,15 +18,16 @@ function App() {
      
       <section className="home" id="home">
         <div className="home-img-container">
-          <div>
-            <div className="frame">
-              <img src={profilePicture} alt="Profile Picture" />
-            </div>
+          
+            {/* <div className="frame">
+            <img className="front" src={profilePicture} alt="Profile Picture" />
+            <img className="back" src={profilePicture} alt="Profile Picture Back" />
+            </div> */}
+            <ProfilePicture></ProfilePicture>
             <div className="home-buttons-container">
               <button onClick={() => window.location.href = '#contact'}>Contact</button>
               <button id="download-button" className="custom-pointer" onClick={downloadFile}>Download CV</button>
             </div>
-          </div>
         </div>
 
         <div className="home-text-container">
