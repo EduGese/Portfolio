@@ -71,9 +71,12 @@
 .home-text-container{
   display: flex;
   flex-direction: column;
-  justify-content:space-evenly;
+  justify-content:center;
   align-items: center;
   width: 50%;
+  height: 70%;
+  margin-top: auto;
+  margin-bottom: auto;
   /* background-color: #0082e6; */
 }
 .home-title-container{
@@ -108,7 +111,7 @@
 .stack-logo-container{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content:space-around;
   /* width: 60%; */
   /* background-color: #0082e6; */
 }
