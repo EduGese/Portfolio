@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../assets/logo_transparent.png'; 
+import logo from '../assets/resetImage.png'; 
 import '../css/navBar.css';
 
 export const NavBar = () => {
@@ -24,7 +24,7 @@ export const NavBar = () => {
         <i className="fas fa-bars"></i>
       </div>
       <ul className={isMenuOpen ? 'menu-open' : ''}>
-        <li><a href="#about" onClick={handleLinkClick}>About me</a></li>
+        <li><a href="#about" onClick={handleLinkClick}>About</a></li>
         <li><a href="#technologies" onClick={handleLinkClick}>Technologies</a></li>
         <li><a href="#projects" onClick={handleLinkClick}>Projects</a></li>
         <li><a href="#education" onClick={handleLinkClick}>Education</a></li>

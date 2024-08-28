@@ -13,7 +13,7 @@
   }
   body{
     font-family: "Poppins", sans-serif;
-    background-color: #1A202C;
+    background-color: #FFFFFF;
 
   }
 
@@ -21,7 +21,7 @@
     section {
       background-size: cover;
       height: calc(100vh - 80px);
-      color: white;
+      color: #151A23;
     }
   
     .upperCase {
@@ -44,7 +44,7 @@
   
     a {
       text-decoration: none;
-      color: white;
+      color: #151A23;
     }
   
     /* .custom-pointer,
@@ -65,37 +65,25 @@
   flex-direction: row;
   height: 100vh;
   justify-content: center;
- 
+  /* background-color: red; */
 }
 
 .home-text-container{
   display: flex;
   flex-direction: column;
   justify-content:space-evenly;
+  align-items: center;
   width: 50%;
-  /* margin: 0 0 0 80px; */
-  margin-right: 20px;
-  
+  /* background-color: #0082e6; */
 }
-.home-text-container h1{
-  font-family: 'Sixtyfour', sans-serif;
-  /* font-size: 35px; */
-  font-size: 2.188em;
-  font-weight: 400;
-  margin: 20px 0;
-  color:#548DBF ;
-  animation: fadeIn 3s ease;
-
+.home-title-container{
+  /* background-color: #0082e6; */
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
-
-.home-text-container h3{
-  font-family: 'Poppins', sans-serif;
-  font-weight: 100;
-  font-size: 25px;
-  color: white;
-}
-
-
 .home-img-container{
   display: flex;
   flex-direction: column;
@@ -103,17 +91,48 @@
   align-items: center;
   width: 30%;
   margin: 20px 180px;
-  
- 
 }
+
+.name, .dev-position, .stack{
+  font-family: 'Poppins', sans-serif;
+}
+.name{
+  font-size: 6vh;
+  font-weight: bold;
+}
+.dev-position{
+  font-size: 4vh;
+  color: #151a23a9;
+}
+
+.stack-logo-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* width: 60%; */
+  /* background-color: #0082e6; */
+}
+.stack-logo-container figure{
+  width: 30px;
+  height: 30px;
+}
+
+/* .home-text-container h3{
+  font-family: 'Poppins', sans-serif;
+  color: #151A23;
+} */
+
+
 
 
 .home-buttons-container{
   width: 70%;
   display: flex;
   flex-direction: row;
-  justify-content:space-around;
+  justify-content:space-evenly;
   align-items: center;
+  /* background-color: red; */
+  height: 20%;
 }
 .home button{
   display: inline-block;
@@ -239,7 +258,7 @@
     top: 80px;
   }
   .home {
-    flex-direction: column-reverse;
+    flex-direction: column;
  
   }
   .home-text-container{
@@ -267,7 +286,6 @@
       height: 60px;
     }
     figure figcaption{
-      /* display: none; */
       color: #ccd8e065;
     }
     .technologies{
@@ -284,10 +302,10 @@
       width: 75%;
     }
     .frame {
-      width: 40vw; /* 50% del ancho de la ventana */
-      height: 40vw; /* 50% del ancho de la ventana, para mantenerlo cuadrado */
-      max-width: 300px; /* Tamaño máximo del marco */
-      max-height: 300px; /* Tamaño máximo del marco */
+      width: 40vw;
+      height: 40vw;
+      max-width: 300px; 
+      max-height: 300px; 
 
     }
 
@@ -308,6 +326,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100vh;
+    padding: 0;
+    margin:0
+  }
+  .home-img-container {
+    height: 50vh;
+    align-items: center;
+    justify-content: center;
+ 
+  }
+  .home-text-container{
+    height: 50vh;
+    
   }
   .home img{
     width: 30vh;
@@ -328,30 +359,11 @@
 }
 
   @media (min-width: 1024px) and (max-width: 1366px){/*Laptop medium*/
-    .home-text-container {
-      height: 85%;
-      justify-content: space-around;
-      padding-top: 50px;
-      padding-bottom: 80px;
-    }
-    .home-text-container h1{
-      font-size: 45px;
-    }
-    .home-text-container h3{
-      font-size: 35px;
-    }
+    
     .home img{
       width: 40vh;
     }
-    .home-text-container :first-child {
-      text-align: start;
-    }
-    .home-text-container :nth-child(2) {
-      text-align: center;
-    }
-    .home-text-container :last-child {
-      text-align: end;
-    }
+    
 
   }
 
@@ -359,27 +371,7 @@
     .home img{
       width: 40vh;
     }
-    .home-text-container {
-      height: 85%;
-      justify-content: space-around;
-      padding-top: 70px;
-      padding-bottom: 90px;
-    }
-    .home-text-container h1{
-      font-size: 65px;
-    }
-    .home-text-container h3{
-      font-size: 55px;
-    }
-    .home-text-container :first-child {
-      text-align: start;
-    }
-    .home-text-container :nth-child(2) {
-      text-align: center;
-    }
-    .home-text-container :last-child {
-      text-align: end;
-    }
+   
     .frame{
       width: 50vW;
       height: 50vw;

@@ -1,5 +1,5 @@
 nav {
-  background: #151A23;
+  background: #fff;
   height: 80px;
   width: 100%;
   position: fixed;
@@ -28,7 +28,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
+  color: #151A23;
   font-size: 17px;
   padding: 7px 13px;
   border-radius: 10px;
@@ -38,15 +38,15 @@ nav ul li a {
 
 nav a.active,
 nav a:hover {
-  background: white;
-  color: #2D3748;
+  background: #2D3748;
+  color: #fff;
   transition: 0.5s;
 }
 
 .menu-icon {
   display: none;
   font-size: 30px;
-  color: white;
+  color:  #151A23;
   cursor: pointer;
 }
 
@@ -62,7 +62,7 @@ nav a:hover {
     right: -100%;
     width: 100%;
     height: calc(100vh - 80px);
-    background: #2c3e50;
+    background: #151A23;
     text-align: center;
     transition: right 0.3s ease;
   }
@@ -78,5 +78,6 @@ nav a:hover {
 
   nav ul li a {
     font-size: 20px;
+    color: #fff;
   }
 }
