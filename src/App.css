@@ -47,11 +47,7 @@
       color: #151A23;
     }
   
-    /* .custom-pointer,
-    button:hover,
-    a:hover {
-      cursor: url('./img/icons8-cursor-64.png'), auto;
-    } */
+
   /************Common styles********************/
 
 
@@ -77,10 +73,8 @@
   height: 70%;
   margin-top: auto;
   margin-bottom: auto;
-  /* background-color: #0082e6; */
 }
 .home-title-container{
-  /* background-color: #0082e6; */
   height: 60%;
   display: flex;
   flex-direction: column;
@@ -112,21 +106,11 @@
   display: flex;
   flex-direction: row;
   justify-content:space-around;
-  /* width: 60%; */
-  /* background-color: #0082e6; */
 }
 .stack-logo-container figure{
   width: 30px;
   height: 30px;
 }
-
-/* .home-text-container h3{
-  font-family: 'Poppins', sans-serif;
-  color: #151A23;
-} */
-
-
-
 
 .home-buttons-container{
   width: 70%;
@@ -134,7 +118,6 @@
   flex-direction: row;
   justify-content:space-evenly;
   align-items: center;
-  /* background-color: red; */
   height: 20%;
 }
 .home button{
@@ -170,7 +153,7 @@
 /***************ABOUT SECTION*****************/
 .about{
   background: linear-gradient(180deg,#151A23, #192C3A);
-  /* background-color: red; */
+
 }
 .text-about{
   max-width: 50%;
@@ -195,6 +178,8 @@
   flex-wrap: wrap;
   width: 60%;
 }
+
+
 .tech-container figure figcaption {
   text-align: center;
 
@@ -245,14 +230,6 @@
     text-align: center;
     transition: all .5s;
   }
-  /* nav ul li{
-
-    margin: 10px 0;
-    line-height: 30px;
-  }
-  nav ul li a{
-    font-size: 20px;
-  } */
   a:hover,a.active{
     background: none;
     color: #0082e6;
@@ -272,7 +249,6 @@
   .home-img-container{
     width: 100%;
     margin-bottom: -40px;
-    /* justify-content: flex-end; */
   }
   .home img{
     width: 50vw;
@@ -289,9 +265,7 @@
       width: 60px;
       height: 60px;
     }
-    figure figcaption{
-      color: #ccd8e065;
-    }
+   
     .technologies{
       min-height: 100vh;
       display: flex;
@@ -356,16 +330,24 @@
     text-align: center;
     margin: 0;
   }
-  .about,.technologies{
-    padding: 20px 10px 20px 10px;
-
-    }
 }
 
   @media (min-width: 1024px) and (max-width: 1366px){/*Laptop medium*/
     
     .home img{
       width: 40vh;
+    }
+    .tech-container figure {
+      margin: 0;
+      padding: 0;
+      width: 10vw;
+      height: 10vw;
+      max-width: 10vh;
+      max-height: 10vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     
 
@@ -379,6 +361,18 @@
     .frame{
       width: 50vW;
       height: 50vw;
+    }
+    .tech-container figure {
+      margin: 0;
+      padding: 0;
+      width: 10vw;
+      height: 10vw;
+      max-width: 10vh;
+      max-height: 10vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
   /**************MEDIA QUERIES*****************/
