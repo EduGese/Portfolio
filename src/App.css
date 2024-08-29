@@ -65,7 +65,7 @@
   flex-direction: row;
   height: 100vh;
   justify-content: center;
-  /* background-color: red; */
+  
 }
 
 .home-text-container{
@@ -271,7 +271,8 @@
   }
   .home-img-container{
     width: 100%;
-    text-align: center;
+    margin-bottom: -40px;
+    /* justify-content: flex-end; */
   }
   .home img{
     width: 50vw;
@@ -337,11 +338,13 @@
     height: 50vh;
     align-items: center;
     justify-content: center;
+    width: 60%;
+    margin-bottom: -40px;
  
   }
   .home-text-container{
     height: 50vh;
-    
+    width: 100%;
   }
   .home img{
     width: 30vh;
