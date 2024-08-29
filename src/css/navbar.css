@@ -43,6 +43,7 @@ nav a:hover {
   transition: 0.5s;
 }
 
+
 .menu-icon {
   display: none;
   font-size: 30px;
@@ -50,7 +51,8 @@ nav a:hover {
   cursor: pointer;
 }
 
-@media (max-width: 640px) {
+/**************MEDIA QUERIES PARA MÓVILES Y TABLETAS*****************/
+@media (max-width: 1024px) {
   .menu-icon {
     display: block;
   }
@@ -65,6 +67,8 @@ nav a:hover {
     background: #151A23;
     text-align: center;
     transition: right 0.3s ease;
+    align-items: center; 
+    justify-content: center; 
   }
 
   nav ul.menu-open {
@@ -74,10 +78,14 @@ nav a:hover {
   nav ul li {
     margin: 20px 0;
     line-height: 40px;
+    width: 100%; 
+    text-align: center; 
   }
 
   nav ul li a {
     font-size: 20px;
     color: #fff;
+    display: block;
+    width: 100%; 
   }
 }
