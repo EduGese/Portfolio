@@ -9,7 +9,7 @@ import '../css/card.css'
 import githubPng from '../assets/icons8-github-30.png'
 
 
-export default function MediaCard({name, image, description, technologies, link, demoLink}) {
+export default function MediaCard({name, image, description, technologies, link, demoLink, websiteLink}) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -40,8 +40,12 @@ export default function MediaCard({name, image, description, technologies, link,
           
         </Button>
         <Button size="small"><a href={demoLink}>demo</a></Button>
-        <Button size="small">Learn More</Button>
+        {
+          websiteLink && <Button size="small"><a href={githubPng}>Website</a></Button>
+        }
+        {/* <Button size="small"><a href={websiteLink}>website</a></Button> */}
       </CardActions>
     </Card>
   );
 }
+

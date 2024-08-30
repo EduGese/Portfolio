@@ -139,7 +139,16 @@ function App() {
         <h1>Projects</h1>
         <div className="tech-container">
           {projects.map((project, index) => (
-            <MediaCard key={index} name={project.name} image={project.image} description={project.description} technologies={project.technologies} link={project.link} demoLink={project.demoLink}></MediaCard>
+            <MediaCard 
+            key={index} 
+            name={project.name} 
+            image={project.image} 
+            description={project.description} 
+            technologies={project.technologies} 
+            link={project.link} 
+            demoLink={project.demoLink}
+            websiteLink={project.websiteLink}
+            ></MediaCard>
           ))}
         </div>
           
