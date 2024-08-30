@@ -1,4 +1,4 @@
-figure {
+.home-img-container figure {
   margin: 0;
   padding: 0;
   width: 20vw; 
@@ -62,7 +62,7 @@ figure {
     font-size: 16px; 
   }
   @media (max-width: 380px){
-    figure {
+    .home-img-container figure {
       margin: 0;
       padding: 0;
       width: 20vw; 
@@ -107,7 +107,7 @@ figure {
       }
   }
   @media (max-width: 830px) {
-    figure {
+    .home-img-container figure {
       margin: 0;
       padding: 0;
       width: 100%;
