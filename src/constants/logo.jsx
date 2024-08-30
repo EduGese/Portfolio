@@ -228,7 +228,7 @@ export const logosDatabase =[
 export const logosTools =[
   {
     href: "https://capacitorjs.com/",
-    svg: (
+    svg: 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
       <path fill="#53b9ff" d="M19.93 27.059.156 46.859l30.496 30.59L0 108.191l19.715 19.813L50.43 97.25l30.547 30.531 19.777-19.8Zm0 0"/>
       <path fill="#119eff" d="M70.258 77.45 50.43 97.25l30.547 30.531 19.777-19.8Zm0 0"/>
@@ -239,7 +239,7 @@ export const logosTools =[
   </svg>
   
 
-    ),
+    ,
     figCaption: "Capacitor"
 },
 ]

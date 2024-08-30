@@ -135,9 +135,9 @@ function App() {
           ))}
         </div>
       </section>
-      <section id="projects">
+      <section id="projects" className='projects-section'>
         <h1>Projects</h1>
-        <div className="tech-container">
+        <div className="project-container">
           {projects.map((project, index) => (
             <MediaCard 
             key={index} 

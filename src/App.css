@@ -18,11 +18,11 @@
   }
 
     /************Common styles********************/
-    section {
+    /* section {
       background-size: cover;
       height: calc(100vh - 80px);
       color: #151A23;
-    }
+    } */
   
     .upperCase {
       text-transform: uppercase;
@@ -196,6 +196,21 @@
 /***************TECHNOLOGIES SECTION*****************/
 
 /***************PROJECT SECTION*****************/
+.project-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%; /* Cambiado de 60% a 100% para adaptarse mejor a todos los tamaños de pantalla */
+  padding: 20px;
+  gap: 20px; /* Añadido para proporcionar espacio entre las tarjetas */
+}
+
+.projects-section {
+  min-height: 100vh;
+  padding: 20px; /* Añadido para proporcionar espacio alrededor del contenido */
+  box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho total */
+}
 
 /***************PROJECT SECTION*****************/
 
