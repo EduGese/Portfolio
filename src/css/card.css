@@ -1,0 +1,8 @@
+.card-logo-container{
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    margin-left: 5px;
+    margin-right: auto;
+}
+
