@@ -145,9 +145,11 @@ function App() {
             image={project.image} 
             description={project.description} 
             technologies={project.technologies} 
-            link={project.link} 
+            ghLink={project.ghLink} 
             demoLink={project.demoLink}
             websiteLink={project.websiteLink}
+            gif={project.gif}
+            gifOrientation={project.gifOrientation}
             ></MediaCard>
           ))}
         </div>
