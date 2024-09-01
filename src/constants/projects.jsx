@@ -14,7 +14,7 @@ export const projects = [
     },
     {
         name:'ScreenPulse - FrontApp',
-        image: 'src/assets/projects/screenPulseFrontApp.png',
+        image: 'src/assets/projects/screenPulseFrontApp3.png',
         description: 'ScreenPulse is an Angular frontend that lets you search and save movies, TV shows, and games using the OMDB API. It’s part of a full-stack app with a Node.js/Express backend and MongoDB database',
         technologies: [logosLanguages[2],logosLanguages[3],logosFrameworks[0], logosLanguages[1], logosFrameworks[5]],
         ghLink:'https://github.com/EduGese/ScreenPulse-frontApp',
@@ -25,7 +25,7 @@ export const projects = [
     },
     {
         name:'ScreenPulse-backend-Api',
-        image: 'src/assets/projects/screenPulseFrontApp.png',
+        image: 'src/assets/projects/screenPulseFrontApp3.png',
         description: 'Backend application built with Node.js and Express using TypeScript for strong and robust typing. It serves as the REST API integrated into the ScreenPulse-frontApp application',
         technologies: [logosFrameworks[2], logosLanguages[1], logosDatabase[2]],
         ghLink:'https://github.com/EduGese/ScreenPulse-backend-Api',
@@ -73,9 +73,9 @@ export const projects = [
         description: 'A conceptual mockup of a photography website, designed to showcase the visual style and user interactions. While interactive elements such as a search bar and shopping cart are included, they do not have any backend functionality ',
         technologies: [logosLanguages[2],logosLanguages[3],logosFrameworks[5]],
         ghLink: 'https://github.com/EduGese/EGS-Photography',
-        demoLink: null,
+        demoLink: 'https://edugese.github.io/EGS-Photography/',
         websiteLink: 'https://edugese.github.io/EGS-Photography/',
-        gif:null,
+        gif:'src/assets/gifs/EGS-Photography.gif',
         gifOrientation:'landscape',
     }
 ]

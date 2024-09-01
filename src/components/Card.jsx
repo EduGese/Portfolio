@@ -11,13 +11,16 @@ import Box from '@mui/material/Box';
 
 export default function MediaCard({ name, image, description, technologies, ghLink, demoLink, websiteLink, gif, gifOrientation }) {
   const [isHovered, setIsHovered] = React.useState(false);
+  const [gifUrl, setGifUrl] =  React.useState(gif);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
+    setGifUrl(`${gif}?${Date.now()}`);
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
+    setGifUrl(gif);
   };
   return (
     <Card sx={{
@@ -43,7 +46,7 @@ export default function MediaCard({ name, image, description, technologies, ghLi
         // objectFit: gifOrientation === 'portrait' ? 'cover' : 'contain',
         // objectPosition: 'center',
        }}
-      image={isHovered && gif ? gif : image}
+      image={isHovered && gif ? gifUrl : image}
       title={name}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
