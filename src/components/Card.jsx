@@ -72,7 +72,7 @@ export default function MediaCard({ name, image, description, technologies, ghLi
           width: '100%',
           marginLeft: 'auto',
           marginRight: 'auto',
-          justifyContent: 'center',
+          justifyContent: 'end',
           flexWrap: 'wrap',
           padding: '10px 0',
         }}>
