@@ -51,9 +51,9 @@ export const projects = [
         description: 'Repositorio del proyecto FCT del ciclo formativo Desarrollo de Aplicaciones Web',
         technologies: [logosLanguages[0],logosLanguages[3],logosLanguages[5],logosFrameworks[6], logosDatabase[0]],
         ghLink: 'https://github.com/EduGese/TourNow?tab=readme-ov-file',
-        demoLink: null,
+        demoLink: 'https://youtu.be/D3eg3gU_CTs',
         websiteLink: null,
-        gif:null,
+        gif:'src/assets/gifs/TourNow.gif',
         gifOrientation:'landscape',
     },
     {
