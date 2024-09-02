@@ -100,7 +100,7 @@ export default function MediaCard({ name, image, description, technologies, ghLi
           justifyContent: 'start'
         }}>
           <Button size="small">
-            <a href="">
+            <a href={ghLink}>
               <GitHubIcon sx={{color:'black'}}/>
             </a>
             
