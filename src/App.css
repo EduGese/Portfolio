@@ -27,7 +27,12 @@
     .upperCase {
       text-transform: uppercase;
     }
-  
+  section{
+    min-height: 100vh;
+  }
+   .about, .technologies, .projects-section, .education, .contact{
+    padding-top: 70px;
+  }/*No estoy seguro de esta implementacion, es para que el link de la navbar lleve al titulo de la seccion y sea bien visible*/
     .section-title {
       font-size: 50px;
       text-align: center;
@@ -59,7 +64,7 @@
   padding-top:80px;
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  /* height: 100vh; */
   justify-content: center;
   
 }
@@ -148,8 +153,6 @@
   background-color: #548DBF ;
 }
 
-   /***********HOME SECTION***************/
-
 /***************ABOUT SECTION*****************/
 .about{
   background: linear-gradient(180deg,#151A23, #192C3A);
@@ -159,9 +162,6 @@
   max-width: 50%;
 
 }
- 
-/***************ABOUT SECTION*****************/
-
 /***************TECHNOLOGIES SECTION*****************/
 .technologies{
   height: 100vh;
@@ -193,9 +193,8 @@
 }
 
 
-/***************TECHNOLOGIES SECTION*****************/
 
-/***************PROJECT SECTION*****************/
+/***************PROJECTS SECTION*****************/
 .project-container {
   display: flex;
   flex-direction: row;
@@ -207,12 +206,18 @@
 }
 
 .projects-section {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 20px; /* Añadido para proporcionar espacio alrededor del contenido */
   box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho total */
 }
 
-/***************PROJECT SECTION*****************/
+
+
+/***************EDUCATION SECTION*****************/
+
+.education{
+  padding-top: 70px;
+}
 
 
 /**************MEDIA QUERIES*****************/

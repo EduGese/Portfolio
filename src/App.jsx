@@ -136,7 +136,7 @@ function App() {
         </div>
       </section>
       <section id="projects" className='projects-section'>
-        <h1>Projects</h1>
+        <h1 className="section-title">Projects</h1>
         <div className="project-container">
           {projects.map((project, index) => (
             <MediaCard 
@@ -155,11 +155,11 @@ function App() {
         </div>
           
       </section>
-      <section id="education">
-        <h1>Education</h1>
+      <section id="education" className='education'>
+        <h1 className="section-title">Education</h1>
       </section>
-      <section id="contact">
-        <h1>Contact</h1>
+      <section id="contact" className='contact'>
+        <h1 className="section-title">Contact</h1>
       </section>
     </>
 
