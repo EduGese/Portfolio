@@ -234,7 +234,7 @@
   .checkbtn{
     display: block;
   }
-  ul{
+  nav ul{
     display:flex;
     flex-direction: column;
     justify-content: center;
