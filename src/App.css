@@ -18,12 +18,7 @@
   }
 
     /************Common styles********************/
-    /* section {
-      background-size: cover;
-      height: calc(100vh - 80px);
-      color: #151A23;
-    } */
-  
+   
     .upperCase {
       text-transform: uppercase;
     }
@@ -215,9 +210,11 @@
 
 /***************EDUCATION SECTION*****************/
 
-.education{
-  padding-top: 70px;
+.education {
+  /* padding-top: 70px; */
+  /* padding-bottom: 20px;  */
 }
+
 
 
 /**************MEDIA QUERIES*****************/
