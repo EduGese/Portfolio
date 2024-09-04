@@ -5,6 +5,8 @@ import { NavBar } from './components/NavBar';
 import { ProfilePicture } from './components/ProfilePic';
 import MediaCard from './components/Card'
 import { ItemsList } from './components/ItemList';
+import BasicForm from './components/Mailer';
+
 import { logosLanguages, logosFrameworks, logosDatabase } from './constants/logo';
 import { projects } from './constants/projects';
 import { certificates } from './constants/education';
@@ -13,7 +15,7 @@ import { certificates } from './constants/education';
 import { downloadFile } from './logic/logic';
 
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper'; // Importar Paper correctamente
+import Paper from '@mui/material/Paper'; 
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Typography from '@mui/material/Typography';
@@ -260,7 +262,7 @@ function App() {
 
       <section id="contact" className='contact'>
       <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">Contact</Typography>
-
+      <BasicForm />
       </section>
       <footer>
 
