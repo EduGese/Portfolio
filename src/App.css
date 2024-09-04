@@ -195,15 +195,15 @@
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  width: 100%; /* Cambiado de 60% a 100% para adaptarse mejor a todos los tamaños de pantalla */
+  width: 100%; 
   padding: 20px;
-  gap: 20px; /* Añadido para proporcionar espacio entre las tarjetas */
+  gap: 20px; 
 }
 
 .projects-section {
   /* min-height: 100vh; */
-  padding: 20px; /* Añadido para proporcionar espacio alrededor del contenido */
-  box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho total */
+  padding: 20px; 
+  box-sizing: border-box; 
 }
 
 
@@ -213,6 +213,7 @@
 .education {
   /* padding-top: 70px; */
   /* padding-bottom: 20px;  */
+
 }
 
 
@@ -366,6 +367,11 @@
       flex-direction: column;
       align-items: center;
     }
+    .education {
+      /* padding-top: 70px; */
+      /* padding-bottom: 20px;  */
+      margin: 0 100px;
+    }
     
 
   }
@@ -390,6 +396,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+    .education {
+      margin: 0 300px;
     }
   }
   /**************MEDIA QUERIES*****************/

@@ -1,4 +1,4 @@
-
+import * as React from 'react';
 import './App.css'
 import { LogoContainer } from './components/LogoContainer';
 import { NavBar } from './components/NavBar';
@@ -7,11 +7,18 @@ import MediaCard from './components/Card'
 import { ItemsList } from './components/ItemList';
 import { logosLanguages, logosFrameworks, logosDatabase } from './constants/logo';
 import { projects } from './constants/projects';
+import { certificates } from './constants/education';
 
 
 import { downloadFile } from './logic/logic';
 
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper'; // Importar Paper correctamente
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+
 
 
 
@@ -161,9 +168,9 @@ function App() {
 
       </section>
       <section id="education" className='education'>
-        <h1 className="section-title">Education</h1>
+        <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">Education</Typography>
+        {/* <h1 >Education</h1> */}
         <Box sx={{
-          minHeight: '100vh',
           display: 'flex',
           flexDirection: {
             xs: 'column',
@@ -178,38 +185,71 @@ function App() {
             width: {
               xs: '70%',
               sm: '70%',
-              md: '70%'
+              md: '60%'
             },
             height: {
               xs: 'auto',
               sm: 'auto',
-              md: '80vh'
+              md: '80vh',
+              lg: '100%'
             },
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            // flexDirection: 'column',
+            // alignItems: {
+            //   xs: 'center',
+            //   sm: 'center',
+            //   lg: 'flex-start'
+            // },
+            // justifyContent: 'center',
             flexGrow: 1
           }}>
             <ItemsList />
           </Box>
           <Box sx={{
             width: {
-              xs: '100%',
-              sm: '100%',
+              xs: '70%',
+              sm: '70%',
               md: '30%'
             },
             height: {
               xs: 'auto',
               sm: 'auto',
-              md: '100vh'
+              md: 'auto'
             },
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             flexGrow: 1
           }}>
-            <h2>certis</h2>
-            <ItemsList />
+            <Paper elevation={3} sx={{ width: '100%', borderRadius: '20px', margin: '0 20px ', padding: '20px' }}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', textAlign: 'center', backgroundColor: '#2c3e50', color: 'white', padding: '10px', borderRadius: '10px' }}>
+                Courses/Certificates
+              </Typography>
+              <List>
+                {certificates.map((certificate, index) => (
+                  <React.Fragment key={certificate.id}> {/* Usando certificate.id como key */}
+                    <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start', mb: 2 }}>
+                      <Typography variant="subtitle1" sx={{ color: 'primary.primary', fontWeight: 'bold' }}>
+                        {certificate.title}
+                      </Typography>
+                      <Typography variant="body2" sx={{ color: 'text.primary' }}>
+                        {certificate.center}
+                      </Typography>
+                      <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+                        {certificate.date}
+                      </Typography>
+                    </ListItem>
+                    {certificate.id !== 3 && (
+                      <Divider variant="middle"  />
+                    )}
+                  </React.Fragment>
+                ))}
+              </List>
+
+            </Paper>
+
+
+
           </Box>
         </Box>
       </section>

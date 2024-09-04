@@ -51,7 +51,7 @@ export const ItemsList = () => {
                       </Typography>
                       <Typography
                         component="span"  
-                        variant="body2"
+                        variant="caption"
                         sx={{ color: 'text.secondary', display: 'block' }}
                       >
                         {education.date} | {education.location}
@@ -63,7 +63,7 @@ export const ItemsList = () => {
               </ListItem>
             </Paper>
 
-            <Divider variant="inset" component="li" />
+            {/* <Divider variant="inset" component="li" /> */}
           </React.Fragment>
         ))
       }

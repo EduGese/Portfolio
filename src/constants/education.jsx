@@ -27,3 +27,30 @@ export const mainEducation = [
         link:'https://www.uam.es/uam/inicio'
     },
 ]
+
+export const certificates = [
+    {
+        id: 1,
+        title: ' Ultimate Docker: Guide from zero to deployments',
+        avatar:'',
+        center: 'Udemy',
+        date: 'Apr, 2024',
+        link:'https://www.udemy.com/'
+    },
+     {
+        id: 2,
+        title: "Arquitecting on AWS",
+        avatar:'',
+        center: 'CAS Trainning',
+        date: 'Feb, 2024',
+        link:'https://cas-training.com/'
+    },
+    {
+        id: 3,
+        title: 'Node: from zero to expert',
+        avatar:'',
+        center: 'Udemy',
+        date: 'May, 2023',
+        link:'https://www.udemy.com/'
+    },
+]
