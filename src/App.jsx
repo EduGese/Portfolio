@@ -27,7 +27,10 @@ function App() {
 
   return (
     <>
+    <header>
       <NavBar></NavBar>
+    </header>
+      
 
       <section className="home" id="home">
         <div className="home-img-container">
@@ -124,7 +127,8 @@ function App() {
         </div>
       </section>
       <section id="technologies" className="technologies">
-        <h1 className="section-title">Technologies</h1>
+        {/* <h1 className="section-title">Technologies</h1> */}
+        <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">Contact</Typography>
 
         <h2>Languages</h2>
         <div className="tech-container">
@@ -227,7 +231,7 @@ function App() {
               </Typography>
               <List>
                 {certificates.map((certificate, index) => (
-                  <React.Fragment key={certificate.id}> {/* Usando certificate.id como key */}
+                  <React.Fragment key={certificate.id}>
                     <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start', mb: 2 }}>
                       <Typography variant="subtitle1" sx={{ color: 'primary.primary', fontWeight: 'bold' }}>
                         {certificate.title}
@@ -255,11 +259,13 @@ function App() {
       </section>
 
       <section id="contact" className='contact'>
-        <h1 className="section-title">Contact</h1>
+      <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">Contact</Typography>
+
       </section>
+      <footer>
+
+      </footer>
     </>
-
-
   )
 }
 
