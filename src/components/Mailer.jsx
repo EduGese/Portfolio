@@ -3,6 +3,7 @@ import { TextField, Button, Typography, Box, Alert } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import SendIcon from '@mui/icons-material/Send';
 import ClearIcon from '@mui/icons-material/Clear';
+import ReCAPTCHA from 'react-google-recaptcha'; 
 
 export default function BasicForm() {
   const [name, setName] = useState('');
@@ -11,7 +12,7 @@ export default function BasicForm() {
 
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
-
+  const [captchaValue, setCaptchaValue] = useState(null);
 
   const clearForm = (e) =>{
     e.preventDefault(); 
@@ -20,6 +21,7 @@ export default function BasicForm() {
     setMessage('');
     setError('');
     setSuccess(false);
+    setCaptchaValue(null);
     
   }
 
@@ -27,13 +29,18 @@ export default function BasicForm() {
     e.preventDefault();
     e.stopPropagation();
 
+    if (!captchaValue) {
+      setError('Please complete the CAPTCHA');
+      return;
+    }
+
     fetch("https://formcarry.com/s/K5U1KeaYlKh", {
       method: 'POST',
       headers: { 
         "Accept": "application/json",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ name, email, message })
+      body: JSON.stringify({ name, email, message, captcha: captchaValue })
     })
     .then(response => response.json())
     .then(response => {
@@ -121,6 +128,11 @@ export default function BasicForm() {
         rows={4}
         fullWidth
         required
+        sx={{ mb: 2 }}
+      />
+      <ReCAPTCHA
+        sitekey="YOUR_RECAPTCHA_SITE_KEY" // Reemplaza con tu clave del sitio
+        onChange={(value) => setCaptchaValue(value)} // Maneja el valor del CAPTCHA
         sx={{ mb: 2 }}
       />
           <Box>
