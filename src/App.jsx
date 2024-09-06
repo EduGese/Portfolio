@@ -263,6 +263,7 @@ function App() {
       <section id="contact" className='contact'>
       <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">Contact</Typography>
       <BasicForm />
+      <SideBarContact/>
       </section>
       <footer>
 
