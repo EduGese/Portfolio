@@ -6,6 +6,8 @@ import { ProfilePicture } from './components/ProfilePic';
 import MediaCard from './components/Card'
 import { ItemsList } from './components/ItemList';
 import BasicForm from './components/Mailer';
+import { SideBarContact } from './components/SideBarContact';  
+
 
 import { logosLanguages, logosFrameworks, logosDatabase } from './constants/logo';
 import { projects } from './constants/projects';
