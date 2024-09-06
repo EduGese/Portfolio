@@ -268,13 +268,29 @@ function App() {
         </Box>
       </section>
 
-      <section id="contact" className='contact'>
-      <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">Contact</Typography>
+      <section id="contact" className='contact' style={{ position: 'relative' }}>
       <BasicForm />
       <SideBarContact/>
-      </section>
-      <footer>
+    </section>
 
+      <footer className='footer'>
+        <Divider variant="middle"/> 
+       <Box>
+        <List sx={{
+          width: '10%',
+          margin: '0 auto',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center'	
+        }}>
+          <ListItem><a href="https://wa.me/+34689262614"><WhatsAppIcon/></a></ListItem>
+          <ListItem><a href="https://t.me/Odardue"><TelegramIcon/></a></ListItem>
+          <ListItem><a href="https://www.linkedin.com/in/eduardo-gonz%C3%A1lez-seco-0938a2a4/"><LinkedInIcon/></a></ListItem>
+          <ListItem><a href="https://github.com/EduGese"><GitHubIcon/></a></ListItem>
+        </List>
+       </Box>
+        
       </footer>
     </>
   )
