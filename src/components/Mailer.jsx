@@ -77,7 +77,12 @@ export default function BasicForm() {
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
-        maxWidth: '500px',
+        maxWidth: {
+          xs: '80%', 
+          sm: '80%',  
+          md: '500px',  
+          lg: '700px',  
+        },
         margin: '0 auto',
         padding: '20px',
         bgcolor: 'background.paper',
@@ -86,7 +91,7 @@ export default function BasicForm() {
       }}
     >
       <Typography variant="h5" sx={{ mb: 2 }}>
-        Contact Me
+        Get In Touch
       </Typography>
 
       {error && (
@@ -135,7 +140,7 @@ export default function BasicForm() {
         onChange={(value) => setCaptchaValue(value)} // Maneja el valor del CAPTCHA
         sx={{ mb: 2 }}
       />
-          <Box>
+          <Box sx={{marginTop:'10px'}}>
               <Button type="submit" variant="contained" color="primary" startIcon={<SendIcon />} sx={{  width: '40%', margin: '0 5px ' }}>
                   Send
               </Button>
