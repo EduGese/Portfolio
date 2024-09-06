@@ -24,6 +24,12 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 
 
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import TelegramIcon from '@mui/icons-material/Telegram';
+
+
 
 
 function App() {
