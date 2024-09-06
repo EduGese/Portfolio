@@ -216,6 +216,17 @@
 
 }
 
+/***************CONTACT SECTION*****************/
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  position: relative;
+}
+
+
 
 
 /**************MEDIA QUERIES*****************/
@@ -229,7 +240,9 @@
   .home-buttons-container{
     margin-top: 15px;
   }
-
+.drawer{
+  display: none;
+}
 }
 @media (max-width: 640px){/*Mobile*/
   .checkbtn{
@@ -304,7 +317,9 @@
       max-height: 300px; 
 
     }
-
+.drawer{
+  display: none;
+}
 }
 @media (max-width: 1024px) {/*Tablet*/
 
