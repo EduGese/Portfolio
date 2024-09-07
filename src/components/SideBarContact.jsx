@@ -6,23 +6,25 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 
 export const SideBarContact = () => {
     return (
-        <Drawer className='drawer'
+        <Drawer
         variant="permanent"
-        anchor="right" 
+        anchor="left" 
         sx={{
-          position: 'absolute', 
-          right: 0, 
-          top: '50%', // Centrado verticalmente
-          transform: 'translateY(-50%)', 
-          width: '80px',
+          position: 'fixed', // Cambia a fixed para que se mantenga en su lugar
+          left: 0,
+          top: '40vh', // Alinea verticalmente al centro de la pantalla
+          transform: 'translateY(-50%)', // Ajusta para centrar completamente
+          width: '60px',
           height: 'auto',
+          margin: '10px 0 10px 0',
+          display: { xs: 'none', sm: 'none', md:'none', lg:'block' },
           flexShrink: 0,
           '& .MuiDrawer-paper': {
-            width: '80px',
+            width: '100px',
             height: 'auto', 
             boxSizing: 'border-box',
             bgcolor: 'background.paper',
-            borderRadius: '10px 0 0 10px', 
+            borderRadius: '0 10px 10px 0', 
           },
 
         }}
@@ -30,7 +32,7 @@ export const SideBarContact = () => {
         <List sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <ListItem>
             <IconButton href="https://wa.me/+34689262614">
-              <WhatsAppIcon fontSize="large" />
+              <WhatsAppIcon fontSize="large"/>
             </IconButton>
           </ListItem>
           <ListItem>
