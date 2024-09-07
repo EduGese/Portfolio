@@ -80,10 +80,10 @@ export default function BasicForm() {
         maxWidth: {
           xs: '80%', 
           sm: '80%',  
-          md: '500px',  
-          lg: '700px',  
+          md: '40%',  
+          lg: '40%',  
         },
-        margin: '0 auto',
+         margin: '0 auto',
         padding: '20px',
         bgcolor: 'background.paper',
         borderRadius: 2,
