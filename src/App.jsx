@@ -7,6 +7,7 @@ import MediaCard from './components/Card'
 import { ItemsList } from './components/ItemList';
 import BasicForm from './components/Mailer';
 import { SideBarContact } from './components/SideBarContact';  
+import {EmailCard} from './components/EmailCard'
 
 
 import { logosLanguages, logosFrameworks, logosDatabase } from './constants/logo';
@@ -28,6 +29,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TelegramIcon from '@mui/icons-material/Telegram';
+
 
 
 
@@ -268,10 +270,11 @@ function App() {
         </Box>
       </section>
 
-      <section id="contact" className='contact' style={{ position: 'relative' }}>
-      <BasicForm />
-      <SideBarContact/>
-    </section>
+      <section id="contact" className='contact' >
+        <EmailCard/>
+        <BasicForm />
+        <SideBarContact />
+      </section>
 
       <footer className='footer'>
         <Divider variant="middle"/> 
