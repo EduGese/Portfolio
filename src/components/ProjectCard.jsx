@@ -13,7 +13,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Divider from '@mui/material/Divider';
 
 
-export default function MediaCard({ name, image, description, technologies, ghLink, demoLink, websiteLink, gif, gifOrientation }) {
+export default function ProjectCard({ name, image, description, technologies, ghLink, demoLink, websiteLink, gif, gifOrientation }) {
   const [isHovered, setIsHovered] = React.useState(false);
   const [gifUrl, setGifUrl] =  React.useState(gif);
 
