@@ -70,7 +70,7 @@
   justify-content:center;
   align-items: center;
   width: 50%;
-  height: 70%;
+  height: 400px;
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -222,8 +222,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 100vh;
   position: relative;  
+}
+/***************FOOTER SECTION*****************/
+.footer{
+  margin-top: 20px;
 }
 
 
@@ -419,6 +423,10 @@
     }
     .education {
       margin: 0 300px;
+    }
+    .home-text-container{
+      height: 400px;
+     
     }
   }
   /**************MEDIA QUERIES*****************/

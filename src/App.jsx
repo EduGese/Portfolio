@@ -1,13 +1,17 @@
 import * as React from 'react';
+import { useState } from 'react';
 import './App.css'
 import { LogoContainer } from './components/LogoContainer';
 import { NavBar } from './components/NavBar';
 import { ProfilePicture } from './components/ProfilePic';
-import MediaCard from './components/Card'
+import ProjectCard from './components/ProjectCard'
 import { ItemsList } from './components/ItemList';
 import BasicForm from './components/Mailer';
 import { SideBarContact } from './components/SideBarContact';  
-import {EmailCard} from './components/EmailCard'
+import {EmailCard} from './components/EmailCard';
+import { Footer } from './components/Footer';
+import { ContactLinks } from './components/ContactLinks';
+
 
 
 import { logosLanguages, logosFrameworks, logosDatabase } from './constants/logo';
@@ -17,12 +21,14 @@ import { certificates } from './constants/education';
 
 import { downloadFile } from './logic/logic';
 
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper'; 
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
+// import Box from '@mui/material/Box';
+// import Paper from '@mui/material/Paper'; 
+// import List from '@mui/material/List';
+// import ListItem from '@mui/material/ListItem';
+// import Typography from '@mui/material/Typography';
+// import Divider from '@mui/material/Divider';
+// import Button from '@mui/material/Button'; 
+import {Button, Box, Paper, List, ListItem, Typography, Divider} from '@mui/material'; 
 
 
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -34,8 +40,16 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 
 
 
-function App() {
 
+function App() {
+  const [visibleProjects, setVisibleProjects] = useState(3);
+  // Función para mostrar más proyectos
+  const showMoreProjects = () => {
+    setVisibleProjects(prevVisible => prevVisible + 3); // Cada vez muestra 3 proyectos más
+  };
+  const showLessProjects = () => {
+    setVisibleProjects(prevVisible => prevVisible - 3); 
+  };
 
   return (
     <>
@@ -166,8 +180,8 @@ function App() {
       <section id="projects" className='projects-section'>
         <h1 className="section-title">Projects</h1>
         <div className="project-container">
-          {projects.map((project, index) => (
-            <MediaCard
+          {projects.slice(0, visibleProjects).map((project, index) => (
+            <ProjectCard
               key={index}
               name={project.name}
               image={project.image}
@@ -178,14 +192,35 @@ function App() {
               websiteLink={project.websiteLink}
               gif={project.gif}
               gifOrientation={project.gifOrientation}
-            ></MediaCard>
+            />
           ))}
         </div>
+        {
+          visibleProjects < projects.length && ( // Show the button only if there are more projects to show
+            <Button
+              variant="contained"
+              onClick={showMoreProjects}
+              sx={{ margin: '20px auto', display: 'block' }}
+            >
+              Show more
+            </Button>
+          )
+        }
+        {
+          visibleProjects > 3 && (
+            <Button
+              variant="contained"
+              onClick={showLessProjects}
+              sx={{ margin: '20px auto', display: 'block' }}
+            >
+              Show less
+            </Button>
+          )
+        }
 
       </section>
       <section id="education" className='education'>
         <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">Education</Typography>
-        {/* <h1 >Education</h1> */}
         <Box sx={{
           display: 'flex',
           flexDirection: {
@@ -210,13 +245,6 @@ function App() {
               lg: '100%'
             },
             display: 'flex',
-            // flexDirection: 'column',
-            // alignItems: {
-            //   xs: 'center',
-            //   sm: 'center',
-            //   lg: 'flex-start'
-            // },
-            // justifyContent: 'center',
             flexGrow: 1
           }}>
             <ItemsList />
@@ -256,45 +284,29 @@ function App() {
                       </Typography>
                     </ListItem>
                     {certificate.id !== 3 && (
-                      <Divider variant="middle"  />
+                      <Divider variant="middle" />
                     )}
                   </React.Fragment>
                 ))}
               </List>
-
             </Paper>
-
-
-
           </Box>
         </Box>
       </section>
 
       <section id="contact" className='contact' >
-        <EmailCard/>
+        <Box>
+          <EmailCard />
+          <ContactLinks />
+        </Box>
         <BasicForm />
-        <SideBarContact />
       </section>
 
       <footer className='footer'>
-        <Divider variant="middle"/> 
-       <Box>
-        <List sx={{
-          width: '10%',
-          margin: '0 auto',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center'	
-        }}>
-          <ListItem><a href="https://wa.me/+34689262614"><WhatsAppIcon/></a></ListItem>
-          <ListItem><a href="https://t.me/Odardue"><TelegramIcon/></a></ListItem>
-          <ListItem><a href="https://www.linkedin.com/in/eduardo-gonz%C3%A1lez-seco-0938a2a4/"><LinkedInIcon/></a></ListItem>
-          <ListItem><a href="https://github.com/EduGese"><GitHubIcon/></a></ListItem>
-        </List>
-       </Box>
-        
+      <Divider variant='middle'/>
+        <Footer/>
       </footer>
+
     </>
   )
 }
