@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TextField, Button, Typography, Box, Alert } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import SendIcon from '@mui/icons-material/Send';
-import ClearIcon from '@mui/icons-material/Clear';
+// import ClearIcon from '@mui/icons-material/Clear';
 import ReCAPTCHA from 'react-google-recaptcha'; 
 
 export default function BasicForm() {
@@ -14,16 +14,16 @@ export default function BasicForm() {
   const [success, setSuccess] = useState(false);
   const [captchaValue, setCaptchaValue] = useState(null);
 
-  const clearForm = (e) =>{
-    e.preventDefault(); 
-    setName('');
-    setEmail('');
-    setMessage('');
-    setError('');
-    setSuccess(false);
-    setCaptchaValue(null);
+  // const clearForm = (e) =>{
+  //   e.preventDefault(); 
+  //   setName('');
+  //   setEmail('');
+  //   setMessage('');
+  //   setError('');
+  //   setSuccess(false);
+  //   setCaptchaValue(null);
     
-  }
+  // }
 
   function onSubmit(e) {
     e.preventDefault();
@@ -91,7 +91,7 @@ export default function BasicForm() {
       }}
     >
       <Typography variant="h5" sx={{ mb: 2 }}>
-        Get In Touch
+        Send me a message
       </Typography>
 
       {error && (
@@ -141,12 +141,12 @@ export default function BasicForm() {
         sx={{ mb: 2 }}
       />
           <Box sx={{marginTop:'10px'}}>
-              <Button type="submit" variant="contained" color="primary" startIcon={<SendIcon />} sx={{  width: '40%', margin: '0 5px ' }}>
+              <Button type="submit" variant="contained" color="primary" startIcon={<SendIcon />} sx={{  width: '100%', margin: '0 5px ' }}>
                   Send
               </Button>
-              <Button type="button" variant="contained" color="secondary" startIcon={<ClearIcon />} sx={{ width: '40%', margin: '0 5px ' }} onClick={clearForm}>
+              {/* <Button type="button" variant="contained" color="secondary" startIcon={<ClearIcon />} sx={{ width: '40%', margin: '0 5px ' }} onClick={clearForm}>
                   Clear
-              </Button>
+              </Button> */}
           </Box>
       
     </Box>
