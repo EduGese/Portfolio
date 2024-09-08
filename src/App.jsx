@@ -6,40 +6,19 @@ import { NavBar } from './components/NavBar';
 import { ProfilePicture } from './components/ProfilePic';
 import ProjectCard from './components/ProjectCard'
 import { ItemsList } from './components/ItemList';
-import BasicForm from './components/Mailer';
-import { SideBarContact } from './components/SideBarContact';  
+import BasicForm from './components/Mailer';  
 import {EmailCard} from './components/EmailCard';
 import { Footer } from './components/Footer';
 import { ContactLinks } from './components/ContactLinks';
-
-
 
 import { logosLanguages, logosFrameworks, logosDatabase } from './constants/logo';
 import { projects } from './constants/projects';
 import { certificates } from './constants/education';
 
-
 import { downloadFile } from './logic/logic';
 
-// import Box from '@mui/material/Box';
-// import Paper from '@mui/material/Paper'; 
-// import List from '@mui/material/List';
-// import ListItem from '@mui/material/ListItem';
-// import Typography from '@mui/material/Typography';
-// import Divider from '@mui/material/Divider';
-// import Button from '@mui/material/Button'; 
+
 import {Button, Box, Paper, List, ListItem, Typography, Divider} from '@mui/material'; 
-
-
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import TelegramIcon from '@mui/icons-material/Telegram';
-
-
-
-
-
 
 function App() {
   const [visibleProjects, setVisibleProjects] = useState(3);
