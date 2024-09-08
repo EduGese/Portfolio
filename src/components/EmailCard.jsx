@@ -10,9 +10,9 @@ export const EmailCard = ()=>{
             flexDirection: 'column',
             alignItems: 'center',
             padding: '20px',
-            backgroundColor: 'background.paper',
-            borderRadius: '10px',
-            boxShadow: 3,
+            // backgroundColor: 'background.paper',
+            // borderRadius: '10px',
+            // boxShadow: 3,
             marginBottom: '40px',
             marginLeft: { xs: '0px', sm: '0px', md: '100px', lg: '200px' }
             
@@ -24,13 +24,13 @@ export const EmailCard = ()=>{
             <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px', marginLeft: '10px' }}>
               <EmailIcon sx={{ fontSize: '40px', color: 'primary.main' }} />
               <Typography variant="body1" sx={{ fontSize: '18px', fontStyle: 'italic' }}>
-                Feel free to reach out via email at
+                {/* Feel free to reach out via email at */}  eddugonz@gmail.com
               </Typography>
             </Box>
   
-            <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'primary.main', marginTop: '8px' }}>
+            {/* <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'primary.main', marginTop: '8px' }}>
               eddugonz@gmail.com
-            </Typography>
+            </Typography> */}
           </Box>
     )
 }
