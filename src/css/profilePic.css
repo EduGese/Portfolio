@@ -120,20 +120,7 @@
       align-items: center;
     }
   }
-  @media (min-width: 1600px) and (max-width: 1930px) {
-    figure {
-      /* max-width: 550px; */
-      /* max-height: 550px; */
-    }
-  }
-
-@media (min-width: 1931px) {
-  figure {
-    /* max-width: 550px; */
-    /* max-height: 550px;  */
-  }
-}
-  
+ 
  
   
 
