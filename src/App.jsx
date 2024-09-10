@@ -23,7 +23,7 @@ import { certificates } from './constants/education';
 import { downloadFile } from './logic/logic';
 
 
-import {Button, Box, Paper, List, ListItem, Typography, Divider } from '@mui/material'; 
+import {Button, Box, Paper, List, ListItem, Typography, Divider, Avatar } from '@mui/material'; 
 
 function App() {
   const [visibleProjects, setVisibleProjects] = useState(3);
@@ -86,17 +86,19 @@ function App() {
     marginTop: 'auto',
     marginBottom: 'auto',
     '@media (max-width: 400px)': {
+      height: '100vh',
       marginTop: '15px',  // Sm-Mobile
     },
 
     '@media (max-width: 640px)': {
+      height: '100vh',
       width: '100%',
       textAlign: 'center',
       margin: '10px 0 0 0',  // Mobile
     },
 
-    '@media (max-width: 1024px)': {
-      height: '70vh',
+    '@media (min-width: 640px) and (max-width: 1024px)': {
+      height: '100vh',
       width: '100%',
       textAlign: 'center',
       margin: 0,  // Tablet
@@ -117,12 +119,21 @@ function App() {
             <Typography variant='h1' sx={{ fontFamily: " 'Poppins', sans-serif", fontSize: '6vh', fontWeight: 'Bold' }}
             >Eduardo González Seco
             </Typography>
+            <Avatar src='src/assets/profile-picture.png' sx={{
+              display:{
+                lg:'none',
+                xl:'none'
+              },
+              width: '20vh',
+              height: '20vh',
+              border:'1px solid black'
+            }}/>
             <Typography variant='h1' sx={{ fontFamily: " 'Poppins', sans-serif", fontSize: '4vh', fontWeight: 'Bold', color: '#151a23a9' }}>
               Full Stack Developer
             </Typography>
             <Box>
               <Typography variant='h6' sx={{ fontFamily: " 'Poppins', sans-serif", fontWeight: 'Bold' }}>
-                MEAN Stack + MySql
+                MEAN + MySql
               </Typography>
               <HomeStackLogoContainer/>
             </Box>
@@ -130,7 +141,13 @@ function App() {
 
           <Box sx={{
             height: '70%',
-            width: '70%',
+            width: {
+              xs: '100%',
+              sm: '100%',
+              md: '70%',
+              lg: '70%',
+              xl: '70%'
+            },
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-evenly',
@@ -155,7 +172,7 @@ function App() {
 
       </section>
       <section id="about" className="about">
-        <h1 className="section-title">About me</h1>
+      <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">About me</Typography>
         <div className="text-about">
           <p className="typing-effect">Quien soy</p>
           <p>Que he hecho</p>
@@ -169,23 +186,23 @@ function App() {
       </section>
       <section id="technologies" className="technologies">
         {/* <h1 className="section-title">Technologies</h1> */}
-        <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">Contact</Typography>
+        <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">Technologies</Typography>
 
-        <h2>Languages</h2>
+        <h6>Languages</h6>
         <div className="tech-container">
           {logosLanguages.map((logo, index) => (
             <LogoContainer key={index} href={logo.href} svg={logo.svg} figCaption={logo.figCaption} />
           ))}
         </div>
 
-        <h2>Frameworks</h2>
+        <h6>Frameworks</h6>
         <div className="tech-container">
           {logosFrameworks.map((logo, index) => (
             <LogoContainer key={index} href={logo.href} svg={logo.svg} figCaption={logo.figCaption} />
           ))}
         </div>
 
-        <h2>Database</h2>
+        <h6>Database</h6>
         <div className="tech-container">
           {logosDatabase.map((logo, index) => (
             <LogoContainer key={index} href={logo.href} svg={logo.svg} figCaption={logo.figCaption} />
@@ -193,7 +210,8 @@ function App() {
         </div>
       </section>
       <section id="projects" className='projects-section'>
-        <h1 className="section-title">Projects</h1>
+        {/* <h1 className="section-title">Projects</h1> */}
+        <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">Projects</Typography>
         <div className="project-container">
           {projects.slice(0, visibleProjects).map((project, index) => (
             <ProjectCard

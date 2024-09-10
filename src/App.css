@@ -150,7 +150,7 @@
 
 /***************ABOUT SECTION*****************/
 .about{
-  background: linear-gradient(180deg,#151A23, #192C3A);
+  /* background: linear-gradient(180deg,#151A23, #192C3A); */
 
 }
 .text-about{
@@ -158,9 +158,9 @@
 
 }
 /***************TECHNOLOGIES SECTION*****************/
-.technologies{
+/* .technologies{
   height: 100vh;
-}
+} */
 .technologies h2{
   font-weight: lighter;
   color:#548DBF;
@@ -202,8 +202,8 @@
 
 .projects-section {
   /* min-height: 100vh; */
-  padding: 20px; 
-  box-sizing: border-box; 
+  /* padding: 20px; 
+  box-sizing: border-box;  */
 }
 
 
