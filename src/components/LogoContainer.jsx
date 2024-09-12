@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 
-export  const LogoContainer = ({href, svg, figCaption}) =>{
+export  const LogoContainer = ({href, svg, figCaption, transition}) =>{
 
 
     return(
@@ -27,10 +27,15 @@ export  const LogoContainer = ({href, svg, figCaption}) =>{
           maxWidth: '10vh',
           maxHeight: '10vh',
           position: 'relative',
-          transition: 'transform 0.3s ease-in-out',
-          '&:hover': {
-            transform: 'scale(1.2)',  
-          },
+          maxWidth: '10vh',
+          maxHeight: '10vh',
+          position: 'relative',
+          transition: transition ? 'transform 0.3s ease-in-out' : 'none',
+          '&:hover': transition
+            ? {
+                transform: 'scale(1.2)',
+              }
+            : {},
         }}
       >
         {svg}
