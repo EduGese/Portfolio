@@ -15,7 +15,7 @@ export const EmailCard = () => {
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
     setShowAlert(true);
-    setTimeout(() => setShowAlert(false), 3000); // El alert desaparecerá después de 3 segundos
+    setTimeout(() => setShowAlert(false), 3000); 
   };
 
   return (
