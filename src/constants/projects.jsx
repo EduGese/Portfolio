@@ -3,13 +3,13 @@ import { logosLanguages, logosFrameworks, logosDatabase, logosTools } from './lo
 export const projects = [
     {
         name:'Task Manager',
-        image: 'src/assets/projects/taskManager.png',
+        image: 'src/assets/taskManager2.jpg',
         description: 'This Ionic 6 Angular Android app empowers you to manage tasks offline. Create, edit, mark tasks complete, and delete them. View pending and completed tasks in separate lists, and track deadlines with a calendar view',
         technologies: [logosLanguages[2],logosLanguages[3], logosLanguages[1], logosFrameworks[1],  logosTools[0], logosDatabase[1]],
         ghLink: 'https://github.com/EduGese/Task-Manager',
         demoLink: 'https://github.com/user-attachments/assets/2b04ef06-d5c1-4606-a3b3-526bda4ed2be',
         websiteLink: null,
-        gif:'src/assets/gifs/taskManager.gif',
+        gif:'src/assets/gifs/taskManager2.gif',
         gifOrientation:'portrait',
     },
     {

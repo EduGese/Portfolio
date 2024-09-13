@@ -1,12 +1,13 @@
 export const mainEducation = [
     {
         id: 1,
-        title: 'Bilingual Higher Degree in Web and Mobile Application Development',
+        title:  'Design and development of web applications (Bilingual)',
         avatar:'src/assets/education/IESEllago.png',
         center: 'IES El Lago ',
         date: '2023',
         location: 'Madrid, Spain',
-        link:'https://www.educa2.madrid.org/web/centro.ies.ellago.madrid'
+        link:'https://www.educa2.madrid.org/web/centro.ies.ellago.madrid',
+        description: 'Full-stack web development (HTML, CSS, JavaScript, PHP, Java), databases (Oracle, MySQL), server administration (Apache, Tomcat), object-oriented programming, mobile development (Android), technical English.'
     },
      {
         id: 2,
@@ -15,7 +16,8 @@ export const mainEducation = [
         center: 'UDIMA',
         date: '2019',
         location: 'London, UK',
-        link:'https://www.udima.es/'
+        link:'https://www.udima.es/',
+        description:null
     },
     {
         id: 3,
@@ -24,7 +26,8 @@ export const mainEducation = [
         center: 'UAM',
         date: '2010',
         location: 'Madrid, Spain',
-        link:'https://www.uam.es/uam/inicio'
+        link:'https://www.uam.es/uam/inicio',
+        description:null
     },
 ]
 
