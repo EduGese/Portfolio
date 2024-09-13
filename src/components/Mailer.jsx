@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { TextField, Button, Typography, Box, Alert } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import SendIcon from '@mui/icons-material/Send';
-// import ClearIcon from '@mui/icons-material/Clear';
 import ReCAPTCHA from 'react-google-recaptcha'; 
 
 export default function BasicForm() {
@@ -14,25 +13,15 @@ export default function BasicForm() {
   const [success, setSuccess] = useState(false);
   const [captchaValue, setCaptchaValue] = useState(null);
 
-  // const clearForm = (e) =>{
-  //   e.preventDefault(); 
-  //   setName('');
-  //   setEmail('');
-  //   setMessage('');
-  //   setError('');
-  //   setSuccess(false);
-  //   setCaptchaValue(null);
-    
-  // }
 
   function onSubmit(e) {
     e.preventDefault();
     e.stopPropagation();
 
-    if (!captchaValue) {
-      setError('Please complete the CAPTCHA');
-      return;
-    }
+    // if (!captchaValue) {
+    //   setError('Please complete the CAPTCHA');
+    //   return;
+    // }
 
     fetch("https://formcarry.com/s/K5U1KeaYlKh", {
       method: 'POST',
@@ -40,12 +29,11 @@ export default function BasicForm() {
         "Accept": "application/json",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ name, email, message, captcha: captchaValue })
+      body: JSON.stringify({ name, email, message })
     })
     .then(response => response.json())
     .then(response => {
       if (response.code === 200) {
-        // Mostrar mensaje de éxito
         setSuccess(true);
         setError('');
         setName('');
@@ -56,13 +44,11 @@ export default function BasicForm() {
         setError(response.message);
         setSuccess(false);
       } else {
-        // Otro error de formcarry
         setError(response.message);
         setSuccess(false);
       }
     })
     .catch(error => {
-      // Error relacionado con la solicitud.
       setError(error.message ? error.message : error);
       setSuccess(false);
     });
@@ -86,7 +72,7 @@ export default function BasicForm() {
          margin: '0 auto',
         padding: '20px',
         bgcolor: 'background.paper',
-        borderRadius: 2,
+        borderRadius: '50px',
         boxShadow: 3,
       }}
     >
@@ -101,7 +87,12 @@ export default function BasicForm() {
       )}
       
       {success && (
-        <Alert severity="success" icon={<CheckIcon fontSize="inherit" />} sx={{ mb: 2, width: '100%' }}>
+        <Alert severity="success" icon={<CheckIcon fontSize="inherit" />}
+         sx={{ mb: 2, position: 'fixed', 
+          bottom: '20px', 
+          right: '20px', 
+          zIndex: 1000, 
+          width: 'auto' }}>
           We received your submission, thank you!
         </Alert>
       )}
@@ -135,18 +126,15 @@ export default function BasicForm() {
         required
         sx={{ mb: 2 }}
       />
-      <ReCAPTCHA
-        sitekey="YOUR_RECAPTCHA_SITE_KEY" // Reemplaza con tu clave del sitio
-        onChange={(value) => setCaptchaValue(value)} // Maneja el valor del CAPTCHA
+      {/* <ReCAPTCHA
+        sitekey="YOUR_RECAPTCHA_SITE_KEY" 
+        onChange={(value) => setCaptchaValue(value)} 
         sx={{ mb: 2 }}
-      />
+      /> */}
           <Box sx={{marginTop:'10px'}}>
               <Button type="submit" variant="contained" color="primary" startIcon={<SendIcon />} sx={{  width: '100%', margin: '0 5px ' }}>
                   Send
               </Button>
-              {/* <Button type="button" variant="contained" color="secondary" startIcon={<ClearIcon />} sx={{ width: '40%', margin: '0 5px ' }} onClick={clearForm}>
-                  Clear
-              </Button> */}
           </Box>
       
     </Box>
