@@ -35,6 +35,7 @@ export default function ProjectCard({ name, image, description, technologies, gh
       justifyContent: 'space-between',
       margin: '10px',
       boxSizing: 'border-box',
+      borderRadius: '50px',
       flex: '1 1 calc(100% - 20px)',
       '@media (min-width: 600px)': {
         flex: '1 1 calc(50% - 20px)',
@@ -46,7 +47,7 @@ export default function ProjectCard({ name, image, description, technologies, gh
       <CardMedia
       sx={{
         height: 140,
-        transition: 'background-image 0.7s ease-in-out',
+        transition: 'background-image 1.2s ease-in-out',
        }}
       image={isHovered && gif ? gifUrl : image}
       title={name}
@@ -80,9 +81,12 @@ export default function ProjectCard({ name, image, description, technologies, gh
           padding: '10px 0',
         }}>
           {technologies.map((tech, index) => (
-            <figure key={index} style={{ margin: '0 5px', width: '30px', height: '30px' }}>
+            <a href={tech.href} key={index} >
+              <figure style={{ margin: '0 5px', width: '30px', height: '30px' }}>
               {tech.svg}
             </figure>
+            </a>
+            
           ))}
         </Box>
         <Divider sx={{
