@@ -5,38 +5,44 @@ import { LogoContainer } from './components/LogoContainer';
 import { NavBar } from './components/NavBar';
 import { ProfilePicture } from './components/ProfilePic';
 import ProjectCard from './components/ProjectCard'
-import { ItemsList } from './components/ItemList';
+import { MainEducationCard } from './components/MainEducationCard';
 import BasicForm from './components/Mailer';
 import { EmailCard } from './components/EmailCard';
 import { Footer } from './components/Footer';
 import { ContactLinks } from './components/ContactLinks';
 import { HomeStackLogoContainer } from './components/HomeStackLogoContainer';
-import { AlertDialogSlide } from './components/AlertDialogSlide';
+import { TechnologiesAlertDialogSlide } from './components/TechnologiesAlertDialogSlide';
+import { EducationAlertDialogSlide } from './components/EducationAlertDialogSlide';
+import { CertificatesCard } from './components/CertificatesCard';
+import { LanguagesCard } from './components/LanguagesCard';
 
 import PersonIcon from '@mui/icons-material/Person';
 import DownloadIcon from '@mui/icons-material/Download';
 import WorkIcon from '@mui/icons-material/Work';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
+import UnfoldLessIcon from '@mui/icons-material/UnfoldLess';
 
-import {  frontEndLogos, backEndLogos, toolsLogos } from './constants/logo';
+import { frontEndLogos, backEndLogos, toolsLogos } from './constants/logo';
 import { projects } from './constants/projects';
-import { certificates } from './constants/education';
+
 
 import { downloadFile } from './logic/logic';
 
 
-import { Button, Box, Paper, List, ListItem, Typography, Divider, Avatar } from '@mui/material';
+import { Button, Box, Paper, Typography, Divider, Avatar } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 
 function App() {
   const [visibleProjects, setVisibleProjects] = useState(3);
+
   const showAllProjects = () => {
     setVisibleProjects(projects.length);
   };
+
   const showLessProjects = () => {
     setVisibleProjects(3);
   };
-
 
   return (
     <>
@@ -287,7 +293,7 @@ function App() {
                   </Typography>
                   <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                     {/* <BusinessIcon sx={{ marginRight: '8px' }} /> */}
-                    <Avatar src='src/assets/scl_consulting_logo.jfif' sx={{ marginRight:'5px', border: '1px solid gray'}}/>
+                    <Avatar src='src/assets/scl_consulting_logo.jfif' sx={{ marginRight: '5px', border: '1px solid gray' }} />
                     <Typography variant="body1">SCL Consulting - Madrid (Hybrid)</Typography>
                   </Box>
                   <Typography variant="body2" sx={{ fontStyle: 'italic' }}>mar. 2023 - jun. 2023</Typography>
@@ -304,7 +310,7 @@ function App() {
                   paddingBottom: '10px'
 
                 }}>
-                  <Typography variant="body2" sx={{ marginTop: '10px', color: 'rgba(57, 57, 57, 0.649)' }}>
+                  <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary' }}>
                     I cut development time by 20% through building a RESTful API with <strong>Node.js-Nest.js</strong> and <strong>MySQL</strong> for Telefónica UK, enhancing SAP data monitoring. Improved user interfaces using <strong>Angular +13</strong>, applying <strong>CLEAN</strong> and <strong>SOLID</strong> principles, while ensuring quality with <strong>Agile</strong> | <strong>SCRUM</strong> and unit testing.
                   </Typography>
                 </Box>
@@ -343,6 +349,7 @@ function App() {
                   lg: '100%',
                   xl: '100%'
                 },
+                borderRadius:'50px',
                 margin: '0 auto',
               }}>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '5px' }}>
@@ -409,165 +416,185 @@ function App() {
         </Box>
       </section>
       <section id="technologies">
-      <Typography sx={{ textAlign: 'center', paddingTop: '70px' }} variant="h3">
-        Technologies
-      </Typography>
+        <Typography sx={{ textAlign: 'center', paddingTop: '70px' }} variant="h3">
+          Technologies
+        </Typography>
 
-      <Box
-        sx={{
-          width: '100%',
-          paddingTop: '40px',
-          paddingX: { xs: '20px', sm: '40px', md: '60px', lg: '80px', xl: '100px' },
-        }}
-      >
-        <Grid
-          container
-          spacing={2}
-          justifyContent="center"
-          alignItems="flex-start"
+        <Box
+          sx={{
+            width: '100%',
+            paddingTop: '40px',
+            paddingX: { xs: '20px', sm: '40px', md: '60px', lg: '80px', xl: '100px' },
+          }}
         >
           <Grid
-            size={{ xs: 10, sm: 10, md: 10, lg: 5, xl: 5 }}
+            container
+            spacing={2}
+            justifyContent="center"
+            alignItems="flex-start"
           >
-            <Paper
-            elevation={3}
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '20px',
-                height: '100%',
-                minHeight: '300px',
-                flexGrow: 1,
-              }}
+            <Grid
+              size={{ xs: 10, sm: 10, md: 10, lg: 5, xl: 5 }}
             >
-              <Typography variant="h5" component="h3">
-                Front-End
-              </Typography>
-              <Box
+              <Paper
+                elevation={3}
                 sx={{
                   display: 'flex',
-                  flexDirection: 'row',
+                  flexDirection: 'column',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  flexWrap: 'wrap',
-                  gap: '20px',
-                  paddingTop: '20px',
+                  padding: '20px',
+                  height: '100%',
+                  minHeight: '300px',
+                  flexGrow: 1,
+                  borderRadius: '50px'
                 }}
               >
-                {frontEndLogos.map((logo, index) => (
-                  <LogoContainer key={index} href={logo.href} svg={logo.svg} figCaption={logo.figCaption} transition={true}/>
-                ))}
-              </Box>
-            </Paper>
-          </Grid>
+                <Typography variant="h5" component="h3">
+                  Front-End
+                </Typography>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexWrap: 'wrap',
+                    gap: '20px',
+                    paddingTop: '20px',
+                  }}
+                >
+                  {frontEndLogos.map((logo, index) => (
+                    <LogoContainer key={index} href={logo.href} svg={logo.svg} figCaption={logo.figCaption} transition={true} />
+                  ))}
+                </Box>
+              </Paper>
+            </Grid>
 
-          <Grid
-             size={{ xs: 10, sm: 10, md: 10, lg: 5, xl: 5 }}
-          >
-            <Paper
-            elevation={3}
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '20px',
-                height: '100%',
-                minHeight: '300px', 
-                flexGrow: 1,  
-              }}
+            <Grid
+              size={{ xs: 10, sm: 10, md: 10, lg: 5, xl: 5 }}
             >
-              <Typography variant="h5" component="h3">
-                Back-End
-              </Typography>
-              <Box
+              <Paper
+                elevation={3}
                 sx={{
                   display: 'flex',
-                  flexDirection: 'row',
+                  flexDirection: 'column',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  flexWrap: 'wrap',
-                  gap: '20px',
-                  paddingTop: '20px',
+                  padding: '20px',
+                  height: '100%',
+                  minHeight: '300px',
+                  flexGrow: 1,
+                  borderRadius: '50px'
                 }}
               >
-                {backEndLogos.map((logo, index) => (
-                  <LogoContainer key={index} href={logo.href} svg={logo.svg} figCaption={logo.figCaption} transition={true}/>
-                ))}
-              </Box>
-            </Paper>
-          </Grid>
+                <Typography variant="h5" component="h3">
+                  Back-End
+                </Typography>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexWrap: 'wrap',
+                    gap: '20px',
+                    paddingTop: '20px',
+                  }}
+                >
+                  {backEndLogos.map((logo, index) => (
+                    <LogoContainer key={index} href={logo.href} svg={logo.svg} figCaption={logo.figCaption} transition={true} />
+                  ))}
+                </Box>
+              </Paper>
+            </Grid>
 
-          <Grid
-           size={{ xs: 10, sm: 10, md: 10, lg: 6, xl: 6 }}
-          >
-            <Paper
-            elevation={3}
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '20px',
-                minHeight: '200px',
-              }}
+            <Grid
+              size={{ xs: 10, sm: 10, md: 10, lg: 5, xl: 5 }}
             >
-              <Typography variant="h5" component="h3">
-                Tools
-              </Typography>
-              <Box
+              <Paper
+                elevation={3}
                 sx={{
                   display: 'flex',
-                  flexDirection: 'row',
+                  flexDirection: 'column',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  flexWrap: 'wrap',
-                  gap: '20px',
-                  paddingTop: '20px',
+                  padding: '20px',
+                  minHeight: '200px',
+                  borderRadius: '50px'
                 }}
               >
-                {toolsLogos.map((logo, index) => (
-                  <LogoContainer key={index} href={logo.href} svg={logo.svg} figCaption={logo.figCaption} transition={true}/>
-                ))}
-              </Box>
-            </Paper>
-          </Grid>
+                <Typography variant="h5" component="h3">
+                  Tools
+                </Typography>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexWrap: 'wrap',
+                    gap: '20px',
+                    paddingTop: '20px',
+                  }}
+                >
+                  {toolsLogos.map((logo, index) => (
+                    <LogoContainer key={index} href={logo.href} svg={logo.svg} figCaption={logo.figCaption} transition={true} />
+                  ))}
+                </Box>
+              </Paper>
+            </Grid>
 
-          <Grid
-           size={{ xs: 5, sm: 5, md: 5, lg: 4, xl: 4 }}
-          >
-              <Box
-               sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                height: '200px',
-                width:'100%'
-              }}
-              >
+            <Grid
+              size={{ xs: 5, sm: 5, md: 5, lg: 5, xl: 5 }}
+            >
+              <Paper variant="outlined"
+                sx={{
+                  borderRadius: '50px'
+                }}>
                 <Box
                   sx={{
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
-                    alignItems: 'center',
-                    color:'rgb(234 179 8 )',
-                    height: '100%',
-                    flexGrow: 1,
-                  }}>
-                  <AlertDialogSlide/>
+                    height: '200px',
+                    width: '100%',
+                    // backgroundColor:'#ffd180'
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      color: 'rgb(234 179 8 )',
+                      height: '100%',
+                      flexGrow: 1,
+                    }}>
+                    <TechnologiesAlertDialogSlide />
+                  </Box>
                 </Box>
-              </Box>
+              </Paper>
+
+            </Grid>
           </Grid>
-        </Grid>
-      </Box>
-    </section>
+        </Box>
+      </section>
 
       <section id="projects" className='projects-section'>
         <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">Projects</Typography>
-        <div className="project-container">
+
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: '20px',
+            padding: '20px',
+
+          }}>
           {projects.slice(0, visibleProjects).map((project, index) => (
             <ProjectCard
               key={index}
@@ -582,35 +609,41 @@ function App() {
               gifOrientation={project.gifOrientation}
             />
           ))}
-        </div>
+        </Box>
         {
           visibleProjects < projects.length && (
-            <Button
-              variant="contained"
-              onClick={showAllProjects}
-              sx={{ margin: '20px auto', display: 'block' }}
-            >
-              Show all
-            </Button>
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+              <Button
+                variant="outlined"
+                color="warning"
+                startIcon={<UnfoldMoreIcon />}
+                onClick={showAllProjects}
+                sx={{ margin: '20px auto' }}
+              >
+                Show all
+              </Button>
+            </Box>
           )
         }
         {
           visibleProjects > 3 && (
-            <Box component="a" href="#projects" sx={{ textDecoration: 'none' }}>
-              <Button
-                variant="contained"
-                onClick={showLessProjects}
-                sx={{ margin: '20px auto', display: 'block' }}
-              >
-                Show Less
-              </Button>
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+              <Box component="a" href="#projects" sx={{ textDecoration: 'none' }}>
+                <Button
+                  variant="outlined"
+                  color="warning"
+                  startIcon={<UnfoldLessIcon />}
+                  onClick={showLessProjects}
+                  sx={{ margin: '20px auto' }}
+                >
+                  Collapse
+                </Button>
+              </Box>
             </Box>
-
-
           )
         }
-
       </section>
+
       <section id="education" className='education'>
         <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">Education</Typography>
         <Box sx={{
@@ -637,52 +670,16 @@ function App() {
               lg: '100%'
             },
             display: 'flex',
-            flexGrow: 1
-          }}>
-            <ItemsList />
-          </Box>
-          <Box sx={{
-            width: {
-              xs: '70%',
-              sm: '70%',
-              md: '30%'
-            },
-            height: {
-              xs: 'auto',
-              sm: 'auto',
-              md: 'auto'
-            },
-            display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
             flexGrow: 1
           }}>
-            <Paper elevation={3} sx={{ width: '100%', borderRadius: '20px', margin: '0 20px ', padding: '20px' }}>
-              <Typography variant="h6" sx={{ fontWeight: 'bold', textAlign: 'center', backgroundColor: '#2c3e50', color: 'white', padding: '10px', borderRadius: '10px' }}>
-                Courses/Certificates
-              </Typography>
-              <List>
-                {certificates.map((certificate, index) => (
-                  <React.Fragment key={certificate.id}>
-                    <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start', mb: 2 }}>
-                      <Typography variant="subtitle1" sx={{ color: 'primary.primary', fontWeight: 'bold' }}>
-                        {certificate.title}
-                      </Typography>
-                      <Typography variant="body2" sx={{ color: 'text.primary' }}>
-                        {certificate.center}
-                      </Typography>
-                      <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-                        {certificate.date}
-                      </Typography>
-                    </ListItem>
-                    {certificate.id !== 3 && (
-                      <Divider variant="middle" />
-                    )}
-                  </React.Fragment>
-                ))}
-              </List>
-            </Paper>
+            <MainEducationCard />
+            <LanguagesCard />
+            <EducationAlertDialogSlide />
           </Box>
+          <CertificatesCard />
         </Box>
       </section>
 
