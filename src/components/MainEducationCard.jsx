@@ -3,7 +3,7 @@ import { mainEducation} from '../constants/education';
 import { Box, Paper, Typography, Avatar } from '@mui/material';
 
 
-export const MainEducationCard = () => {
+export const MainEducationCard = ({language}) => {
   const education = mainEducation[0];
   return (
     <Paper  sx={{ 
@@ -37,16 +37,16 @@ export const MainEducationCard = () => {
 
       <Box sx={{ textAlign: { xs: 'center', sm: 'left' }, width: '100%' }}>
         <Typography variant="h6" sx={{ fontSize: '20px', fontWeight: 'bold' }}>
-          {education.title}
+          {language === 'en' ? education.titleEn : education.titleEs}
         </Typography>
         <Typography variant="body1" sx={{ color: 'text.primary' }}>
           {education.center}
         </Typography>
         <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block' }}>
-          {education.date} | {education.location}
+          {education.date} | {language === 'en' ? education.locationEn : education.locationEs}
         </Typography>
         <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary' }}>
-          {education.description}
+          {language === 'en' ? education.descriptionEn : education.descriptionEs}
         </Typography>
       </Box>
     </Paper>

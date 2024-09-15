@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import logo from '../assets/resetImage.png'; 
+import logo from '../assets/resetImage.png';
 import '../css/navBar.css';
+import Avatar from '@mui/material/Avatar';
 
-export const NavBar = () => {
+export const NavBar = ({ language, handleLanguageToggle, texts }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const spanishFlag = 'https://flagcdn.com/w320/es.png';
+  const englishFlag = 'https://flagcdn.com/w320/gb.png';
 
   const handleLinkClick = () => {
     setIsMenuOpen(false);
@@ -15,21 +18,26 @@ export const NavBar = () => {
         src={logo}
         className="custom-pointer"
         alt="Logo"
-        onClick={() => {window.location.href = '#home'; handleLinkClick()}
-        
-        
+        onClick={() => { window.location.href = '#home'; handleLinkClick() }
         }
       />
+      <Avatar onClick={handleLanguageToggle}  src={language === 'es' ? englishFlag : spanishFlag}
+        alt={language === 'es' ? 'Change to English' : 'Change to Spanish'}
+        sx={{ width: '24px', height: '24px' , display:{ xs: 'block', sm: 'block', md: 'none'}}}/>
+       
       <div className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <i className="fas fa-bars"></i>
       </div>
       <ul className={isMenuOpen ? 'menu-open' : ''}>
-        <li><a href="#about" onClick={handleLinkClick}>About me</a></li>
-        <li><a href="#technologies" onClick={handleLinkClick}>Technologies</a></li>
-        <li><a href="#projects" onClick={handleLinkClick}>Projects</a></li>
-        <li><a href="#education" onClick={handleLinkClick}>Education</a></li>
-        <li><a href="#contact" onClick={handleLinkClick}>Contact</a></li>
+        <li onClick={handleLinkClick}><a href="#about">{texts.about}</a></li>
+        <li onClick={handleLinkClick}><a href="#technologies">{texts.technologies}</a></li>
+        <li onClick={handleLinkClick}><a href="#projects">{texts.projects}</a></li>
+        <li onClick={handleLinkClick}><a href="#education">{texts.education}</a></li>
+        <li onClick={handleLinkClick}><a href="#contact">{texts.contact}</a></li>
       </ul>
+      <Avatar onClick={handleLanguageToggle}  src={language === 'es' ? englishFlag : spanishFlag}
+        alt={language === 'es' ? 'Change to English' : 'Change to Spanish'}
+        sx={{ width: '24px', height: '24px' , display:{ xs: 'none', sm: 'none', md: 'block'}}}/>
     </nav>
   );
 };

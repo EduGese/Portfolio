@@ -1,59 +1,74 @@
 export const mainEducation = [
     {
         id: 1,
-        title:  'Design and development of web applications (Bilingual)',
+        titleEn:  'Design and development of web applications (Bilingual)',
+        titleEs:'Desarrollo de Aplicaciones Web (Bilingüe)',
         avatar:'src/assets/education/IESEllago.png',
         center: 'IES El Lago ',
         date: '2023',
-        location: 'Madrid, Spain',
+        locationEn: 'Madrid, Spain',
+        locationEs:'Madrid, España',
         link:'https://www.educa2.madrid.org/web/centro.ies.ellago.madrid',
-        description: 'Full-stack web development (HTML, CSS, JavaScript, PHP, Java), databases (Oracle, MySQL), server administration (Apache, Tomcat), object-oriented programming, mobile development (Android), technical English.'
+        descriptionEn: 'Web development (HTML, CSS, JavaScript, PHP, Java), databases (Oracle, MySQL), server administration (Apache, Tomcat), object-oriented programming, mobile development (Android), technical English',
+        descriptionEs:'Desarrollo web (HTML, CSS, JavaScript, PHP, Java), bases de datos (Oracle, MySQL), administración de servidores (Apache, Tomcat), programación orientada a objetos, desarrollo móvil (Android), inglés técnico',
     },
      {
         id: 2,
-        title: "Master's Degree in Secondary and Baccalaureate Education Teacher Training",
+        titleEn: "Master's Degree in Secondary and Baccalaureate Education Teacher Training",
+        titleEs:'Máster en Formación del Profesorado de Educación Secundaria y Bachillerato',
         avatar:'src/assets/education/Udima.jpg',
         center: 'UDIMA',
         date: '2019',
-        location: 'London, UK',
+        locationEn: 'London, UK',
+        locationEs:'Londres, Reino Unido',
         link:'https://www.udima.es/',
-        description:null
+        descriptionEn:null,
+        descriptionEs:null,
     },
     {
         id: 3,
-        title: 'Bachelor of Arts (BA) in History',
+        titleEn: 'Bachelor of Arts (BA) in History',
+        titleEs:'Licenciatura en Historia',
         avatar:'src/assets/education/Uam.png',
         center: 'UAM',
         date: '2010',
-        location: 'Madrid, Spain',
+        locationEn: 'Madrid, Spain',
+        locationEs:'Madrid, España',
         link:'https://www.uam.es/uam/inicio',
-        description:null
+        descriptionEn:null,
+        descriptionEs:null,
     },
 ]
 
 export const certificates = [
     {
         id: 1,
-        title: ' Ultimate Docker: Guide from zero to deployments',
+        titleEn: 'Ultimate Docker: Guide from zero to deployments',
+        titleEs:'Docker definitivo: Guía de cero a despliegues',
         avatar:'',
         center: 'Udemy',
-        date: 'Apr, 2024',
+        dateEn: 'Apr, 2024',
+        dateEs: 'Abr, 2024',
         link:'https://www.udemy.com/'
     },
      {
         id: 2,
-        title: "Arquitecting on AWS",
+        titleEn: "Arquitecting on AWS",
+        titleEs:'Arquitecting on AWS',
         avatar:'',
         center: 'CAS Trainning',
-        date: 'Feb, 2024',
+        dateEn: 'Feb, 2024',
+        dateEs: 'Feb, 2024',
         link:'https://cas-training.com/'
     },
     {
         id: 3,
-        title: 'Node: from zero to expert',
+        titleEn: 'Node: from zero to expert',
+        titleEs:'Node: de cero a experto',
         avatar:'',
         center: 'Udemy',
-        date: 'May, 2023',
+        dateEn: 'May, 2023',
+        dateEs:'May, 2023',
         link:'https://www.udemy.com/'
     },
 ]

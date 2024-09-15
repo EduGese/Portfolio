@@ -10,10 +10,10 @@ export const SideBarContact = () => {
         variant="permanent"
         anchor="left" 
         sx={{
-          position: 'fixed', // Cambia a fixed para que se mantenga en su lugar
+          position: 'fixed', 
           left: 0,
-          top: '40vh', // Alinea verticalmente al centro de la pantalla
-          transform: 'translateY(-50%)', // Ajusta para centrar completamente
+          top: '40vh',
+          transform: 'translateY(-50%)', 
           width: '60px',
           height: 'auto',
           margin: '10px 0 10px 0',

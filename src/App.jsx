@@ -6,7 +6,7 @@ import { NavBar } from './components/NavBar';
 import { ProfilePicture } from './components/ProfilePic';
 import ProjectCard from './components/ProjectCard'
 import { MainEducationCard } from './components/MainEducationCard';
-import BasicForm from './components/Mailer';
+import Mailer from './components/Mailer';
 import { EmailCard } from './components/EmailCard';
 import { Footer } from './components/Footer';
 import { ContactLinks } from './components/ContactLinks';
@@ -22,12 +22,16 @@ import WorkIcon from '@mui/icons-material/Work';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
 import UnfoldLessIcon from '@mui/icons-material/UnfoldLess';
+import EmailIcon from '@mui/icons-material/Email';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+
 
 import { frontEndLogos, backEndLogos, toolsLogos } from './constants/logo';
 import { projects } from './constants/projects';
+import { textsTranslations } from './constants/textsTranslations';
 
 
-import { downloadFile } from './logic/logic';
+import { openFile } from './logic/logic';
 
 
 import { Button, Box, Paper, Typography, Divider, Avatar } from '@mui/material';
@@ -35,7 +39,13 @@ import Grid from '@mui/material/Grid2';
 
 function App() {
   const [visibleProjects, setVisibleProjects] = useState(3);
+  const [language, setLanguage] = useState('es');
+  const texts = textsTranslations;
+  const visibleText = texts[language];
 
+  const handleLanguageToggle = () => {
+    setLanguage((prevLanguage) => (prevLanguage === 'es' ? 'en' : 'es'));
+  };
   const showAllProjects = () => {
     setVisibleProjects(projects.length);
   };
@@ -47,138 +57,191 @@ function App() {
   return (
     <>
       <header>
-        <NavBar></NavBar>
+        <NavBar
+          language={language}
+          handleLanguageToggle={handleLanguageToggle}
+          texts={visibleText}
+        />
       </header>
 
 
       <section className="home" id="home">
-        <Box className="home-img-container"
-          sx={{
-            display: {
-              xs: 'none',
-              sm: 'none',
-              md: 'none',
-              lg: 'flex',
-              xl: 'flex'
-            },
-            flexDirection: 'column',
-            justifyContent: 'space-around',
-            alignItems: 'center',
-            height: {
-              xs: '10vh',
-              sm: '10vh',
-              md: '10vh',
-              lg: '80vh',
-              xl: '90vh'
-            },
-            width: {
-              xs: '100%',
-              sm: '100%',
-              md: '30%',
-              lg: '30%',
-              xl: '30%'
-            },
-            margin: '20px 180px',
-          }}>
-          <ProfilePicture></ProfilePicture>
-        </Box>
-
         <Box sx={{
+          height: '100%',
+          width: '100%',
+          position: 'relative',
+          overflow: 'hidden',
+          paddingTop: '80px',
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'row',
           justifyContent: 'center',
-          alignItems: 'center',
-          width: '50%',
-          height: '80vh',
-          marginTop: 'auto',
-          marginBottom: 'auto',
-          '@media (max-width: 400px)': {
-            height: '100vh',
-            marginTop: '15px',  // Sm-Mobile
-          },
+          backgroundColor: 'rgba(255, 255, 255, 0.144)',
+          backdropFilter: 'grayscale(30%)'
 
-          '@media (max-width: 640px)': {
-            height: '100vh',
-            width: '100%',
-            textAlign: 'center',
-            margin: '10px 0 0 0',  // Mobile
-          },
-
-          '@media (min-width: 640px) and (max-width: 1024px)': {
-            height: '100vh',
-            width: '100%',
-            textAlign: 'center',
-            margin: 0,  // Tablet
-          },
-
-          '@media (min-width: 1367px) and (max-width: 1920px)': {
-            height: '70vh',  // Laptop large
-          }
-        }} >
-          <Box sx={{
-            height: '60%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-evenly',
-            alignItems: 'center',
-          }} className='home-title-container'>
-
-            <Typography variant='h1' sx={{ fontFamily: " 'Poppins', sans-serif", fontSize: '6vh', fontWeight: 'Bold' }}
-            >Eduardo González Seco
-            </Typography>
-            <Avatar src='src/assets/profile-picture.png' sx={{
+        }}>
+          <Box className="home-img-container"
+            sx={{
               display: {
-                lg: 'none',
-                xl: 'none'
+                xs: 'none',
+                sm: 'none',
+                md: 'none',
+                lg: 'flex',
+                xl: 'flex'
               },
-              width: '20vh',
-              height: '20vh',
-              border: '1px solid black'
-            }} />
-            <Typography variant='h1' sx={{ fontFamily: " 'Poppins', sans-serif", fontSize: '4vh', fontWeight: 'Bold', color: '#151a23a9' }}>
-              Full Stack Developer
-            </Typography>
-
-            <Box>
-              <Typography variant='h6' sx={{ fontFamily: " 'Poppins', sans-serif", fontWeight: 'Bold' }}>
-                MEAN + MySql
-              </Typography>
-              <HomeStackLogoContainer />
-            </Box>
+              flexDirection: 'column',
+              justifyContent: 'space-around',
+              alignItems: 'center',
+              height: {
+                xs: '10vh',
+                sm: '10vh',
+                md: '10vh',
+                lg: '80vh',
+                xl: '90vh'
+              },
+              width: {
+                xs: '100%',
+                sm: '100%',
+                md: '30%',
+                lg: '30%',
+                xl: '30%'
+              },
+              margin: '20px 180px',
+            }}>
+            <ProfilePicture></ProfilePicture>
           </Box>
 
           <Box sx={{
-            height: '70%',
-            width: {
-              xs: '100%',
-              sm: '100%',
-              md: '70%',
-              lg: '70%',
-              xl: '70%'
-            },
             display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-evenly',
+            flexDirection: 'column',
+            justifyContent: 'center',
             alignItems: 'center',
-            height: '20%',
-          }} className="home-buttons-container">
-            <Box component="a" href="#contact" sx={{ textDecoration: 'none' }}>
-              <Button variant="contained" color="success" startIcon={<PersonIcon />}
-                sx={{ width: '150px', margin: '0 5px ', borderRadius: '500px' }}>
-                Contact
-              </Button>
+            width: '50%',
+            height: '80vh',
+            marginTop: 'auto',
+            marginBottom: 'auto',
+            '@media (max-width: 400px)': {
+              height: '100vh',
+              marginTop: '15px',
+            },
 
+            '@media (max-width: 640px)': {
+              height: '100vh',
+              width: '100%',
+              textAlign: 'center',
+              margin: '10px 0 0 0',
+            },
+
+            '@media (min-width: 640px) and (max-width: 1024px)': {
+              height: '100vh',
+              width: '100%',
+              textAlign: 'center',
+              margin: 0,
+            },
+
+            '@media (min-width: 1367px) and (max-width: 1920px)': {
+              height: '70vh',
+            }
+          }} >
+            <Box sx={{
+              height: {
+                xs: '70vh',
+                sm: '40vh',
+                md: '60%',
+                lg: '60%',
+                xl: '60%'
+              },
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: {
+                xs: 'space-around',
+                sm: 'space-around',
+                md: 'space-evenly',
+                lg: 'space-evenly',
+                xl: 'space-evenly'
+              },
+              marginTop: {
+                xs: '40px',
+                sm: '100px',
+              },
+              alignItems: 'center',
+            }} className='home-title-container'>
+
+              <Typography variant='h1' color='warning' sx={{ fontFamily: " 'Poppins', sans-serif", fontSize: '6vh', fontWeight: 'Bold' }}
+              >Eduardo González Seco
+              </Typography>
+              <Avatar src='src/assets/profile-picture.png' sx={{
+                display: {
+                  lg: 'none',
+                  xl: 'none'
+                },
+                width: '20vh',
+                height: '20vh',
+                margin: '0 20px',
+                border: '1px solid black'
+              }} />
+              <Typography variant='h1' color='text.secondary' sx={{ fontFamily: " 'Poppins', sans-serif", fontSize: '4vh', fontWeight: 'Bold' }}>
+                {/* Full Stack Developer */}
+                {visibleText.role}
+              </Typography>
+
+              <Box
+                sx={{
+                  width: '200px',
+                  textAlign: 'center'
+                }}>
+                <Typography variant='h6' sx={{ fontFamily: " 'Poppins', sans-serif", fontWeight: 'Bold' }}>
+                  MEAN + MySql
+                </Typography>
+                <HomeStackLogoContainer />
+              </Box>
             </Box>
-            <Box >
-              <Button variant="contained" color="primary" startIcon={<DownloadIcon />}
-                sx={{ width: '150px', margin: '0 5px ', borderRadius: '500px' }} onClick={downloadFile}>
-                CV
-              </Button>
+            <Box sx={{
+              height: '20%',
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+              <EmailIcon color='warning' sx={{ fontSize: '40px' }} />
+              <Typography variant="body1" color='text.secondary' sx={{ fontSize: '18px', fontStyle: 'italic' }}>
+                eddugonz@gmail.com
+              </Typography>
+            </Box>
+            <Box sx={{
+              height: '70%',
+              width: {
+                xs: '100%',
+                sm: '100%',
+                md: '70%',
+                lg: '70%',
+                xl: '70%'
+              },
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-evenly',
+              alignItems: 'center',
+              height: '20%',
+            }} className="home-buttons-container">
+              <Box component="a" href="#contact" sx={{ textDecoration: 'none' }}>
+                <Button variant="outlined" color="warning" startIcon={<PersonIcon />}
+                  sx={{ width: '150px', margin: '0 5px ', borderRadius: '50px' }}>
+                  {visibleText.buttonContact}
+                </Button>
+
+              </Box>
+              <Box >
+                <Button variant="outlined" color="warning" startIcon={<RemoveRedEyeIcon />}
+                  sx={{ width: '150px', margin: '0 5px ', borderRadius: '50px' }} onClick={openFile}>
+                  CV
+                </Button>
+              </Box>
             </Box>
           </Box>
         </Box>
 
-      </section>
+
+      </section >
       <section id="about" className="about">
         <Box
           sx={{
@@ -216,15 +279,23 @@ function App() {
             }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               <PersonIcon />
-              <Typography variant="h5" sx={{ marginLeft: '1rem' }}>Who am I</Typography>
+              <Typography variant="h5" sx={{ marginLeft: '1rem' }}>{visibleText.presentationTitle}</Typography>
             </Box>
             <Divider sx={{ margin: '5px 0 5px 0', width: '50%' }} />
-            <Typography variant="overline" >
-              I'm a <strong>web developer</strong> with a passion for <strong>technology</strong>, <strong>programming</strong>, and <strong>constantly learning</strong> new things.
-              This is what truly excites me and makes me feel alive.
+            <Typography variant="overline">
+              {visibleText.presentation.part1}
+              <strong>{visibleText.presentation.part2}</strong>
+              {visibleText.presentation.part3}
+              <strong>{visibleText.presentation.part4}</strong>
+              {visibleText.presentation.part5}
+              <strong>{visibleText.presentation.part6}</strong>
+              {visibleText.presentation.part7}
               <br />
-              After living in the UK for 9 years, I've developed a <strong>strong command of English </strong>and enjoy communicating in the language.
+              {visibleText.presentation.part8}
+              <strong>{visibleText.presentation.part9}</strong>
+              {visibleText.presentation.part10}
             </Typography>
+
           </Box>
 
 
@@ -262,7 +333,7 @@ function App() {
               }}>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'start' }}>
                 <WorkIcon />
-                <Typography variant="h5" sx={{ marginLeft: '1rem' }}>Work experience</Typography>
+                <Typography variant="h5" sx={{ marginLeft: '1rem' }}>{visibleText.experience}</Typography>
               </Box>
               <Divider sx={{ margin: '5px 0 5px 0', width: '50%' }} />
 
@@ -289,12 +360,12 @@ function App() {
 
                 }}>
                   <Typography variant="h6">
-                    Web developer
+                    {visibleText.experienceRol}
                   </Typography>
                   <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                     {/* <BusinessIcon sx={{ marginRight: '8px' }} /> */}
                     <Avatar src='src/assets/scl_consulting_logo.jfif' sx={{ marginRight: '5px', border: '1px solid gray' }} />
-                    <Typography variant="body1">SCL Consulting - Madrid (Hybrid)</Typography>
+                    <Typography variant="body1">SCL Consulting - Madrid ({visibleText.experienceModality})</Typography>
                   </Box>
                   <Typography variant="body2" sx={{ fontStyle: 'italic' }}>mar. 2023 - jun. 2023</Typography>
                 </Box>
@@ -311,7 +382,16 @@ function App() {
 
                 }}>
                   <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary' }}>
-                    I cut development time by 20% through building a RESTful API with <strong>Node.js-Nest.js</strong> and <strong>MySQL</strong> for Telefónica UK, enhancing SAP data monitoring. Improved user interfaces using <strong>Angular +13</strong>, applying <strong>CLEAN</strong> and <strong>SOLID</strong> principles, while ensuring quality with <strong>Agile</strong> | <strong>SCRUM</strong> and unit testing.
+                    {visibleText.experienceAchivements.part1}
+                    <strong>{visibleText.experienceAchivements.part2}</strong>
+                    {visibleText.experienceAchivements.part3}
+                    <strong>{visibleText.experienceAchivements.part4}</strong>
+                    {visibleText.experienceAchivements.part5}
+                    <strong>{visibleText.experienceAchivements.part6}</strong>
+                    {visibleText.experienceAchivements.part7}
+                    <strong>{visibleText.experienceAchivements.part8}</strong>
+                    {visibleText.experienceAchivements.part9}
+                    <strong>{visibleText.experienceAchivements.part10}</strong>
                   </Typography>
                 </Box>
               </Box>
@@ -349,12 +429,12 @@ function App() {
                   lg: '100%',
                   xl: '100%'
                 },
-                borderRadius:'50px',
+                borderRadius: '50px',
                 margin: '0 auto',
               }}>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '5px' }}>
                 <LocalLibraryIcon />
-                <Typography variant="h5" sx={{ marginLeft: '1rem' }}>Currently learning:</Typography>
+                <Typography variant="h5" sx={{ marginLeft: '1rem' }}>{visibleText.learning}</Typography>
               </Box>
               <Divider sx={{ margin: '5px auto 5px auto', width: '60%' }} />
 
@@ -417,7 +497,7 @@ function App() {
       </section>
       <section id="technologies">
         <Typography sx={{ textAlign: 'center', paddingTop: '70px' }} variant="h3">
-          Technologies
+          {visibleText.technologies}
         </Typography>
 
         <Box
@@ -525,7 +605,7 @@ function App() {
                 }}
               >
                 <Typography variant="h5" component="h3">
-                  Tools
+                  {visibleText.tools}
                 </Typography>
                 <Box
                   sx={{
@@ -572,7 +652,7 @@ function App() {
                       height: '100%',
                       flexGrow: 1,
                     }}>
-                    <TechnologiesAlertDialogSlide />
+                    <TechnologiesAlertDialogSlide visibleText={visibleText}/>
                   </Box>
                 </Box>
               </Paper>
@@ -583,7 +663,7 @@ function App() {
       </section>
 
       <section id="projects" className='projects-section'>
-        <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">Projects</Typography>
+        <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">{visibleText.projectsTitle}</Typography>
 
         <Box
           sx={{
@@ -600,7 +680,7 @@ function App() {
               key={index}
               name={project.name}
               image={project.image}
-              description={project.description}
+              description={language === 'en' ? project.descriptionEn : project.descriptionEs}
               technologies={project.technologies}
               ghLink={project.ghLink}
               demoLink={project.demoLink}
@@ -618,9 +698,9 @@ function App() {
                 color="warning"
                 startIcon={<UnfoldMoreIcon />}
                 onClick={showAllProjects}
-                sx={{ margin: '20px auto' }}
+                sx={{ margin: '20px auto', borderRadius: '50px' }}
               >
-                Show all
+                {visibleText.buttonShowAll}
               </Button>
             </Box>
           )
@@ -634,9 +714,9 @@ function App() {
                   color="warning"
                   startIcon={<UnfoldLessIcon />}
                   onClick={showLessProjects}
-                  sx={{ margin: '20px auto' }}
+                  sx={{ margin: '20px auto', borderRadius: '50px' }}
                 >
-                  Collapse
+                  {visibleText.buttonCollapse}
                 </Button>
               </Box>
             </Box>
@@ -645,7 +725,7 @@ function App() {
       </section>
 
       <section id="education" className='education'>
-        <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">Education</Typography>
+        <Typography sx={{ textAlign: 'center', paddingTop: '20px' }} variant="h4">{visibleText.educationTitle}</Typography>
         <Box sx={{
           display: 'flex',
           flexDirection: {
@@ -675,25 +755,25 @@ function App() {
             justifyContent: 'center',
             flexGrow: 1
           }}>
-            <MainEducationCard />
-            <LanguagesCard />
-            <EducationAlertDialogSlide />
+            <MainEducationCard language={language}/>
+            <LanguagesCard language={language}/>
+            <EducationAlertDialogSlide language={language}/>
           </Box>
-          <CertificatesCard />
+          <CertificatesCard language={language}/>
         </Box>
       </section>
 
       <section id="contact" className='contact' >
         <Box>
-          <EmailCard />
+          <EmailCard visibleText={visibleText}/>
           <ContactLinks />
         </Box>
-        <BasicForm />
+        <Mailer visibleText={visibleText}/>
       </section>
 
       <footer className='footer'>
         <Divider variant='middle' />
-        <Footer />
+        <Footer visibleText={visibleText}/>
       </footer>
 
     </>

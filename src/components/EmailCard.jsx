@@ -8,14 +8,14 @@ import Tooltip from '@mui/material/Tooltip';
 import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
 
-export const EmailCard = () => {
+export const EmailCard = ({ visibleText }) => {
   const email = 'eddugonz@gmail.com';
   const [showAlert, setShowAlert] = useState(false);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
     setShowAlert(true);
-    setTimeout(() => setShowAlert(false), 3000); 
+    setTimeout(() => setShowAlert(false), 3000);
   };
 
   return (
@@ -28,7 +28,7 @@ export const EmailCard = () => {
       marginLeft: { xs: '0px', sm: '0px', md: '100px', lg: '200px' }
     }}>
       <Typography variant="h5" sx={{ fontWeight: 'bold', marginBottom: '8px' }}>
-        Let's Connect!
+        {visibleText.emailCardTitle}
       </Typography>
 
       <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px', marginLeft: '10px' }}>
@@ -43,18 +43,18 @@ export const EmailCard = () => {
         </Tooltip>
       </Box>
       {showAlert && (
-        <Alert 
-          icon={<CheckIcon fontSize="inherit" />} 
+        <Alert
+          icon={<CheckIcon fontSize="inherit" />}
           severity="success"
-          sx={{ 
-            position: 'fixed', 
-            bottom: '20px', 
-            left: '20px', 
-            zIndex: 1000, 
+          sx={{
+            position: 'fixed',
+            bottom: '20px',
+            left: '20px',
+            zIndex: 1000,
             width: 'auto'
           }}
         >
-          Email successfully copied to clipboard!
+          {visibleText.emailCardAlert}
         </Alert>
       )}
     </Box>

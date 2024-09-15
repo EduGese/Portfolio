@@ -1,16 +1,20 @@
 import { Box, Avatar, Typography } from '@mui/material';
 
-export const LanguagesCard = () => {
+export const LanguagesCard = ({language}) => {
     const languages = [
         {
             flag: 'https://flagcdn.com/w320/es.png', 
-            language: 'Spanish',
-            level: 'Native'
+            languageEn: 'Spanish',
+            languageEs: 'Español',
+            levelEn: 'Native',
+            levelEs: 'Nativo'
         },
         {
             flag: 'https://flagcdn.com/w320/gb.png', 
-            language: 'English',
-            level: 'Advanced'
+            languageEn: 'English',
+            languageEs: 'Inglés',
+            levelEn: 'Advance',
+            levelEs: 'Avanzado'
         }
     ];
 
@@ -48,15 +52,15 @@ export const LanguagesCard = () => {
                     }}
                 >
                     <Avatar
-                        alt={`${lang.language} flag`}
+                        alt={language === 'en'? `${lang.languageEn} flag` : `${lang.languageEs} flag`}
                         src={lang.flag}
                         sx={{ width: '40px', height: '40px' }}
                     />
                     <Typography variant="h6">
-                        {lang.language}
+                        {language === 'en' ? lang.languageEn : lang.languageEs}
                     </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                        {lang.level}
+                        {language === 'en' ? lang.levelEn : lang.levelEs}
                     </Typography>
                 </Box>
             ))}

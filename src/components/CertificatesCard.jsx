@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Paper, List, ListItem, Typography, Divider} from '@mui/material';
 import { certificates } from '../constants/education';
 
-export const CertificatesCard = () =>{
+export const CertificatesCard = ({language}) =>{
 
     return(
         <Box sx={{
@@ -25,22 +25,22 @@ export const CertificatesCard = () =>{
               <Box
               >
                 <Typography variant="h6" color='warning' sx={{ fontWeight: 'bold', borderRadius: '50px', textAlign: 'center',  padding: '10px', borderRadius: '10px' }}>
-                  Courses/Certificates
+                   {language === 'en' ? 'Courses/Certificates' : 'Cursos/Certificados'} 
                 </Typography>
               </Box>
-              
               <List>
                 {certificates.map((certificate, index) => (
                   <React.Fragment key={certificate.id}>
                     <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start', mb: 2 }}>
                       <Typography variant="subtitle1" sx={{ color: 'primary.primary', fontWeight: 'bold' }}>
-                        {certificate.title}
+                        {language === 'en' ? certificate.titleEn : certificate.titleEs}
                       </Typography>
                       <Typography variant="body2" sx={{ color: 'text.primary' }}>
                         {certificate.center}
                       </Typography>
                       <Typography variant="caption" sx={{ color: 'text.secondary' }}>
                         {certificate.date}
+                        {language === 'en' ? certificate.dateEn : certificate.dateEs}
                       </Typography>
                     </ListItem>
                     {certificate.id !== 3 && (

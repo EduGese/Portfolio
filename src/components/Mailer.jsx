@@ -4,7 +4,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import SendIcon from '@mui/icons-material/Send';
 import ReCAPTCHA from 'react-google-recaptcha'; 
 
-export default function BasicForm() {
+export default function Mailer({visibleText}) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -77,7 +77,7 @@ export default function BasicForm() {
       }}
     >
       <Typography variant="h5" sx={{ mb: 2 }}>
-        Send me a message
+        {visibleText.mailerTitle}
       </Typography>
 
       {error && (
@@ -93,12 +93,12 @@ export default function BasicForm() {
           right: '20px', 
           zIndex: 1000, 
           width: 'auto' }}>
-          We received your submission, thank you!
+          {visibleText.confirmationMessage}
         </Alert>
       )}
 
       <TextField
-        label="Full Name"
+        label={visibleText.formLabelName}
         value={name}
         onChange={(e) => setName(e.target.value)}
         fullWidth
@@ -107,7 +107,7 @@ export default function BasicForm() {
       />
 
       <TextField
-        label="Your Email Address"
+        label={visibleText.formLabelEmail}
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
@@ -117,7 +117,7 @@ export default function BasicForm() {
       />
 
       <TextField
-        label="Your Message"
+        label={visibleText.formLabelMessage}
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         multiline
@@ -132,8 +132,8 @@ export default function BasicForm() {
         sx={{ mb: 2 }}
       /> */}
           <Box sx={{marginTop:'10px'}}>
-              <Button type="submit" variant="contained" color="primary" startIcon={<SendIcon />} sx={{  width: '100%', margin: '0 5px ' }}>
-                  Send
+              <Button type="submit" variant="contained" color="primary" startIcon={<SendIcon />} sx={{  width: '100%', margin: '0 5px ', borderRadius:'50px' }}>
+              {visibleText.buttonSend}
               </Button>
           </Box>
       

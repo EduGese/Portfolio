@@ -14,7 +14,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="left" ref={ref} {...props} />;
 });
 
-export const TechnologiesAlertDialogSlide = () => {
+export const TechnologiesAlertDialogSlide = ({visibleText}) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -27,8 +27,8 @@ export const TechnologiesAlertDialogSlide = () => {
 
   return (
     <React.Fragment>
-      <Button variant="outlined" color="warning" onClick={handleClickOpen}>
-        Also know
+      <Button variant="outlined" color="warning" sx={{ borderRadius: '50px'}} onClick={handleClickOpen}>
+        {visibleText.techDialogButtonTitle}
       </Button>
       <Dialog
         open={open}
@@ -37,7 +37,7 @@ export const TechnologiesAlertDialogSlide = () => {
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>{"I also know or have some knowledge of:"}</DialogTitle>
+        <DialogTitle>{visibleText.techDialogTitle}</DialogTitle>
         <DialogContent>
           <Box
             sx={{
