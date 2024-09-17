@@ -34,7 +34,7 @@ export const projects = [
         ghLink: 'https://github.com/EduGese/ScreenPulse-backend-Api',
         demoLink: 'https://youtu.be/e1ZbcnbUI2E',
         websiteLink: null,
-        gif: null,
+        gif: 'src/assets/gifs/screenPulse.gif',
         gifOrientation: 'landscape',
     },
     {
@@ -52,8 +52,8 @@ export const projects = [
     {
         name: 'TourNow',
         image: 'src/assets/projects/tourNow.png',
-        descriptionEn: 'Repositorio del proyecto FCT del ciclo formativo Desarrollo de Aplicaciones Web',
-        descriptionEs: 'Repositorio del proyecto final de ciclo formativo de Desarrollo de Aplicaciones Web',
+        descriptionEn: 'TourNow is a digital platform connecting tourism businesses with travelers. Businesses can create detailed profiles of their tours, and users can easily explore and book activities in cities like Madrid, Barcelona, and Seville',
+        descriptionEs: 'TourNow es una plataforma digital que conecta a empresas turísticas con viajeros. Las empresas pueden crear perfiles detallados de sus tours y los usuarios pueden explorar y reservar fácilmente actividades en ciudades como Madrid, Barcelona y Sevilla',
         technologies: [logosLanguages[0], logosLanguages[3], logosLanguages[5], logosFrameworks[6], logosDatabase[0]],
         ghLink: 'https://github.com/EduGese/TourNow?tab=readme-ov-file',
         demoLink: 'https://youtu.be/D3eg3gU_CTs',
@@ -64,8 +64,8 @@ export const projects = [
     {
         name: 'Esquivaman',
         image: 'src/assets/projects/esquivaman.png',
-        descriptionEn: 'Videogame mobile app developed with Android Studio',
-        descriptionEs: 'Aplicación móvil de videojuego desarrollada con Android Studio',
+        descriptionEn: 'EsquivaMan is a fast-paced mobile game where you dodge a relentless barrage of washing machines. Test your reflexes and see how high you can score! Developed with Android Studio and Java',
+        descriptionEs: 'EsquivaMan es un juego móvil frenético donde deberás esquivar una lluvia de lavadoras para sobrevivir. ¡Pon a prueba tus reflejos y alcanza la puntuación más alta! Desarrollado con Android Studio y Java',
         technologies: [logosLanguages[4], logosTools[1]],
         ghLink: 'https://github.com/EduGese/EsquivamanAndroidStudiovideogame?tab=readme-ov-file',
         demoLink: 'https://github.com/user-attachments/assets/d390a75f-14a0-47aa-a658-70a5b6e2e0db',
