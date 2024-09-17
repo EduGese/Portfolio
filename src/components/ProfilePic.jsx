@@ -1,4 +1,4 @@
-import profilePicture from "../assets/profile-picture.png"
+import profilePicture from "../assets/profile-picture3.png"
 import avatar from "../assets/avataaars.png"
 import '../css/ProfilePic.css'
 export const ProfilePicture = () => {
