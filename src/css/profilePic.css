@@ -20,8 +20,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
-  border: 2px solid #151A23;
+  background-color: #ffffff;
+  border: 5px SOLID #93420016;
   perspective: 1000px;
 }
 
