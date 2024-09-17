@@ -1,6 +1,6 @@
 nav {
-  background: #fff;
-  height: 80px;
+  background: #ffffff72;
+  height: 50px;
   width: 100%;
   position: fixed;
   z-index: 1;
@@ -8,6 +8,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
+  backdrop-filter: blur(15px);
 }
 
 nav img {
@@ -31,16 +32,38 @@ nav ul li a {
   color: #151A23;
   font-size: 17px;
   padding: 7px 13px;
-  border-radius: 10px;
+  border-radius: 50px;
   text-transform: uppercase;
   text-decoration: none;
 }
 
 nav a.active,
 nav a:hover {
-  background: #2D3748;
+  /* background: #ed6c02;
   color: #fff;
-  transition: 0.5s;
+  transition: 0.5s; */
+  color:#ed6c02;
+}
+nav a {
+  color: #000;
+  text-decoration: none;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+nav a::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #ed6c02;
+  bottom: -5px;
+  left: 50%;
+  transition: all 0.3s ease-in-out;
+}
+nav a:hover::before {
+  width: 100%;
+  left: 0;
 }
 
 

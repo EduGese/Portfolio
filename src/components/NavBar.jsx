@@ -14,13 +14,14 @@ export const NavBar = ({ language, handleLanguageToggle, texts }) => {
 
   return (
     <nav>
-      <img
+      {/* <img
         src={logo}
         className="custom-pointer"
         alt="Logo"
         onClick={() => { window.location.href = '#home'; handleLinkClick() }
         }
-      />
+      /> */}
+      <Avatar src='src/assets/avataaars.png' onClick={() => { window.location.href = '#home'; handleLinkClick() }}/>
       <Avatar onClick={handleLanguageToggle}  src={language === 'es' ? englishFlag : spanishFlag}
         alt={language === 'es' ? 'Change to English' : 'Change to Spanish'}
         sx={{ width: '24px', height: '24px' , display:{ xs: 'block', sm: 'block', md: 'none'}}}/>
