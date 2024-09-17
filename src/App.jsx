@@ -75,8 +75,8 @@ function App() {
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'center',
-          backgroundColor: 'rgba(255, 255, 255, 0.144)',
-          backdropFilter: 'grayscale(30%)'
+          backgroundColor: 'rgba(255, 255, 255, 0.844)',
+          backdropFilter: 'grayscale(100%)  blur(px)'
 
         }}>
           <Box className="home-img-container"
@@ -120,7 +120,7 @@ function App() {
             marginTop: 'auto',
             marginBottom: 'auto',
             '@media (max-width: 400px)': {
-              height: '100vh',
+              height: '10vh',
               marginTop: '15px',
             },
 
@@ -160,7 +160,7 @@ function App() {
                 xl: 'space-evenly'
               },
               marginTop: {
-                xs: '40px',
+                xs: '10px',
                 sm: '100px',
               },
               alignItems: 'center',
@@ -180,7 +180,6 @@ function App() {
                 border: '1px solid black'
               }} />
               <Typography variant='h1' color='text.secondary' sx={{ fontFamily: " 'Poppins', sans-serif", fontSize: '4vh', fontWeight: 'Bold' }}>
-                {/* Full Stack Developer */}
                 {visibleText.role}
               </Typography>
 
@@ -221,7 +220,6 @@ function App() {
               flexDirection: 'row',
               justifyContent: 'space-evenly',
               alignItems: 'center',
-              height: '20%',
             }} className="home-buttons-container">
               <Box component="a" href="#contact" sx={{ textDecoration: 'none' }}>
                 <Button variant="outlined" color="warning" startIcon={<PersonIcon />}
@@ -268,7 +266,7 @@ function App() {
           <Box
             sx={{
               width: {
-                xs: '100%',
+                xs: '80%',
                 sm: '70%',
                 md: '100%',
                 lg: '70%',
@@ -282,19 +280,22 @@ function App() {
               <Typography variant="h5" sx={{ marginLeft: '1rem' }}>{visibleText.presentationTitle}</Typography>
             </Box>
             <Divider sx={{ margin: '5px 0 5px 0', width: '50%' }} />
-            <Typography variant="overline">
-              {visibleText.presentation.part1}
-              <strong>{visibleText.presentation.part2}</strong>
-              {visibleText.presentation.part3}
-              <strong>{visibleText.presentation.part4}</strong>
-              {visibleText.presentation.part5}
-              <strong>{visibleText.presentation.part6}</strong>
-              {visibleText.presentation.part7}
-              <br />
-              {visibleText.presentation.part8}
-              <strong>{visibleText.presentation.part9}</strong>
-              {visibleText.presentation.part10}
-            </Typography>
+            <Box sx={{ textAlign: 'justify', width: '100%' }}>
+              <Typography variant="overline">
+                {visibleText.presentation.part1}
+                {visibleText.presentation.part2}
+                {visibleText.presentation.part3}
+                {visibleText.presentation.part4}
+                {visibleText.presentation.part5}
+                {visibleText.presentation.part6}
+                {visibleText.presentation.part7}
+                {/* <br /> */}
+                {visibleText.presentation.part8}
+                {visibleText.presentation.part9}
+                {visibleText.presentation.part10}
+              </Typography>
+            </Box>
+
 
           </Box>
 
@@ -309,7 +310,7 @@ function App() {
               xl: 'row'
             },
             width: {
-              xs: '100%',
+              xs: '80%',
               sm: '70%',
               md: '100%',
               lg: '70%',
@@ -378,7 +379,8 @@ function App() {
                     xl: '60%'
                   },
                   paddingRight: '10px',
-                  paddingBottom: '10px'
+                  paddingBottom: '10px',
+                  textAlign:'justify'
 
                 }}>
                   <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary' }}>
@@ -496,7 +498,7 @@ function App() {
         </Box>
       </section>
       <section id="technologies">
-        <Typography sx={{ textAlign: 'center', paddingTop: '70px' }} variant="h3">
+        <Typography sx={{ textAlign: 'center', paddingTop: '70px' }} variant="h4">
           {visibleText.technologies}
         </Typography>
 
@@ -530,7 +532,7 @@ function App() {
                   borderRadius: '50px'
                 }}
               >
-                <Typography variant="h5" component="h3">
+                <Typography variant="h5" component="h5">
                   Front-End
                 </Typography>
                 <Box
@@ -568,7 +570,7 @@ function App() {
                   borderRadius: '50px'
                 }}
               >
-                <Typography variant="h5" component="h3">
+                <Typography variant="h5" component="h5">
                   Back-End
                 </Typography>
                 <Box
@@ -604,7 +606,7 @@ function App() {
                   borderRadius: '50px'
                 }}
               >
-                <Typography variant="h5" component="h3">
+                <Typography variant="h5" component="h5">
                   {visibleText.tools}
                 </Typography>
                 <Box
@@ -624,41 +626,11 @@ function App() {
                 </Box>
               </Paper>
             </Grid>
-
-            <Grid
-              size={{ xs: 5, sm: 5, md: 5, lg: 5, xl: 5 }}
-            >
-              <Paper variant="outlined"
-                sx={{
-                  borderRadius: '50px'
-                }}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    height: '200px',
-                    width: '100%',
-                    // backgroundColor:'#ffd180'
-                  }}
-                >
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      color: 'rgb(234 179 8 )',
-                      height: '100%',
-                      flexGrow: 1,
-                    }}>
-                    <TechnologiesAlertDialogSlide visibleText={visibleText}/>
-                  </Box>
-                </Box>
-              </Paper>
-
-            </Grid>
           </Grid>
+          <Box sx={{ display: 'flex', justifyContent: 'center', marginTop:'20px' }}>
+            <TechnologiesAlertDialogSlide visibleText={visibleText} />
+          </Box>
+          
         </Box>
       </section>
 
@@ -755,25 +727,25 @@ function App() {
             justifyContent: 'center',
             flexGrow: 1
           }}>
-            <MainEducationCard language={language}/>
-            <LanguagesCard language={language}/>
-            <EducationAlertDialogSlide language={language}/>
+            <MainEducationCard language={language} />
+            <LanguagesCard language={language} />
+            <EducationAlertDialogSlide language={language} />
           </Box>
-          <CertificatesCard language={language}/>
+          <CertificatesCard language={language} />
         </Box>
       </section>
 
       <section id="contact" className='contact' >
         <Box>
-          <EmailCard visibleText={visibleText}/>
+          <EmailCard visibleText={visibleText} />
           <ContactLinks />
         </Box>
-        <Mailer visibleText={visibleText}/>
+        <Mailer visibleText={visibleText} />
       </section>
 
       <footer className='footer'>
         <Divider variant='middle' />
-        <Footer visibleText={visibleText}/>
+        <Footer visibleText={visibleText} />
       </footer>
 
     </>
