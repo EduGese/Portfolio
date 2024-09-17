@@ -13,7 +13,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Divider from '@mui/material/Divider';
 
 
-export default function ProjectCard({ name, image, description, technologies, ghLink, demoLink, websiteLink, gif,  }) {
+export default function ProjectCard({ name, image, description, technologies, ghLink, demoLink, websiteLink, gif }) {
   const [isHovered, setIsHovered] = React.useState(false);
   const [gifUrl, setGifUrl] =  React.useState(gif);
 
@@ -49,7 +49,8 @@ export default function ProjectCard({ name, image, description, technologies, gh
         height: 140,
         transition: 'background-image 1.2s ease-in-out',
        }}
-      image={isHovered && gif ? gifUrl : image}
+      // image={isHovered && gif ? gifUrl : image}
+      image={gif ? gif : image}
       title={name}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
