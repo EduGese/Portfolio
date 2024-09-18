@@ -6,5 +6,8 @@ export default defineConfig({
   plugins: [react()],
   build: {
     chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      external: ['@mui/icons-material'],
+    },
   }
 })
