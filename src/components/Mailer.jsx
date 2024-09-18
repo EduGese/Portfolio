@@ -74,6 +74,7 @@ export default function Mailer({visibleText}) {
         bgcolor: 'background.paper',
         borderRadius: '50px',
         boxShadow: 3,
+        backgroundColor: '#FAFAFA'
       }}
     >
       <Typography variant="h5" sx={{ mb: 2 }}>
@@ -103,7 +104,7 @@ export default function Mailer({visibleText}) {
         onChange={(e) => setName(e.target.value)}
         fullWidth
         required
-        sx={{ mb: 2 }}
+        sx={{ mb: 2, backgroundColor:'#ffff' }}
       />
 
       <TextField
@@ -113,7 +114,7 @@ export default function Mailer({visibleText}) {
         onChange={(e) => setEmail(e.target.value)}
         fullWidth
         required
-        sx={{ mb: 2 }}
+        sx={{ mb: 2, backgroundColor:'#ffff'}}
       />
 
       <TextField
@@ -124,7 +125,7 @@ export default function Mailer({visibleText}) {
         rows={4}
         fullWidth
         required
-        sx={{ mb: 2 }}
+        sx={{ mb: 2, backgroundColor:'#ffff'}}
       />
       {/* <ReCAPTCHA
         sitekey="YOUR_RECAPTCHA_SITE_KEY" 

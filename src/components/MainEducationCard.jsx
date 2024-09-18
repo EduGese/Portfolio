@@ -16,7 +16,8 @@ export const MainEducationCard = ({language}) => {
       flexDirection: { xs: 'column', sm: 'row' },
       alignItems: 'center',
       justifyContent: 'center',
-      gap: '20px' 
+      gap: '20px',
+      backgroundColor: '#FAFAFA' 
     }}>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <a href={education.link}>
@@ -45,7 +46,7 @@ export const MainEducationCard = ({language}) => {
         <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block' }}>
           {education.date} | {language === 'en' ? education.locationEn : education.locationEs}
         </Typography>
-        <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary' }}>
+        <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary', textAlign:'justify' }}>
           {language === 'en' ? education.descriptionEn : education.descriptionEs}
         </Typography>
       </Box>

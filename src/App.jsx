@@ -17,7 +17,6 @@ import { CertificatesCard } from './components/CertificatesCard';
 import { LanguagesCard } from './components/LanguagesCard';
 
 import PersonIcon from '@mui/icons-material/Person';
-import DownloadIcon from '@mui/icons-material/Download';
 import WorkIcon from '@mui/icons-material/Work';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
@@ -31,7 +30,6 @@ import { projects } from './constants/projects';
 import { textsTranslations } from './constants/textsTranslations';
 
 
-import { openFile } from './logic/logic';
 
 
 import { Button, Box, Paper, Typography, Divider, Avatar } from '@mui/material';
@@ -53,6 +51,14 @@ function App() {
   const showLessProjects = () => {
     setVisibleProjects(3);
   };
+  const openFile = ()=> {
+    if(language ==='en'){
+      window.open("public/files/Eduardo GS CV ENG.pdf");
+      }else{
+        window.open("public/files/Eduardo GS CV.pdf");
+  
+      } 
+  }
 
   return (
     <>
@@ -166,7 +172,20 @@ function App() {
               alignItems: 'center',
             }} className='home-title-container'>
 
-              <Typography variant='h1' color='warning' sx={{ fontFamily: " 'Poppins', sans-serif", fontSize: '6vh', fontWeight: 'Bold' }}
+              <Typography variant='h1'  sx={{  fontSize: '6vh', fontWeight: 'Bold',  alignItems: {
+                xs: 'space-around',
+                sm: 'center',
+                md: 'center',
+                lg: 'center',
+                xl: 'center'
+              },
+              padding:{
+                xs: '0px 0 20px 0',
+                sm: '0 0 30px 0',
+                md: '0',
+                lg: '0',
+                xl: '0'
+              } }}
               >Eduardo González Seco
               </Typography>
               <Avatar src='src/assets/profile-picture.png' sx={{
@@ -179,7 +198,7 @@ function App() {
                 margin: '0 20px',
                 border: '1px solid black'
               }} />
-              <Typography variant='h1' color='text.secondary' sx={{ fontFamily: " 'Poppins', sans-serif", fontSize: '4vh', fontWeight: 'Bold' }}>
+              <Typography variant='h1' color='text.secondary' sx={{  fontSize: '4vh', fontWeight: 'Bold' }}>
                 {visibleText.role}
               </Typography>
 
@@ -201,9 +220,10 @@ function App() {
               flexDirection: 'row',
               justifyContent: 'center',
               alignItems: 'center',
+              paddingTop:{ xs: '40px', sm: '80px', md: '40px', lg: '40px', xl: '60px'} 
             }}>
               <EmailIcon color='warning' sx={{ fontSize: '40px' }} />
-              <Typography variant="body1" color='text.secondary' sx={{ fontSize: '18px', fontStyle: 'italic' }}>
+              <Typography variant="body1" color='text.secondary' sx={{ fontSize: '18px', fontStyle: 'italic'}}>
                 eddugonz@gmail.com
               </Typography>
             </Box>
@@ -220,6 +240,7 @@ function App() {
               flexDirection: 'row',
               justifyContent: 'space-evenly',
               alignItems: 'center',
+              padding:{ xs: '20px', sm: '20px', md: '0', lg: '20px'}
             }} className="home-buttons-container">
               <Box component="a" href="#contact" sx={{ textDecoration: 'none' }}>
                 <Button variant="outlined" color="warning" startIcon={<PersonIcon />}
@@ -432,7 +453,8 @@ function App() {
                   xl: '100%'
                 },
                 borderRadius: '50px',
-                margin: '0 auto',
+                margin: '0 auto', 
+                backgroundColor: '#FAFAFA'
               }}>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '5px' }}>
                 <LocalLibraryIcon />
@@ -529,7 +551,8 @@ function App() {
                   height: '100%',
                   minHeight: '300px',
                   flexGrow: 1,
-                  borderRadius: '50px'
+                  borderRadius: '50px',
+                  backgroundColor: '#FAFAFA'
                 }}
               >
                 <Typography variant="h5" component="h5">
@@ -567,7 +590,8 @@ function App() {
                   height: '100%',
                   minHeight: '300px',
                   flexGrow: 1,
-                  borderRadius: '50px'
+                  borderRadius: '50px',
+                  backgroundColor: '#FAFAFA'
                 }}
               >
                 <Typography variant="h5" component="h5">
@@ -603,7 +627,8 @@ function App() {
                   alignItems: 'center',
                   padding: '20px',
                   minHeight: '200px',
-                  borderRadius: '50px'
+                  borderRadius: '50px',
+                  backgroundColor: '#FAFAFA'
                 }}
               >
                 <Typography variant="h5" component="h5">

@@ -13,6 +13,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Divider from '@mui/material/Divider';
 
 
+
+
 export default function ProjectCard({ name, image, description, technologies, ghLink, demoLink, websiteLink, gif }) {
   const [isHovered, setIsHovered] = React.useState(false);
   const [gifUrl, setGifUrl] =  React.useState(gif);
@@ -36,7 +38,12 @@ export default function ProjectCard({ name, image, description, technologies, gh
       margin: '10px',
       boxSizing: 'border-box',
       borderRadius: '50px',
+      backgroundColor: '#FAFAFA',
       flex: '1 1 calc(100% - 20px)',
+      transition: 'box-shadow 0.3s ease-in-out', // Transición suave para el hover
+      '&:hover': {
+        boxShadow: 8, // Sombra más intensa al hacer hover
+      },
       '@media (min-width: 600px)': {
         flex: '1 1 calc(50% - 20px)',
       },
@@ -64,7 +71,7 @@ export default function ProjectCard({ name, image, description, technologies, gh
         <Typography gutterBottom variant="h5" component="div">
           {name}
         </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+        <Typography variant="body2" sx={{ color: 'text.secondary',textAlign:'justify' }}>
           {description}
         </Typography>
       </CardContent>
