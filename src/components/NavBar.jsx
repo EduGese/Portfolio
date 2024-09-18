@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import logo from '../assets/resetImage.png';
-import '../css/navBar.css';
+// import logo from '../assets/resetImage.png';
+// import '../css/navBar.css';
 import Avatar from '@mui/material/Avatar';
 
 export const NavBar = ({ language, handleLanguageToggle, texts }) => {
