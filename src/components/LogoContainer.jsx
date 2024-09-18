@@ -27,9 +27,6 @@ export  const LogoContainer = ({href, svg, figCaption, transition}) =>{
           maxWidth: '10vh',
           maxHeight: '10vh',
           position: 'relative',
-          maxWidth: '10vh',
-          maxHeight: '10vh',
-          position: 'relative',
           transition: transition ? 'transform 0.3s ease-in-out' : 'none',
           '&:hover': transition
             ? {

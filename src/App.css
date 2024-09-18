@@ -53,7 +53,7 @@ a {
       rgba(255, 252, 252, 0) 40%,
       rgba(255, 255, 255, 0) 60%,
       rgb(255, 255, 255) 100%),
-    url('src/assets/images/patternBackground6.jpg');
+    url('public/assets/images/patternBackground6.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

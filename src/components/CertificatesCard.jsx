@@ -24,7 +24,7 @@ export const CertificatesCard = ({language}) =>{
             <Paper  sx={{ width: '100%', borderRadius: '50px', margin: '0 20px ', padding: '20px', backgroundColor: '#FAFAFA' }}>
               <Box
               >
-                <Typography variant="h6" color='warning' sx={{ fontWeight: 'bold', borderRadius: '50px', textAlign: 'center',  padding: '10px', borderRadius: '10px' }}>
+                <Typography variant="h6" color='warning' sx={{ fontWeight: 'bold', borderRadius: '50px', textAlign: 'center',  padding: '10px' }}>
                    {language === 'en' ? 'Courses/Certificates' : 'Cursos/Certificados'} 
                 </Typography>
               </Box>
