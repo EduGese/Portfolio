@@ -28,7 +28,7 @@ export const LanguagesCard = ({language}) => {
             display: 'flex',
             flexDirection: {
                 xs: 'column',
-                sm: 'column',
+                sm: 'row',
                 md: 'row'
             },
             alignItems: 'start',

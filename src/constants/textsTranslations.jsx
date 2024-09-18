@@ -64,7 +64,7 @@ export const textsTranslations = {
     about: 'Sobre mí',
     technologies: 'Tecnologías',
     projects: 'Proyectos',
-    education: 'Educación',
+    education: 'Formación',
     contact: 'Contacto',
     role: 'Desarrollador Full Stack',
     buttonContact: 'Contacto',
