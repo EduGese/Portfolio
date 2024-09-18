@@ -39,11 +39,9 @@ nav ul li a {
 
 nav a.active,
 nav a:hover {
-  /* background: #ed6c02;
-  color: #fff;
-  transition: 0.5s; */
-  color:#ed6c02;
+  color: #ed6c02;
 }
+
 nav a {
   color: #000;
   text-decoration: none;
@@ -51,6 +49,7 @@ nav a {
   position: relative;
   overflow: hidden;
 }
+
 nav a::before {
   content: '';
   position: absolute;
@@ -61,6 +60,7 @@ nav a::before {
   left: 50%;
   transition: all 0.3s ease-in-out;
 }
+
 nav a:hover::before {
   width: 100%;
   left: 0;
@@ -70,11 +70,10 @@ nav a:hover::before {
 .menu-icon {
   display: none;
   font-size: 30px;
-  color:  #151A23;
+  color: #151A23;
   cursor: pointer;
 }
 
-/**************MEDIA QUERIES PARA MÓVILES Y TABLETAS*****************/
 @media (max-width: 1024px) {
   .menu-icon {
     display: block;
@@ -90,8 +89,8 @@ nav a:hover::before {
     background: #151A23;
     text-align: center;
     transition: right 0.3s ease;
-    align-items: center; 
-    justify-content: center; 
+    align-items: center;
+    justify-content: center;
   }
 
   nav ul.menu-open {
@@ -101,14 +100,14 @@ nav a:hover::before {
   nav ul li {
     margin: 20px 0;
     line-height: 40px;
-    width: 100%; 
-    text-align: center; 
+    width: 100%;
+    text-align: center;
   }
 
   nav ul li a {
     font-size: 20px;
     color: #fff;
     display: block;
-    width: 100%; 
+    width: 100%;
   }
 }

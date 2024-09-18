@@ -16,8 +16,16 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #FFFFFF;
+}
 
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ffff;
+  border-radius: 50px;
+  border: 3px solid #ed6c025f;
 }
 
 /************Common styles********************/
@@ -26,17 +34,12 @@ body {
   text-transform: uppercase;
 }
 
-section {
-  min-height: 100vh;
-}
-
 .projects-section,
 .education,
 .contact {
   padding: 70px 30px 0 30px;
 }
 
-/*No estoy seguro de esta implementacion, es para que el link de la navbar lleve al titulo de la seccion y sea bien visible*/
 .section-title {
   font-size: 50px;
   text-align: center;
@@ -48,19 +51,19 @@ a {
   color: #151A23;
 }
 
-
-/************Common styles********************/
-
-
 /***********HOME SECTION***************/
 .home {
-  position: relative;
-  overflow: hidden;
-  padding-top: 80px;
-  /* margin-bottom: -100px; */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  background-image:
+    linear-gradient(to left, rgb(255, 255, 255) 20%, rgba(255, 252, 252, 0) 40%, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 100%),
+    linear-gradient(rgb(255, 255, 255) 20%,
+      rgba(255, 252, 252, 0) 40%,
+      rgba(255, 255, 255, 0) 60%,
+      rgb(255, 255, 255) 100%),
+    url('src/assets/images/patternBackground6.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
 }
 
 .stack-logo-container figure {
@@ -70,31 +73,13 @@ a {
 
 /***********ABOUT ME SECTION***************/
 .about strong {
-  color: rgb(234 179 8);
+  color: #ed6c02;
 }
 
 .about img {
   width: 50px;
   height: 50px;
 }
-
-/***************TECHNOLOGIES SECTION*****************/
-
-
-/***************PROJECTS SECTION*****************/
-.project-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 20px;
-  gap: 20px;
-}
-
-
-/***************EDUCATION SECTION*****************/
-
 
 /***************CONTACT SECTION*****************/
 
@@ -126,10 +111,10 @@ a {
 
 @media (max-width: 640px) {
 
-  /*Mobile*/
   .checkbtn {
     display: block;
   }
+
   nav ul {
     display: flex;
     flex-direction: column;
@@ -143,41 +128,48 @@ a {
     text-align: center;
     transition: all .5s;
   }
+
   a:hover,
   a.active {
     background: none;
     color: #0082e6;
   }
+
   #check:checked~ul {
     top: 80px;
   }
+
   .home {
     flex-direction: column;
   }
+
   .home img {
     width: 50vw;
   }
+
   .about {
     padding: 20px 20px 20px 20px;
   }
+
   .frame {
     width: 40vw;
     height: 40vw;
     max-width: 300px;
     max-height: 300px;
   }
+
   .contact {
     flex-direction: column;
   }
 }
 
 @media (max-width: 1024px) {
-  /*Tablet*/
 
   label.logo {
     font-size: 30px;
     padding-left: 50px;
   }
+
   .home {
     flex-direction: column;
     align-items: center;
@@ -186,20 +178,21 @@ a {
     padding: 0;
     margin: 0
   }
+
   .home img {
     width: 30vh;
   }
+
   .contact {
     flex-direction: column;
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1366px) {
-  /*Laptop medium*/
-
   .home img {
     width: 40vh;
   }
+
   .education {
     margin: 0 100px;
   }
@@ -207,14 +200,15 @@ a {
 
 @media (min-width: 1367px) and (max-width: 1920px) {
 
-  /*Laptop large*/
   .home img {
     width: 40vh;
   }
+
   .frame {
     width: 50vW;
     height: 50vw;
   }
+
   .education {
     margin: 0 300px;
   }
