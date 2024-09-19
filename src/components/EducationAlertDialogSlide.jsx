@@ -26,7 +26,7 @@ export const EducationAlertDialogSlide = ({ language }) => {
 
   return (
     <React.Fragment>
-      <Button variant="outlined" color="warning" sx={{ borderRadius: '50px' }} onClick={handleClickOpen}>
+      <Button variant="outlined" color="warning" sx={{ borderRadius: '50px', marginBottom:{  xs:'20px'} }} onClick={handleClickOpen}>
         {language === 'en' ? 'More Education' : 'Más formación'}
       </Button>
       <Dialog

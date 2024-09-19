@@ -193,6 +193,13 @@ function App() {
                     md: '0',
                     lg: '0',
                     xl: '0'
+                  },
+                  width: {
+                    xs: '80%',
+                    sm: '100%',
+                    md: '100%',
+                    lg: '100%',
+                    xl: '100%'
                   }
                 }}
                 >Eduardo González Seco
@@ -319,7 +326,6 @@ function App() {
                   {visibleText.presentation.part5}
                   {visibleText.presentation.part6}
                   {visibleText.presentation.part7}
-                  {/* <br /> */}
                   {visibleText.presentation.part8}
                   {visibleText.presentation.part9}
                   {visibleText.presentation.part10}
@@ -466,8 +472,8 @@ function App() {
                   backgroundColor: '#FAFAFA'
                 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '5px' }}>
-                  <LocalLibraryIcon />
-                  <Typography variant="h5" sx={{ marginLeft: '1rem' }}>{visibleText.learning}</Typography>
+                  <LocalLibraryIcon sx={{display:{xs:'none', sm:'block'}}}/>
+                  <Typography variant="h5" sx={{ marginLeft: '1rem', fontSize:'18px' }}>{visibleText.learning}</Typography>
                 </Box>
                 <Divider sx={{ margin: '5px auto 5px auto', width: '60%' }} />
 
