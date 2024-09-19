@@ -81,7 +81,7 @@ export const textsTranslations = {
       part9: "gran dominio del inglés",
       part10: " y disfruto comunicarme en este idioma."
     },
-    experience: 'Mi experencia',
+    experience: 'Mi experiencia',
     experienceRol: 'Desarrollador Web',
     experienceModality: 'Híbrido',
     experienceAchivements: {
