@@ -197,7 +197,7 @@ function App() {
                 }}
                 >Eduardo González Seco
                 </Typography>
-                <Avatar src='/assets/profile-picture.png' sx={{
+                <Avatar src='/assets/profile-picture3.png' sx={{
                   display: {
                     lg: 'none',
                     xl: 'none'
