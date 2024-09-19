@@ -180,7 +180,7 @@ function App() {
               }} className='home-title-container'>
 
                 <Typography variant='h1' sx={{
-                  fontSize: '6vh', fontWeight: 'Bold', alignItems: {
+                  fontSize: '5.5vh', fontWeight: 'Bold', alignItems: {
                     xs: 'space-around',
                     sm: 'center',
                     md: 'center',
@@ -194,13 +194,6 @@ function App() {
                     lg: '0',
                     xl: '0'
                   },
-                  width: {
-                    xs: '80%',
-                    sm: '100%',
-                    md: '100%',
-                    lg: '100%',
-                    xl: '100%'
-                  }
                 }}
                 >Eduardo González Seco
                 </Typography>
