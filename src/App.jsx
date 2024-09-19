@@ -58,9 +58,9 @@ function App() {
   };
   const openFile = () => {
     if (language === 'en') {
-      window.open("public/files/Eduardo GS CV ENG.pdf");
+      window.open("/files/Eduardo GS CV ENG.pdf");
     } else {
-      window.open("public/files/Eduardo GS CV.pdf");
+      window.open("/files/Eduardo GS CV.pdf");
 
     }
   }
@@ -197,7 +197,7 @@ function App() {
                 }}
                 >Eduardo González Seco
                 </Typography>
-                <Avatar src='src/assets/profile-picture.png' sx={{
+                <Avatar src='/assets/profile-picture.png' sx={{
                   display: {
                     lg: 'none',
                     xl: 'none'
@@ -395,7 +395,7 @@ function App() {
                     </Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                       {/* <BusinessIcon sx={{ marginRight: '8px' }} /> */}
-                      <Avatar src='src/assets/scl_consulting_logo.jfif' sx={{ marginRight: '5px', border: '1px solid gray' }} />
+                      <Avatar src='/assets/scl_consulting_logo.jfif' sx={{ marginRight: '5px', border: '1px solid gray' }} />
                       <Typography variant="body1">SCL Consulting - Madrid ({visibleText.experienceModality})</Typography>
                     </Box>
                     <Typography variant="body2" sx={{ fontStyle: 'italic' }}>mar. 2023 - jun. 2023</Typography>
@@ -499,7 +499,7 @@ function App() {
                     </Typography>
                     <Box sx={{ textAlign: 'center' }}>
                       <a href="https://react.dev/">
-                        <img src="src/assets/react.svg" />
+                        <img src="/assets/react.svg" />
                       </a>
                     </Box>
                   </Box>
@@ -519,7 +519,7 @@ function App() {
                     </Typography>
                     <Box sx={{ textAlign: 'center' }}>
                       <a href="https://react.dev/">
-                        <img src="src/assets/aws.svg" />
+                        <img src="/assets/aws.svg" />
                       </a>
                     </Box>
                   </Box>

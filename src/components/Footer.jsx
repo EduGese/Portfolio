@@ -26,7 +26,7 @@ export const Footer = ({ visibleText }) => {
         <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', margin: '0 5px ' }}>
           <a href="https://es.react.dev/">
             <img
-              src="src/assets/react.svg"
+              src="/assets/react.svg"
               alt="React Logo"
               style={{ width: '24px', marginRight: '5px' }}
             />
@@ -34,7 +34,7 @@ export const Footer = ({ visibleText }) => {
           +
           <a href="https://mui.com/material-ui/">
             <img
-              src="src/assets/materialui.svg"
+              src="/assets/materialui.svg"
               alt="Material UI Logo"
               style={{ width: '24px', marginLeft: '5px' }}
             />
