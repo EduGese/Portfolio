@@ -1,4 +1,4 @@
-import * as React from 'react';
+// import * as React from 'react';
 import { useState } from 'react';
 import './App.css'
 import { LogoContainer } from './components/LogoContainer';
@@ -89,7 +89,11 @@ function App() {
             flexDirection: 'row',
             justifyContent: 'center',
             backgroundColor: 'rgba(255, 255, 255, 0.844)',
-            backdropFilter: 'grayscale(100%)  blur(px)'
+            backdropFilter: 'grayscale(100%)  blur(px)',
+            '@media (max-width: 1024px) and (orientation:landscape)': {
+              paddingTop: '0',
+            },
+
 
           }}>
             <Box className="home-img-container"
@@ -291,7 +295,10 @@ function App() {
                 md: '20px',
                 lg: '0',
                 xl: '0'
-              }
+              },
+              '@media (max-width: 1024px) and (orientation:landscape)': {
+                height: '100%',
+              },
             }}>
             <Box
               sx={{
@@ -393,7 +400,6 @@ function App() {
                       {visibleText.experienceRol}
                     </Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                      {/* <BusinessIcon sx={{ marginRight: '8px' }} /> */}
                       <Avatar src='/assets/scl_consulting_logo.jfif' sx={{ marginRight: '5px', border: '1px solid gray' }} />
                       <Typography variant="body1">SCL Consulting - Madrid ({visibleText.experienceModality})</Typography>
                     </Box>
@@ -465,8 +471,8 @@ function App() {
                   backgroundColor: '#FAFAFA'
                 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '5px' }}>
-                  <LocalLibraryIcon sx={{display:{xs:'none', sm:'block'}}}/>
-                  <Typography variant="h5" sx={{ marginLeft: '1rem', fontSize:'18px' }}>{visibleText.learning}</Typography>
+                  <LocalLibraryIcon sx={{ display: { xs: 'none', sm: 'block' } }} />
+                  <Typography variant="h5" sx={{ marginLeft: '1rem', fontSize: '18px' }}>{visibleText.learning}</Typography>
                 </Box>
                 <Divider sx={{ margin: '5px auto 5px auto', width: '60%' }} />
 
@@ -560,7 +566,10 @@ function App() {
                     minHeight: '300px',
                     flexGrow: 1,
                     borderRadius: '50px',
-                    backgroundColor: '#FAFAFA'
+                    backgroundColor: '#FAFAFA',
+                    '@media (max-width: 1024px) and (orientation:landscape)': {
+                      minHeight: '0',
+                      },
                   }}
                 >
                   <Typography variant="h5" component="h5">
@@ -575,6 +584,9 @@ function App() {
                       flexWrap: 'wrap',
                       gap: '20px',
                       paddingTop: '20px',
+                      '@media (max-width: 1024px) and (orientation:landscape)': {
+                        gap: '50px',
+                      },
                     }}
                   >
                     {frontEndLogos.map((logo, index) => (
@@ -599,7 +611,10 @@ function App() {
                     minHeight: '300px',
                     flexGrow: 1,
                     borderRadius: '50px',
-                    backgroundColor: '#FAFAFA'
+                    backgroundColor: '#FAFAFA',
+                    '@media (max-width: 1024px) and (orientation:landscape)': {
+                      minHeight: '0',
+                      },
                   }}
                 >
                   <Typography variant="h5" component="h5">
@@ -614,6 +629,9 @@ function App() {
                       flexWrap: 'wrap',
                       gap: '20px',
                       paddingTop: '20px',
+                      '@media (max-width: 1024px) and (orientation:landscape)': {
+                        gap: '50px',
+                      },
                     }}
                   >
                     {backEndLogos.map((logo, index) => (
@@ -636,7 +654,10 @@ function App() {
                     padding: '20px',
                     minHeight: '200px',
                     borderRadius: '50px',
-                    backgroundColor: '#FAFAFA'
+                    backgroundColor: '#FAFAFA',
+                    '@media (max-width: 1024px) and (orientation:landscape)': {
+                      minHeight: '0',
+                      },
                   }}
                 >
                   <Typography variant="h5" component="h5">
@@ -651,6 +672,9 @@ function App() {
                       flexWrap: 'wrap',
                       gap: '20px',
                       paddingTop: '20px',
+                      '@media (max-width: 1024px) and (orientation:landscape)': {
+                        gap: '50px',
+                      },
                     }}
                   >
                     {toolsLogos.map((logo, index) => (
@@ -741,7 +765,7 @@ function App() {
             alignItems: 'center',
             justifyContent: 'center',
             flexWrap: 'wrap',
-            minHeight: {lg:'80vh'},
+            minHeight: { lg: '80vh' },
           }}>
             <Box sx={{
               width: {
@@ -780,9 +804,9 @@ function App() {
               },
               justifyContent: 'center',
               alignItems: 'center',
-              minHeight: {sm:'90vh',md:'80vh',lg:'80vh'},
+              minHeight: { sm: '90vh', md: '80vh', lg: '80vh' },
               position: 'relative',
-              paddingTop:{xs:'70px', sm:'0px'}
+              paddingTop: { xs: '70px', sm: '0px' },
             }}>
             <Box>
               <EmailCard visibleText={visibleText} />

@@ -444,4 +444,18 @@ nav a:hover::before {
     display: block;
     width: 100%;
   }
+  .no-scroll {
+    overflow: hidden;
+  }
+  
+}
+@media (max-width: 1024px) and (orientation:landscape){
+  nav ul{
+
+    height: calc(100vh - 80px );
+    justify-content: space-around;
+  }
+  nav ul li {
+    margin: 0;
+  }
 }

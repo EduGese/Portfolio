@@ -36,7 +36,7 @@ export  const LogoContainer = ({href, svg, figCaption, transition}) =>{
         }}
       >
         {svg}
-        <Typography variant="caption" component="figcaption">
+        <Typography variant="caption" component="figcaption" sx={{whiteSpace:'nowrap'}}>
           {figCaption}
         </Typography>
       </Box>

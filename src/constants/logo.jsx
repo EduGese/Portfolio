@@ -361,7 +361,7 @@ export const frontEndLogos = [
         </g>
       </svg>
     ),
-    figCaption: "A. Material"
+    figCaption: "Angular Material"
   },
   {
     href: "https://ionicframework.com/",

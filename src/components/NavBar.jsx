@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import logo from '../assets/resetImage.png';
 // import '../css/navBar.css';
 import Avatar from '@mui/material/Avatar';
@@ -11,16 +11,19 @@ export const NavBar = ({ language, handleLanguageToggle, texts }) => {
   const handleLinkClick = () => {
     setIsMenuOpen(false);
   };
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, [isMenuOpen]);
 
   return (
     <nav>
-      {/* <img
-        src={logo}
-        className="custom-pointer"
-        alt="Logo"
-        onClick={() => { window.location.href = '#home'; handleLinkClick() }
-        }
-      /> */}
       <Avatar src='\assets\avataaars.png' onClick={() => { window.location.href = '#home'; handleLinkClick() }}/>
       <Avatar onClick={handleLanguageToggle}  src={language === 'es' ? englishFlag : spanishFlag}
         alt={language === 'es' ? 'Change to English' : 'Change to Spanish'}
