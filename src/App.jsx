@@ -319,16 +319,7 @@ function App() {
               <Divider sx={{ margin: '5px 0 5px 0', width: '50%' }} />
               <Box sx={{ textAlign: 'justify', width: '100%' }}>
                 <Typography variant="overline">
-                  {visibleText.presentation.part1}
-                  {visibleText.presentation.part2}
-                  {visibleText.presentation.part3}
-                  {visibleText.presentation.part4}
-                  {visibleText.presentation.part5}
-                  {visibleText.presentation.part6}
-                  {visibleText.presentation.part7}
-                  {visibleText.presentation.part8}
-                  {visibleText.presentation.part9}
-                  {visibleText.presentation.part10}
+                  {visibleText.presentation}
                 </Typography>
               </Box>
 
@@ -403,7 +394,7 @@ function App() {
                       <Avatar src='/assets/scl_consulting_logo.jfif' sx={{ marginRight: '5px', border: '1px solid gray' }} />
                       <Typography variant="body1">SCL Consulting - Madrid ({visibleText.experienceModality})</Typography>
                     </Box>
-                    <Typography variant="body2" sx={{ fontStyle: 'italic' }}>mar. 2023 - jun. 2023</Typography>
+                    <Typography variant="body2" sx={{ fontStyle: 'italic' }}>{visibleText.experienceDate}</Typography>
                   </Box>
                   <Box sx={{
                     width: {
@@ -419,16 +410,7 @@ function App() {
 
                   }}>
                     <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary' }}>
-                      {visibleText.experienceAchivements.part1}
-                      {visibleText.experienceAchivements.part2}
-                      {visibleText.experienceAchivements.part3}
-                      {visibleText.experienceAchivements.part4}
-                      {visibleText.experienceAchivements.part5}
-                      {visibleText.experienceAchivements.part6}
-                      {visibleText.experienceAchivements.part7}
-                      {visibleText.experienceAchivements.part8}
-                      {visibleText.experienceAchivements.part9}
-                      {visibleText.experienceAchivements.part10}
+                      {visibleText.experienceAchivements}     
                     </Typography>
                   </Box>
                 </Box>
