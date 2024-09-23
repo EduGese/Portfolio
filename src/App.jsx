@@ -58,10 +58,9 @@ function App() {
   };
   const openFile = () => {
     if (language === 'en') {
-      window.open("/files/Eduardo GS CV ENG.pdf");
+      window.open("/files/EduardoGS_english.pdf");
     } else {
-      window.open("/files/Eduardo GS CV.pdf");
-
+      window.open("/files/EduardoGS.pdf");
     }
   }
 
