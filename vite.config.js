@@ -5,17 +5,17 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 export default defineConfig({
   plugins: [
     react(),
-    createHtmlPlugin({
-      inject: {
-        data: {
-          title: 'My portfolio',
-        },
-      },
-      minify: true,
-    }),
+    // createHtmlPlugin({
+    //   inject: {
+    //     data: {
+    //       title: 'My portfolio',
+    //     },
+    //   },
+    //   minify: true,
+    // }),
   ],
   server: {
-    port: 3000, // o cualquier otro puerto disponible
+    port: 3000,
   },
   build: {
     chunkSizeWarningLimit: 1000,

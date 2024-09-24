@@ -59,9 +59,9 @@ function App() {
   };
   const openFile = () => {
     if (language === 'en') {
-      window.open("/files/EduardoGS_english.pdf");
+      window.open("./files/EduardoGS english.pdf");
     } else {
-      window.open("/files/EduardoGS.pdf");
+      window.open("./files/EduardoGS.pdf");
     }
   }
 
