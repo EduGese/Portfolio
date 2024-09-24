@@ -184,7 +184,7 @@ function App() {
               }} className='home-title-container'>
 
                 <Typography variant='h1' sx={{
-                  fontSize: '5.5vh', fontWeight: 'Bold', alignItems: {
+                  fontSize: {xs:'5vh', sm:'5.5vh'}, fontWeight: 'Bold', alignItems: {
                     xs: 'space-around',
                     sm: 'center',
                     md: 'center',
