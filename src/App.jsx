@@ -221,7 +221,7 @@ function App() {
                     textAlign: 'center'
                   }}>
                   <Typography variant='h6' sx={{ fontFamily: " 'Poppins', sans-serif", fontWeight: 'Bold' }}>
-                    MEAN + MySql
+                    MEAN + MySQL
                   </Typography>
                   <HomeStackLogoContainer />
                 </Box>
@@ -318,7 +318,7 @@ function App() {
               </Box>
               <Divider sx={{ margin: '5px 0 5px 0', width: '50%' }} />
               <Box sx={{ textAlign: 'justify', width: '100%' }}>
-                <Typography variant="overline">
+                <Typography sx={{fontSize:{xl: '1rem'}}} variant="overline">
                   {visibleText.presentation}
                 </Typography>
               </Box>
@@ -361,7 +361,7 @@ function App() {
                 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'start' }}>
                   <WorkIcon />
-                  <Typography variant="h5" sx={{ marginLeft: '1rem' }}>{visibleText.experience}</Typography>
+                  <Typography variant="h5" sx={{ marginLeft: '1rem',  }}>{visibleText.experience}</Typography>
                 </Box>
                 <Divider sx={{ margin: '5px 0 5px 0', width: '50%' }} />
 
@@ -409,7 +409,7 @@ function App() {
                     textAlign: 'justify'
 
                   }}>
-                    <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary' }}>
+                    <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary',fontSize:{xl: '1rem'}  }}>
                       {visibleText.experienceAchivements}     
                     </Typography>
                   </Box>
@@ -516,8 +516,8 @@ function App() {
           </Box>
         </section>
         <section id="technologies" className='technologies'>
-          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold' }} variant="h3">
-            {visibleText.technologies}
+          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: {xs: 'h4',  sm: 'h3', xl:'h2'}}} >
+            <strong>{visibleText.technologies}</strong>
           </Typography>
 
           <Box
@@ -674,7 +674,9 @@ function App() {
         </section>
 
         <section id="projects" className='projects-section'>
-          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold' }} variant="h3">{visibleText.projectsTitle}</Typography>
+          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: {xs: 'h4',  sm: 'h3', xl:'h2'}}} >
+            <strong>{visibleText.projectsTitle}</strong>
+            </Typography>
 
           <Box
             sx={{
@@ -736,7 +738,9 @@ function App() {
         </section>
 
         <section id="education" className='education'>
-          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold' }} variant="h3">{visibleText.educationTitle}</Typography>
+          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' } }}>
+            <strong>{visibleText.educationTitle}</strong>
+          </Typography>
           <Box sx={{
             display: 'flex',
             flexDirection: {

@@ -14,6 +14,9 @@ export default defineConfig({
       minify: true,
     }),
   ],
+  server: {
+    port: 3000, // o cualquier otro puerto disponible
+  },
   build: {
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
