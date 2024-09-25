@@ -42,14 +42,14 @@ export const Footer = ({ visibleText }) => {
         </Box>
         <Typography variant="body2" align="center"> {visibleText.footerText.part2} Eduardo González Seco</Typography>
       </Box>
-      <Link
+      /*<Link
         href="https://github.com/EduGese/Portfolio"
         sx={{ marginTop: '10px', display: 'block', textDecoration: 'none' }}
       >
         <Typography variant="body2">
           {visibleText.footerLink}
         </Typography>
-      </Link>
+      </Link>*/
     </Box>
   )
 }
