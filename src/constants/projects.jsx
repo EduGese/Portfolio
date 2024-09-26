@@ -28,7 +28,7 @@ export const projects = [
     {
         name: 'ScreenPulse-backend-Api',
         image: '/assets/projects/screenPulseFrontApp3.png',
-        descriptionEn: 'Backend application built with Node.js and Express using TypeScript for strong and robust typing. It serves as the REST API integrated into the ScreenPulse-frontApp application',
+        descriptionEn: 'Backend application built with Node.js and Express using TypeScript for robust typing. It serves as the REST API integrated into the ScreenPulse-frontApp application',
         descriptionEs: 'Aplicación backend construida con Node.js y Express utilizando TypeScript para un tipado fuerte y robusto. Sirve como API REST integrada en la aplicación ScreenPulse-frontApp',
         technologies: [logosFrameworks[2], logosLanguages[1], logosDatabase[2]],
         ghLink: 'https://github.com/EduGese/ScreenPulse-backend-Api',
@@ -40,7 +40,7 @@ export const projects = [
     {
         name: 'The-Weather-App',
         image: '/assets/projects/theWeatherApp.png',
-        descriptionEn: "The Weather App is a responsive web application (Single Page Application) developed with Angular 16.1.5 that provides real-time weather information based on the user's location upon opening the page",
+        descriptionEn: "The Weather App is a responsive web application (Single Page Application) developed with Angular 16.1.5 that provides real-time weather information based on the user's location when opening the page",
         descriptionEs: "La aplicación del tiempo es una aplicación web responsive (Single Page Application) desarrollada con Angular 16.1.5 que proporciona información meteorológica en tiempo real basada en la ubicación del usuario al abrir la página",
         technologies: [logosLanguages[2], logosLanguages[3], logosFrameworks[0], logosLanguages[1]],
         ghLink: 'https://github.com/EduGese/The-Weather-App',

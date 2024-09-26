@@ -23,7 +23,7 @@ export const textsTranslations = {
     buttonShowAll:'Show all',
     buttonCollapse:'Collapse',
     educationTitle:'Education',
-    emailCardTitle:"Let's connnect!",
+    emailCardTitle:"Let's connect!",
     emailCardAlert:'Email copied to clipboard!',
     mailerTitle:'Send me a message',
     formLabelName:'Full Name',
