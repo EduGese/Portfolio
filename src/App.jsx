@@ -6,7 +6,6 @@ import { NavBar } from './components/NavBar';
 import { ProfilePicture } from './components/ProfilePic';
 import ProjectCard from './components/ProjectCard'
 import { MainEducationCard } from './components/MainEducationCard';
-import Mailer from './components/Mailer';
 import { EmailCard } from './components/EmailCard';
 import { Footer } from './components/Footer';
 import { ContactLinks } from './components/ContactLinks';
