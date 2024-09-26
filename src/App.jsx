@@ -184,7 +184,7 @@ function App() {
               }} className='home-title-container'>
 
                 <Typography variant='h1' sx={{
-                  fontSize: {xs:'5vh', sm:'5.5vh'}, fontWeight: 'Bold', alignItems: {
+                  fontSize: { xs: '5vh', sm: '5.5vh' }, fontWeight: 'Bold', alignItems: {
                     xs: 'space-around',
                     sm: 'center',
                     md: 'center',
@@ -318,7 +318,7 @@ function App() {
               </Box>
               <Divider sx={{ margin: '5px 0 5px 0', width: '50%' }} />
               <Box sx={{ textAlign: 'justify', width: '100%' }}>
-                <Typography sx={{fontSize:{xl: '1rem'}}} variant="overline">
+                <Typography sx={{ fontSize: { xl: '1rem' } }} variant="overline">
                   {visibleText.presentation}
                 </Typography>
               </Box>
@@ -361,7 +361,7 @@ function App() {
                 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'start' }}>
                   <WorkIcon />
-                  <Typography variant="h5" sx={{ marginLeft: '1rem',  }}>{visibleText.experience}</Typography>
+                  <Typography variant="h5" sx={{ marginLeft: '1rem', }}>{visibleText.experience}</Typography>
                 </Box>
                 <Divider sx={{ margin: '5px 0 5px 0', width: '50%' }} />
 
@@ -409,8 +409,8 @@ function App() {
                     textAlign: 'justify'
 
                   }}>
-                    <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary',fontSize:{xl: '1rem'}  }}>
-                      {visibleText.experienceAchivements}     
+                    <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary', fontSize: { xl: '1rem' } }}>
+                      {visibleText.experienceAchivements}
                     </Typography>
                   </Box>
                 </Box>
@@ -516,7 +516,7 @@ function App() {
           </Box>
         </section>
         <section id="technologies" className='technologies'>
-          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: {xs: 'h4',  sm: 'h3', xl:'h2'}}} >
+          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' } }} >
             <strong>{visibleText.technologies}</strong>
           </Typography>
 
@@ -551,7 +551,7 @@ function App() {
                     backgroundColor: '#FAFAFA',
                     '@media (max-width: 1024px) and (orientation:landscape)': {
                       minHeight: '0',
-                      },
+                    },
                   }}
                 >
                   <Typography variant="h5" component="h5">
@@ -596,7 +596,7 @@ function App() {
                     backgroundColor: '#FAFAFA',
                     '@media (max-width: 1024px) and (orientation:landscape)': {
                       minHeight: '0',
-                      },
+                    },
                   }}
                 >
                   <Typography variant="h5" component="h5">
@@ -639,7 +639,7 @@ function App() {
                     backgroundColor: '#FAFAFA',
                     '@media (max-width: 1024px) and (orientation:landscape)': {
                       minHeight: '0',
-                      },
+                    },
                   }}
                 >
                   <Typography variant="h5" component="h5">
@@ -674,9 +674,9 @@ function App() {
         </section>
 
         <section id="projects" className='projects-section'>
-          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: {xs: 'h4',  sm: 'h3', xl:'h2'}}} >
+          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' } }} >
             <strong>{visibleText.projectsTitle}</strong>
-            </Typography>
+          </Typography>
 
           <Box
             sx={{
@@ -779,32 +779,37 @@ function App() {
           </Box>
         </section>
 
-        <section id="contact" className='contact' >
+        <section id="contact" className='contact'>
           <Box
             sx={{
               display: 'flex',
-              flexDirection: {
-                xs: 'column',
-                sm: 'column',
-                md: 'row'
-              },
+              flexDirection: { xs: 'column', sm: 'column', md: 'row' },
               justifyContent: 'center',
               alignItems: 'center',
-              minHeight: { sm: '90vh', md: '80vh', lg: '80vh' },
-              position: 'relative',
-              paddingTop: { xs: '70px', sm: '0px' },
+              minHeight: {xs:'80vh', sm: '80vh', md: '80vh', lg: '80vh' },
+              padding: { xs: '40px 20px', sm: '60px 40px' },
+              background: 'linear-gradient(to bottom, white 0%, #fAfAfA 50%, white 100%)',
+            }}
+          >
+            <Box sx={{
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center', 
+              marginRight: { md: '0px' },  
+              textAlign: 'center'
             }}>
-            <Box>
+              
               <EmailCard visibleText={visibleText} />
               <ContactLinks />
             </Box>
-            <Mailer visibleText={visibleText} />
           </Box>
-
         </section>
 
+
+
         <footer className='footer'>
-          <Divider variant='middle' />
           <Footer visibleText={visibleText} />
         </footer>
 

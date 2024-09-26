@@ -25,15 +25,18 @@ export const EmailCard = ({ visibleText }) => {
       alignItems: 'center',
       padding: '20px',
       marginBottom: '40px',
-      marginLeft: { xs: '0px', sm: '0px', md: '100px', lg: '200px' }
+      // marginLeft: { xs: '0px', sm: '0px', md: '100px', lg: '200px' }
     }}>
-      <Typography variant="h5" sx={{ fontWeight: 'bold', marginBottom: '8px' }}>
+      <Typography variant="h4" sx={{ fontWeight: 'bold', marginBottom: '20px' }}>
         {visibleText.emailCardTitle}
       </Typography>
 
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px', marginLeft: '10px' }}>
+      <Box sx={{
+        display: 'flex', alignItems: 'center', gap: '10px', transition: 'transform 0.2s',
+        '&:hover': { transform: 'scale(1.05)' }
+      }}>
         <EmailIcon color='warning' sx={{ fontSize: '40px' }} />
-        <Typography variant="body1" color='warning' sx={{ fontSize: '18px', fontStyle: 'italic' }}>
+        <Typography variant="body1" color='warning' sx={{ fontSize: '20px', fontStyle: 'italic', fontWeight: 'bold' }}>
           {email}
         </Typography>
         <Tooltip title="Copy email">
