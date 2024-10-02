@@ -32,6 +32,8 @@ import Grid from '@mui/material/Grid2';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { motion, AnimatePresence } from 'framer-motion';
+
 
 
 const theme = createTheme({
@@ -42,7 +44,7 @@ const theme = createTheme({
 
 function App() {
   const [visibleProjects, setVisibleProjects] = useState(3);
-  const [language, setLanguage] = useState('es');
+  const [language, setLanguage] = useState('en');
   const texts = textsTranslations;
   const visibleText = texts[language];
 
@@ -685,22 +687,31 @@ function App() {
               justifyContent: 'center',
               gap: '20px',
               padding: '20px',
-
-            }}>
-            {projects.slice(0, visibleProjects).map((project, index) => (
-              <ProjectCard
-                key={index}
-                name={project.name}
-                image={project.image}
-                description={language === 'en' ? project.descriptionEn : project.descriptionEs}
-                technologies={project.technologies}
-                ghLink={project.ghLink}
-                demoLink={project.demoLink}
-                websiteLink={project.websiteLink}
-                gif={project.gif}
-                gifOrientation={project.gifOrientation}
-              />
-            ))}
+            }}
+          >
+            <AnimatePresence>
+              {projects.slice(0, visibleProjects).map((project, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 50 }}
+                  transition={{ duration: 2 }}
+                >
+                  <ProjectCard
+                    name={project.name}
+                    image={project.image}
+                    description={language === 'en' ? project.descriptionEn : project.descriptionEs}
+                    technologies={project.technologies}
+                    ghLink={project.ghLink}
+                    demoLink={project.demoLink}
+                    websiteLink={project.websiteLink}
+                    gif={project.gif}
+                    gifOrientation={project.gifOrientation}
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </Box>
           {
             visibleProjects < projects.length && (
@@ -785,7 +796,7 @@ function App() {
               flexDirection: { xs: 'column', sm: 'column', md: 'row' },
               justifyContent: 'center',
               alignItems: 'center',
-              minHeight: {xs:'80vh', sm: '80vh', md: '80vh', lg: '80vh' },
+              minHeight: { xs: '80vh', sm: '80vh', md: '80vh', lg: '80vh' },
               padding: { xs: '40px 20px', sm: '60px 40px' },
               background: 'linear-gradient(to bottom, white 0%, #fAfAfA 50%, white 100%)',
             }}
@@ -795,11 +806,11 @@ function App() {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              alignItems: 'center', 
-              marginRight: { md: '0px' },  
+              alignItems: 'center',
+              marginRight: { md: '0px' },
               textAlign: 'center'
             }}>
-              
+
               <EmailCard visibleText={visibleText} />
               <ContactLinks />
             </Box>
