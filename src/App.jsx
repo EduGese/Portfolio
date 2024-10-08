@@ -685,8 +685,9 @@ function App() {
               flexDirection: 'row',
               flexWrap: 'wrap',
               justifyContent: 'center',
-              gap: '20px',
+              gap: {xs:'20px', xl:'40px'},
               padding: '20px',
+               margin:{ xs: '0 auto', xl: '0 150px' },
             }}
           >
             <AnimatePresence>
@@ -696,7 +697,7 @@ function App() {
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 50 }}
-                  transition={{ duration: 2 }}
+                  transition={{ duration: 0.5 }}
                 >
                   <ProjectCard
                     name={project.name}
