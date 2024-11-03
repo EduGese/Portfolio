@@ -42,6 +42,16 @@ export const mainEducation = [
 
 export const certificates = [
     {
+        id: 4,
+        titleEn: 'AWS Cloud Solutions Developer',
+        titleEs:'Desarrollador de Soluciones en la nube de AWS',
+        avatar:'',
+        center: 'Experis Academy',
+        dateEn: 'Nov, 2024',
+        dateEs: 'Nov, 2024',
+        link:'https://www.experis.es/es/soluciones-it/academy'
+    },
+    {
         id: 1,
         titleEn: 'Ultimate Docker: Guide from zero to deployments',
         titleEs:'Docker definitivo: Guía de cero a despliegues',
