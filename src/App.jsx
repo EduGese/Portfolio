@@ -26,7 +26,7 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { frontEndLogos, backEndLogos, toolsLogos } from './constants/logo';
 import { projects } from './constants/projects';
 import { textsTranslations } from './constants/textsTranslations';
-
+import Link from '@mui/material/Link';
 import { Button, Box, Paper, Typography, Divider, Avatar } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 
@@ -60,9 +60,11 @@ function App() {
   };
   const openFile = () => {
     if (language === 'en') {
-      window.open("./files/EduardoGS english.pdf");
+      // window.open("./files/EduardoGS english.pdf");
+      window.open("./files/EduardoGSEnglishPlain.pdf");
     } else {
-      window.open("./files/EduardoGS.pdf");
+      // window.open("./files/EduardoGS.pdf");
+      window.open("./files/EduardoGSPlain.pdf");
     }
   }
 
@@ -365,7 +367,6 @@ function App() {
                   <Typography variant="h5" sx={{ marginLeft: '1rem', }}>{visibleText.experience}</Typography>
                 </Box>
                 <Divider sx={{ margin: '5px 0 5px 0', width: '50%' }} />
-
                 <Box sx={{
                   padding: '10px', display: 'flex', flexDirection: {
                     xs: 'column',
@@ -389,13 +390,16 @@ function App() {
 
                   }}>
                     <Typography variant="h6">
-                      {visibleText.experienceRol}
+                      {visibleText.companies.company2.rol}
                     </Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                      <Avatar src='/assets/scl_consulting_logo.jfif' sx={{ marginRight: '5px', border: '1px solid gray' }} />
-                      <Typography variant="body1">SCL Consulting - Madrid ({visibleText.experienceModality})</Typography>
+                      <Avatar src={visibleText.companies.company2.logo} sx={{ marginRight: '5px', width: 50, height: 50, border: '1px solid Gainsboro' }} />
+                      <Typography variant="body1">{visibleText.companies.company2.name}
+                        <Typography variant="body2"
+                        sx={{ color: 'text.secondary' }}>{visibleText.companies.company2.location} ({visibleText.companies.company2.modality})</Typography>
+                      </Typography>
                     </Box>
-                    <Typography variant="body2" sx={{ fontStyle: 'italic' }}>{visibleText.experienceDate}</Typography>
+                    <Typography variant="body2" sx={{ fontStyle: 'italic'}}>{visibleText.companies.company2.date}</Typography>
                   </Box>
                   <Box sx={{
                     width: {
@@ -411,7 +415,58 @@ function App() {
 
                   }}>
                     <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary', fontSize: { xl: '1rem' } }}>
-                      {visibleText.experienceAchivements}
+                      {visibleText.companies.company2.achivements}
+                       
+                    </Typography>
+                    <Link href="#projects" color='warning'>{visibleText.companies.company2.linkProjectsText}</Link>
+                  </Box>
+                </Box>
+                <Box sx={{
+                  padding: '10px', display: 'flex', flexDirection: {
+                    xs: 'column',
+                    sm: 'column',
+                    md: 'column',
+                    lg: 'row',
+                    xl: 'row'
+                  }
+                }}>
+
+                  <Box sx={{
+                    width: {
+                      xs: '100%',
+                      sm: '100%',
+                      md: '100%',
+                      lg: '40%',
+                      xl: '40%'
+                    },
+                    paddingRight: '10px',
+                    paddingBottom: '10px'
+
+                  }}>
+                    <Typography variant="h6">
+                      {visibleText.companies.company1.rol}
+                    </Typography>
+                    <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                      <Avatar  src='/assets/timeStamp.jfif' sx={{ marginRight: '5px',width:50, height:50, border: '1px solid Gainsboro' }} />
+                      <Typography variant="body1">{visibleText.companies.company1.name}<Typography variant="body2" sx={{ color: 'text.secondary'}}>{visibleText.companies.company1.location} ({visibleText.companies.company1.modality})</Typography> </Typography>
+                    </Box>
+                    <Typography variant="body2" sx={{ fontStyle: 'italic'}}>{visibleText.companies.company1.date}</Typography>
+                  </Box>
+                  <Box sx={{
+                    width: {
+                      xs: '100%',
+                      sm: '100%',
+                      md: '100%',
+                      lg: '60%',
+                      xl: '60%'
+                    },
+                    paddingRight: '10px',
+                    paddingBottom: '10px',
+                    textAlign: 'justify'
+
+                  }}>
+                    <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary', fontSize: { xl: '1rem' } }}>
+                      {visibleText.companies.company1.achivements}
                     </Typography>
                   </Box>
                 </Box>
@@ -517,7 +572,7 @@ function App() {
           </Box>
         </section>
         <section id="technologies" className='technologies'>
-          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' } }} >
+          <Typography sx={{ textAlign: 'center', paddingTop: { xs: '85px', sm: '85px', md:'85px', lg:'150px', xl: '85px' }, fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' } }} >
             <strong>{visibleText.technologies}</strong>
           </Typography>
 
