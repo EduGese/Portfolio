@@ -60,10 +60,9 @@ function App() {
   };
   const openFile = () => {
     if (language === 'en') {
-      // window.open("./files/EduardoGS english.pdf");
+
       window.open("./files/EduardoGSEnglishPlain.pdf");
     } else {
-      // window.open("./files/EduardoGS.pdf");
       window.open("./files/EduardoGSPlain.pdf");
     }
   }
