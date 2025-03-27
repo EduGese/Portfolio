@@ -259,22 +259,29 @@ function App() {
               }} className="home-buttons-container">
                 <Box component="a" href="#contact" sx={{ textDecoration: 'none' }}>
                   <Button variant="outlined" color="warning" startIcon={<PersonIcon />}
-                    sx={{ width: '150px', margin: '0 5px ', borderRadius: '50px' }}>
+                    sx={{ width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
+                      '&:hover': {
+                        backgroundColor: (theme) => theme.palette.warning.main,
+                        color: '#fff',
+                        borderColor: (theme) => theme.palette.warning.main
+                      } }}>
                     {visibleText.buttonContact}
                   </Button>
-
                 </Box>
                 <Box >
                   <Button variant="outlined" color="warning" startIcon={<RemoveRedEyeIcon />}
-                    sx={{ width: '150px', margin: '0 5px ', borderRadius: '50px' }} onClick={openFile}>
+                    sx={{ width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
+                      '&:hover': {
+                        backgroundColor: (theme) => theme.palette.warning.main,
+                        color: '#fff',
+                        borderColor: (theme) => theme.palette.warning.main
+                      } }} onClick={openFile}>
                     CV
                   </Button>
                 </Box>
               </Box>
             </Box>
           </Box>
-
-
         </section >
         <section id="about" className="about">
           <Box
@@ -776,7 +783,12 @@ function App() {
                   color="warning"
                   startIcon={<UnfoldMoreIcon />}
                   onClick={showAllProjects}
-                  sx={{ margin: '20px auto', borderRadius: '50px' }}
+                  sx={{ margin: '20px auto', borderRadius: '50px', transition: 'all 0.5s ease',
+                    '&:hover': {
+                      backgroundColor: (theme) => theme.palette.warning.main,
+                      color: '#fff',
+                      borderColor: (theme) => theme.palette.warning.main
+                    } }}
                 >
                   {visibleText.buttonShowAll}
                 </Button>
@@ -792,7 +804,12 @@ function App() {
                     color="warning"
                     startIcon={<UnfoldLessIcon />}
                     onClick={showLessProjects}
-                    sx={{ margin: '20px auto', borderRadius: '50px' }}
+                    sx={{ margin: '20px auto', borderRadius: '50px', transition: 'all 0.5s ease',
+                      '&:hover': {
+                        backgroundColor: (theme) => theme.palette.warning.main,
+                        color: '#fff',
+                        borderColor: (theme) => theme.palette.warning.main
+                      } }}
                   >
                     {visibleText.buttonCollapse}
                   </Button>

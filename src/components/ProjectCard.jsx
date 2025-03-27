@@ -4,6 +4,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 import Typography from '@mui/material/Typography';
 
 import Box from '@mui/material/Box';
@@ -15,9 +16,10 @@ import Divider from '@mui/material/Divider';
 
 
 
+
 export default function ProjectCard({ name, image, description, technologies, ghLink, demoLink, websiteLink, gif }) {
   const [isHovered, setIsHovered] = React.useState(false);
-  const [gifUrl, setGifUrl] =  React.useState(gif);
+  const [gifUrl, setGifUrl] = React.useState(gif);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -40,9 +42,9 @@ export default function ProjectCard({ name, image, description, technologies, gh
       borderRadius: '50px',
       backgroundColor: '#FAFAFA',
       flex: '1 1 calc(100% - 20px)',
-      transition: 'box-shadow 0.3s ease-in-out', // Transición suave para el hover
+      transition: 'box-shadow 0.3s ease-in-out',
       '&:hover': {
-        boxShadow: 8, // Sombra más intensa al hacer hover
+        boxShadow: 8,
       },
       '@media (min-width: 600px)': {
         flex: '1 1 calc(50% - 20px)',
@@ -52,16 +54,15 @@ export default function ProjectCard({ name, image, description, technologies, gh
       }
     }}>
       <CardMedia
-      sx={{
-        height: 140,
-        transition: 'background-image 1.2s ease-in-out',
-       }}
-      // image={isHovered && gif ? gifUrl : image}
-      image={gif ? gif : image}
-      title={name}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    />
+        sx={{
+          height: 140,
+          transition: 'background-image 1.2s ease-in-out',
+        }}
+        image={gif ? gif : image}
+        title={name}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      />
       <CardContent sx={{
         height: {
           xs: '230px',
@@ -71,62 +72,105 @@ export default function ProjectCard({ name, image, description, technologies, gh
         <Typography gutterBottom variant="h5" component="div">
           {name}
         </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary',textAlign:'justify' }}>
+        <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'justify' }}>
           {description}
         </Typography>
       </CardContent>
-     
+
       <CardActions sx={{
         width: '100%',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        padding: '0 16px 16px',
       }}>
         <Box sx={{
           display: 'flex',
-          flexDirection: 'row',
-          width: '100%',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          justifyContent: 'end',
           flexWrap: 'wrap',
-          padding: '10px 0',
+          justifyContent: 'center',
+          gap: '8px',
+          padding: '8px 0',
         }}>
           {technologies.map((tech, index) => (
             <a href={tech.href} key={index} >
               <figure style={{ margin: '0 5px', width: '30px', height: '30px' }}>
-              {tech.svg}
-            </figure>
+                {tech.svg}
+              </figure>
             </a>
-            
+
           ))}
         </Box>
         <Divider sx={{
-          width: '100%', 
+          width: '100%',
           margin: '10px 0',
-          color: 'rgba(0, 0, 0, 0.6)', 
+          color: 'rgba(0, 0, 0, 0.6)',
           fontSize: '14px'
         }}>
           +info
         </Divider>
-        <Box sx={{
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'start'
+
+
+
+        <ButtonGroup size="small" aria-label="Small button group" sx={{
+          borderRadius: 50,
         }}>
-          <Button size="small">
-            <a href={ghLink}>
-              <GitHubIcon sx={{color:'black'}}/>
-            </a>
-            
+          {demoLink && <Button
+            variant="outlined"
+            color='warning'
+            href={demoLink}
+            startIcon={<VideocamOutlinedIcon />}
+            sx={{
+              borderRadius: 50,
+              transition: 'all 0.5s ease',
+              '&:hover': {
+                backgroundColor: (theme) => theme.palette.warning.main,
+                color: '#fff',
+                borderColor: (theme) => theme.palette.warning.main
+              }
+            }}
+          >
+            Demo
           </Button>
-          {
-          demoLink && <Button size="small"><a href={demoLink}><VideocamOutlinedIcon /></a></Button>
           }
-          {
-            websiteLink && <Button size="small"><a href={websiteLink}><LanguageOutlinedIcon /></a></Button>
+
+          {websiteLink && <Button
+            variant="outlined"
+            color='info'
+            href={websiteLink}
+            startIcon={<LanguageOutlinedIcon />}
+            sx={{
+              borderRadius: 50,
+              transition: 'all 0.5s ease',
+              '&:hover': {
+                backgroundColor: (theme) => theme.palette.info.main,
+                color: '#fff',
+                borderColor: (theme) => theme.palette.info.main
+              }
+            }}
+          >
+            Website
+          </Button>
           }
-        </Box>
+          {ghLink && <Button
+            variant="outlined"
+            color='success'
+            href={ghLink}
+            startIcon={<GitHubIcon />}
+            sx={{
+              borderRadius: 50,
+              transition: 'all 0.5s ease',
+              '&:hover': {
+                backgroundColor: (theme) => theme.palette.success.main,
+                color: '#fff',
+                borderColor: (theme) => theme.palette.success.main
+              }
+            }}
+          >
+            Github
+          </Button>
+          }
+
+        </ButtonGroup>
+
       </CardActions>
     </Card>
   );
