@@ -770,6 +770,7 @@ function App() {
                     websiteLink={project.websiteLink}
                     gif={project.gif}
                     gifOrientation={project.gifOrientation}
+                    swaggerDoc={project.swaggerDoc}
                   />
                 </motion.div>
               ))}
