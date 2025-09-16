@@ -8,7 +8,7 @@ export const textsTranslations = {
     role: 'Full Stack Developer',
     buttonContact: 'Contact',
     presentationTitle: 'Who am I',
-    presentation: "Full-stack developer with experience in Angular, Node.js, and databases (MySQL, MongoDB). Passionate about technology, I am specializing in cloud development and currently pursuing the AWS Developer certification. I aim to contribute to innovative projects in cloud architectures or other technological areas, delivering scalable and efficient solutions. Living in London for 9 years provided me with a strong command of English and the ability to work in international environments.",
+    presentation: "Full-stack developer with experience in Angular, Node.js, and databases (MySQL, MongoDB). Passionate about technology, with training in cloud development and practical knowledge of AWS, focused on scalable architectures and DevOps. My goal is to contribute to innovative projects in cloud or other technological fields, delivering scalable and efficient solutions. Living 9 years in London has given me a strong command of English and the ability to work effectively in international environments.",
     experience: 'My experience',
     companies: {
       company2: {
@@ -65,7 +65,7 @@ export const textsTranslations = {
     role: 'Desarrollador Full Stack',
     buttonContact: 'Contacto',
     presentationTitle: 'Quién soy',
-    presentation: "Desarrollador Full-stack con experiencia en Angular, Node.js y bases de datos (MySQL, MongoDB). Apasionado por la tecnología, estoy especializándome en desarrollo en la nube y actualmente en proceso de obtener la certificación AWS Developer. Busco contribuir a proyectos innovadores en la nube u otros ámbitos tecnológicos, aportando soluciones escalables y eficientes. Vivir 9 años en Londres me ha proporcionado un sólido dominio del inglés y una habilidad para trabajar en ambientes internacionales. ",
+    presentation: "Desarrollador Full-stack con experiencia en Angular, Node.js y bases de datos (MySQL, MongoDB). Apasionado por la tecnología, con formación en desarrollo en la nube y conocimientos prácticos en AWS, enfocado en arquitecturas escalables y DevOps. Mi objetivo es contribuir a proyectos innovadores en la nube u otros ámbitos tecnológicos, aportando soluciones escalables y eficientes. Vivir 9 años en Londres me ha proporcionado un sólido dominio del inglés y una habilidad para trabajar en ambientes internacionales. ",
     experience: 'Mi experiencia',
     companies: {
       company2: {
