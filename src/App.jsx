@@ -269,7 +269,7 @@ function App() {
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'space-evenly',
-                alignItems: 'center',
+                alignItems:{ xs: 'start', sm: 'start', md: 'center', lg: 'center', xl: 'center'   },
                 padding: { xs: '20px', sm: '20px', md: '0', lg: '20px' }
               }} className="home-buttons-container">
                 <Box component="a" href="#contact" sx={{ textDecoration: 'none' }}>
