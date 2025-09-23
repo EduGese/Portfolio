@@ -13,11 +13,12 @@ import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Divider from '@mui/material/Divider';
 import DataObjectIcon from '@mui/icons-material/DataObject';
+import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 
 
 
 
-export default function ProjectCard({ name, image, description, technologies, ghLink, demoLink, websiteLink, gif, swaggerDoc }) {
+export default function ProjectCard({ name, image, description, technologies, ghLink, demoLink, websiteLink, gif, swaggerDoc, deepWiki }) {
   const [isHovered, setIsHovered] = React.useState(false);
   const [gifUrl, setGifUrl] = React.useState(gif);
 
@@ -184,6 +185,24 @@ export default function ProjectCard({ name, image, description, technologies, gh
             }}
           >
             API Doc
+          </Button>
+          }
+                     {swaggerDoc && <Button
+            variant="outlined"
+            color='success'
+            href={deepWiki}
+            startIcon={<ArticleOutlinedIcon style={{ width: 24, height: 24 }}/>}
+            sx={{
+              borderRadius: 50,
+              transition: 'all 0.5s ease',
+              '&:hover': {
+                backgroundColor: (theme) => theme.palette.success.main,
+                color: '#fff',
+                borderColor: (theme) => theme.palette.success.main
+              }
+            }}
+          >
+            Deep Wiki
           </Button>
           }
 

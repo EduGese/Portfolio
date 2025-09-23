@@ -37,6 +37,7 @@ export const projects = [
         swaggerDoc: 'https://edugese.github.io/ScreenPulse-backend-Api/',
         gif: '/assets/gifs/screenPulse.gif',
         gifOrientation: 'landscape',
+        deepWiki: 'https://deepwiki.com/EduGese/ScreenPulse-backend-Api/1-overview'
     },
     {
         name: 'The-Weather-App',

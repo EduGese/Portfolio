@@ -790,6 +790,7 @@ function App() {
                     gif={project.gif}
                     gifOrientation={project.gifOrientation}
                     swaggerDoc={project.swaggerDoc}
+                    deepWiki={project.deepWiki}
                   />
                 </motion.div>
               ))}
