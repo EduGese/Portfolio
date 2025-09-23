@@ -22,6 +22,7 @@ import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
 import UnfoldLessIcon from '@mui/icons-material/UnfoldLess';
 import EmailIcon from '@mui/icons-material/Email';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 import { frontEndLogos, backEndLogos, toolsLogos } from './constants/logo';
 import { projects } from './constants/projects';
@@ -228,6 +229,7 @@ function App() {
                   <HomeStackLogoContainer />
                 </Box>
               </Box>
+
               <Box sx={{
                 height: '20%',
                 width: '100%',
@@ -235,7 +237,7 @@ function App() {
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingTop: { xs: '40px', sm: '80px', md: '40px', lg: '40px', xl: '60px' }
+                paddingTop: '40px'
               }}>
                 <EmailIcon color='warning' sx={{ fontSize: '40px' }} />
                 <Typography variant="body1" color='text.secondary' sx={{ fontSize: '18px', fontStyle: 'italic' }}>
@@ -243,7 +245,20 @@ function App() {
                 </Typography>
               </Box>
               <Box sx={{
-                height: '70%',
+                paddingTop: '10px',
+                height: '10%',
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}> <LocationOnIcon sx={{ fontSize: '20px', verticalAlign: 'middle', marginRight: '5px' }} />
+                <Typography variant="body1" color='text.secondary' sx={{ fontSize: '18px', fontStyle: 'italic' }}>
+                 {visibleText.personalLocation}
+                </Typography>
+              </Box>
+              <Box sx={{
+                height: '100%',
                 width: {
                   xs: '100%',
                   sm: '100%',
@@ -259,23 +274,27 @@ function App() {
               }} className="home-buttons-container">
                 <Box component="a" href="#contact" sx={{ textDecoration: 'none' }}>
                   <Button variant="outlined" color="warning" startIcon={<PersonIcon />}
-                    sx={{ width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
+                    sx={{
+                      width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
                       '&:hover': {
                         backgroundColor: (theme) => theme.palette.warning.main,
                         color: '#fff',
                         borderColor: (theme) => theme.palette.warning.main
-                      } }}>
+                      }
+                    }}>
                     {visibleText.buttonContact}
                   </Button>
                 </Box>
                 <Box >
                   <Button variant="outlined" color="warning" startIcon={<RemoveRedEyeIcon />}
-                    sx={{ width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
+                    sx={{
+                      width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
                       '&:hover': {
                         backgroundColor: (theme) => theme.palette.warning.main,
                         color: '#fff',
                         borderColor: (theme) => theme.palette.warning.main
-                      } }} onClick={openFile}>
+                      }
+                    }} onClick={openFile}>
                     CV
                   </Button>
                 </Box>
@@ -402,10 +421,10 @@ function App() {
                       <Avatar src={visibleText.companies.company2.logo} sx={{ marginRight: '5px', width: 50, height: 50, border: '1px solid Gainsboro' }} />
                       <Typography variant="body1">{visibleText.companies.company2.name}
                         <Typography variant="body2"
-                        sx={{ color: 'text.secondary' }}>{visibleText.companies.company2.location} ({visibleText.companies.company2.modality})</Typography>
+                          sx={{ color: 'text.secondary' }}>{visibleText.companies.company2.location} ({visibleText.companies.company2.modality})</Typography>
                       </Typography>
                     </Box>
-                    <Typography variant="body2" sx={{ fontStyle: 'italic'}}>{visibleText.companies.company2.date}</Typography>
+                    <Typography variant="body2" sx={{ fontStyle: 'italic' }}>{visibleText.companies.company2.date}</Typography>
                   </Box>
                   <Box sx={{
                     width: {
@@ -422,7 +441,7 @@ function App() {
                   }}>
                     <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary', fontSize: { xl: '1rem' } }}>
                       {visibleText.companies.company2.achivements}
-                       
+
                     </Typography>
                     <Link href="#projects" color='warning'>{visibleText.companies.company2.linkProjectsText}</Link>
                   </Box>
@@ -453,10 +472,10 @@ function App() {
                       {visibleText.companies.company1.rol}
                     </Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                      <Avatar  src='/assets/timeStamp.jfif' sx={{ marginRight: '5px',width:50, height:50, border: '1px solid Gainsboro' }} />
-                      <Typography variant="body1">{visibleText.companies.company1.name}<Typography variant="body2" sx={{ color: 'text.secondary'}}>{visibleText.companies.company1.location} ({visibleText.companies.company1.modality})</Typography> </Typography>
+                      <Avatar src='/assets/timeStamp.jfif' sx={{ marginRight: '5px', width: 50, height: 50, border: '1px solid Gainsboro' }} />
+                      <Typography variant="body1">{visibleText.companies.company1.name}<Typography variant="body2" sx={{ color: 'text.secondary' }}>{visibleText.companies.company1.location} ({visibleText.companies.company1.modality})</Typography> </Typography>
                     </Box>
-                    <Typography variant="body2" sx={{ fontStyle: 'italic'}}>{visibleText.companies.company1.date}</Typography>
+                    <Typography variant="body2" sx={{ fontStyle: 'italic' }}>{visibleText.companies.company1.date}</Typography>
                   </Box>
                   <Box sx={{
                     width: {
@@ -578,7 +597,7 @@ function App() {
           </Box>
         </section>
         <section id="technologies" className='technologies'>
-          <Typography sx={{ textAlign: 'center', paddingTop: { xs: '85px', sm: '85px', md:'85px', lg:'150px', xl: '85px' }, fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' } }} >
+          <Typography sx={{ textAlign: 'center', paddingTop: { xs: '85px', sm: '85px', md: '85px', lg: '150px', xl: '85px' }, fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' } }} >
             <strong>{visibleText.technologies}</strong>
           </Typography>
 
@@ -746,9 +765,9 @@ function App() {
               flexDirection: 'row',
               flexWrap: 'wrap',
               justifyContent: 'center',
-              gap: {xs:'20px', xl:'40px'},
+              gap: { xs: '20px', xl: '40px' },
               padding: '20px',
-               margin:{ xs: '0 auto', xl: '0 150px' },
+              margin: { xs: '0 auto', xl: '0 150px' },
             }}
           >
             <AnimatePresence>
@@ -784,12 +803,14 @@ function App() {
                   color="warning"
                   startIcon={<UnfoldMoreIcon />}
                   onClick={showAllProjects}
-                  sx={{ margin: '20px auto', borderRadius: '50px', transition: 'all 0.5s ease',
+                  sx={{
+                    margin: '20px auto', borderRadius: '50px', transition: 'all 0.5s ease',
                     '&:hover': {
                       backgroundColor: (theme) => theme.palette.warning.main,
                       color: '#fff',
                       borderColor: (theme) => theme.palette.warning.main
-                    } }}
+                    }
+                  }}
                 >
                   {visibleText.buttonShowAll}
                 </Button>
@@ -805,12 +826,14 @@ function App() {
                     color="warning"
                     startIcon={<UnfoldLessIcon />}
                     onClick={showLessProjects}
-                    sx={{ margin: '20px auto', borderRadius: '50px', transition: 'all 0.5s ease',
+                    sx={{
+                      margin: '20px auto', borderRadius: '50px', transition: 'all 0.5s ease',
                       '&:hover': {
                         backgroundColor: (theme) => theme.palette.warning.main,
                         color: '#fff',
                         borderColor: (theme) => theme.palette.warning.main
-                      } }}
+                      }
+                    }}
                   >
                     {visibleText.buttonCollapse}
                   </Button>

@@ -1,5 +1,6 @@
 export const textsTranslations = {
   en: {
+    personalLocation: 'Madrid, Spain',
     about: 'About me',
     technologies: 'Technologies',
     projects: 'Projects',
@@ -57,6 +58,7 @@ export const textsTranslations = {
 
   },
   es: {
+    personalLocation: 'Madrid, España',
     about: 'Sobre mí',
     technologies: 'Tecnologías',
     projects: 'Proyectos',
