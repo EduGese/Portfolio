@@ -14,11 +14,13 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Divider from '@mui/material/Divider';
 import DataObjectIcon from '@mui/icons-material/DataObject';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import { pink } from '@mui/material/colors';
+import Tooltip from '@mui/material/Tooltip';
 
 
 
-
-export default function ProjectCard({ name, image, description, technologies, ghLink, demoLink, websiteLink, gif, swaggerDoc, deepWiki }) {
+export default function ProjectCard({ name, image, description, technologies, ghLink, demoLink, websiteLink, gif, swaggerDoc, deepWiki, storybookLink }) {
   const [isHovered, setIsHovered] = React.useState(false);
   const [gifUrl, setGifUrl] = React.useState(gif);
 
@@ -31,6 +33,77 @@ export default function ProjectCard({ name, image, description, technologies, gh
     setIsHovered(false);
     setGifUrl(gif);
   };
+  const buttonConfigs = [
+    {
+      key: 'demo',
+      prop: demoLink,
+      description: 'Watch live demo of the application',
+      label: 'Demo',
+      icon: <VideocamOutlinedIcon />,
+      color: 'warning',
+      hoverColor: (theme) => theme.palette.warning.main
+    },
+    {
+      key: 'website',
+      prop: websiteLink,
+      description: 'Visit the live website',
+      label: 'Web',
+      icon: <LanguageOutlinedIcon />,
+      color: 'info',
+      hoverColor: (theme) => theme.palette.info.main
+    },
+    {
+      key: 'github',
+      prop: ghLink,
+      description: 'View source code on GitHub',
+      label: 'Github',
+      icon: <GitHubIcon />,
+      color: 'success',
+      hoverColor: (theme) => theme.palette.success.main
+    },
+    {
+      key: 'api',
+      prop: swaggerDoc,
+      description: 'Explore API documentation',
+      label: 'API Doc',
+      icon: <DataObjectIcon style={{ width: 24, height: 24 }} />,
+      color: 'success',
+      hoverColor: (theme) => theme.palette.success.main
+    },
+    {
+      key: 'storybook',
+      prop: storybookLink,
+      description: 'Browse UI components in Storybook',
+      label: 'Storybook',
+      icon: <AutoStoriesIcon style={{ width: 24, height: 24 }} />,
+      customStyle: {
+        borderRadius: 50,
+        transition: 'all 0.3s ease',
+        color: pink[500],
+        borderColor: pink[500],
+        '& .MuiSvgIcon-root': {
+          color: pink[500],
+        },
+        '&:hover': {
+          backgroundColor: pink[500],
+          color: '#fff',
+          borderColor: pink[500],
+          '& .MuiSvgIcon-root': {
+            color: '#fff',
+          }
+        }
+      }
+    },
+    {
+      key: 'wiki',
+      prop: deepWiki,
+      description: 'Read detailed documentation and guides',
+      label: 'Deep Wiki',
+      icon: <ArticleOutlinedIcon style={{ width: 24, height: 24 }} />,
+      color: 'success',
+      hoverColor: (theme) => theme.palette.success.main
+    }
+  ];
   return (
     <Card sx={{
       width: '100%',
@@ -88,14 +161,17 @@ export default function ProjectCard({ name, image, description, technologies, gh
           display: 'flex',
           flexWrap: 'wrap',
           justifyContent: 'center',
-          gap: '8px',
+          gap: '4px',
           padding: '8px 0',
         }}>
           {technologies.map((tech, index) => (
             <a href={tech.href} key={index} >
-              <figure style={{ margin: '0 5px', width: '30px', height: '30px' }}>
-                {tech.svg}
-              </figure>
+              <Tooltip title={tech.figCaption} placement="top" arrow>
+                <figure style={{ margin: '0 5px', width: '30px', height: '30px' }}>
+                  {tech.svg}
+                </figure>
+              </Tooltip>
+
             </a>
 
           ))}
@@ -109,103 +185,42 @@ export default function ProjectCard({ name, image, description, technologies, gh
           +info
         </Divider>
 
+        <ButtonGroup size="small" aria-label="Small button group" sx={{ borderRadius: 50 }}>
+          {buttonConfigs.map((config) => {
+            if (!config.prop) return null;
 
+            const baseStyle = {
+              borderRadius: 50,
+              transition: 'all 0.3s ease',
+            };
 
-        <ButtonGroup size="small" aria-label="Small button group" sx={{
-          borderRadius: 50,
-        }}>
-          {demoLink && <Button
-            variant="outlined"
-            color='warning'
-            href={demoLink}
-            startIcon={<VideocamOutlinedIcon />}
-            sx={{
-              borderRadius: 50,
-              transition: 'all 0.5s ease',
-              '&:hover': {
-                backgroundColor: (theme) => theme.palette.warning.main,
-                color: '#fff',
-                borderColor: (theme) => theme.palette.warning.main
-              }
-            }}
-          >
-            Demo
-          </Button>
-          }
+            const buttonStyle = config.customStyle
+              ? config.customStyle
+              : {
+                ...baseStyle,
+                '&:hover': {
+                  backgroundColor: config.hoverColor,
+                  color: '#fff',
+                  borderColor: config.hoverColor
+                }
+              };
 
-          {websiteLink && <Button
-            variant="outlined"
-            color='info'
-            href={websiteLink}
-            startIcon={<LanguageOutlinedIcon />}
-            sx={{
-              borderRadius: 50,
-              transition: 'all 0.5s ease',
-              '&:hover': {
-                backgroundColor: (theme) => theme.palette.info.main,
-                color: '#fff',
-                borderColor: (theme) => theme.palette.info.main
-              }
-            }}
-          >
-            Website
-          </Button>
-          }
-          {ghLink && <Button
-            variant="outlined"
-            color='success'
-            href={ghLink}
-            startIcon={<GitHubIcon />}
-            sx={{
-              borderRadius: 50,
-              transition: 'all 0.5s ease',
-              '&:hover': {
-                backgroundColor: (theme) => theme.palette.success.main,
-                color: '#fff',
-                borderColor: (theme) => theme.palette.success.main
-              }
-            }}
-          >
-            Github
-          </Button>
-          }
-           {swaggerDoc && <Button
-            variant="outlined"
-            color='success'
-            href={swaggerDoc}
-            startIcon={<DataObjectIcon style={{ width: 24, height: 24 }}/>}
-            sx={{
-              borderRadius: 50,
-              transition: 'all 0.5s ease',
-              '&:hover': {
-                backgroundColor: (theme) => theme.palette.success.main,
-                color: '#fff',
-                borderColor: (theme) => theme.palette.success.main
-              }
-            }}
-          >
-            API Doc
-          </Button>
-          }
-                     {swaggerDoc && <Button
-            variant="outlined"
-            color='success'
-            href={deepWiki}
-            startIcon={<ArticleOutlinedIcon style={{ width: 24, height: 24 }}/>}
-            sx={{
-              borderRadius: 50,
-              transition: 'all 0.5s ease',
-              '&:hover': {
-                backgroundColor: (theme) => theme.palette.success.main,
-                color: '#fff',
-                borderColor: (theme) => theme.palette.success.main
-              }
-            }}
-          >
-            Deep Wiki
-          </Button>
-          }
+            return (
+              <Tooltip title={config.description} key={config.key} placement="top" arrow>
+                <Button
+                  key={config.key}
+                  variant="outlined"
+                  color={config.color}
+                  href={config.prop}
+                  startIcon={config.icon}
+                  sx={buttonStyle}
+                >
+                  {config.label}
+                </Button>
+              </Tooltip>
 
+            );
+          })}
         </ButtonGroup>
 
       </CardActions>

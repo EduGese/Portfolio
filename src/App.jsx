@@ -791,6 +791,7 @@ function App() {
                     gifOrientation={project.gifOrientation}
                     swaggerDoc={project.swaggerDoc}
                     deepWiki={project.deepWiki}
+                    storybookLink={project.storybookLink}
                   />
                 </motion.div>
               ))}

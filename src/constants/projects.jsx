@@ -1,4 +1,4 @@
-import { logosLanguages, logosFrameworks, logosDatabase, logosTools } from './logo'
+import { logosLanguages, logosFrameworks, logosDatabase, logosTools, toolsLogos, frontEndLogos } from './logo'
 
 export const projects = [
     {
@@ -18,10 +18,11 @@ export const projects = [
         image: '/assets/projects/screenPulseFrontApp3.png',
         descriptionEn: 'ScreenPulse is an Angular frontend that lets you search and save movies, TV shows, and games using the OMDB API. It’s part of a full-stack app with a Node.js/Express backend and MongoDB database',
         descriptionEs: 'ScreenPulse es un frontend Angular que te permite buscar y guardar películas, series y juegos utilizando la API OMDB. Es parte de una aplicación full-stack con un backend Node.js/Express y una base de datos MongoDB',
-        technologies: [logosLanguages[2], logosLanguages[3], logosFrameworks[0], logosLanguages[1], logosFrameworks[5]],
+        technologies: [logosLanguages[2], logosLanguages[3], logosFrameworks[0], frontEndLogos[5], logosLanguages[1], logosFrameworks[5], toolsLogos[7]],
         ghLink: 'https://github.com/EduGese/ScreenPulse-frontApp',
-        demoLink: 'https://youtu.be/e1ZbcnbUI2E',
+        //demoLink: 'https://youtu.be/e1ZbcnbUI2E',
         websiteLink: 'https://sreenpulse.web.app/',
+        storybookLink: 'https://edugese.github.io/ScreenPulse-frontApp/',
         gif: '/assets/gifs/screenPulse.gif',
         gifOrientation: 'landscape',
     },
