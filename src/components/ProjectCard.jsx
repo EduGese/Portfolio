@@ -64,7 +64,7 @@ export default function ProjectCard({ name, image, description, technologies, gh
     {
       key: 'api',
       prop: swaggerDoc,
-      description: 'Explore API documentation',
+      description: 'Explore Swagger API documentation',
       label: 'API Doc',
       icon: <DataObjectIcon style={{ width: 24, height: 24 }} />,
       color: 'success',

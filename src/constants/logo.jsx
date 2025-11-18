@@ -582,7 +582,7 @@ export const toolsLogos = [
         </g>
       </svg>
     ,
-    figCaption: "Stoybook"
+    figCaption: "Storybook"
   },
 
 ]
