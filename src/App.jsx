@@ -535,7 +535,7 @@ function App() {
                 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '5px' }}>
                   <LocalLibraryIcon sx={{ display: { xs: 'none', sm: 'block' } }} />
-                  <Typography variant="h5" sx={{ marginLeft: '1rem', fontSize: '18px' }}>{visibleText.learning}</Typography>
+                  <Typography variant="h5" sx={{ marginLeft: '1rem' }}>{visibleText.learning}</Typography>
                 </Box>
                 <Divider sx={{ margin: '5px auto 5px auto', width: '60%' }} />
 
@@ -563,11 +563,11 @@ function App() {
 
                   }}>
                     <Typography variant="h6" sx={{ textAlign: 'center' }}>
-                      React
+                      Angular Signals
                     </Typography>
                     <Box sx={{ textAlign: 'center' }}>
-                      <a href="https://react.dev/">
-                        <img src="/assets/react.svg" />
+                      <a href="https://angular.dev/guide/signals">
+                        <img src="/assets/angular-icon.png" />
                       </a>
                     </Box>
                   </Box>
@@ -583,11 +583,11 @@ function App() {
                     paddingBottom: '10px',
                   }}>
                     <Typography variant="h6" sx={{ textAlign: 'center' }}>
-                      AWS Developer Associate
+                      Storybook
                     </Typography>
                     <Box sx={{ textAlign: 'center' }}>
-                      <a href="https://react.dev/">
-                        <img src="/assets/aws.svg" />
+                      <a href="https://storybook.js.org/docs">
+                        <img src="/assets/storybook-icon.png" />
                       </a>
                     </Box>
                   </Box>

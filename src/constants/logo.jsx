@@ -109,14 +109,74 @@ export const logosFrameworks = [
   {
     href: "https://angular.dev/",
     svg: (
-      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 48 48">
-        <path fill="#bdbdbd" d="M23.933 2L3 9.285 6.308 36.408 23.955 46 41.693 36.278 45 9.156z"></path>
-        <path fill="#b71c1c" d="M42.818 10.527L24 4.135 24 43.695 39.832 35.017z"></path>
-        <path fill="#dd2c00" d="M23.941 4.115L5.181 10.644 8.168 35.143 23.951 43.721 24 43.695 24 4.135z"></path>
-        <path fill="#bdbdbd" d="M24 5.996L24 15.504 32.578 34 36.987 34z"></path>
-        <path fill="#eee" d="M11.013 34L15.422 34 24 15.504 24 5.996z"></path>
-        <path fill="#bdbdbd" d="M24 24H30V28H24z"></path>
-        <path fill="#eee" d="M18 24H24V28H18z"></path>
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <g clipPath="url(#prefix__clip0_9_19)">
+          <mask
+            id="prefix__a"
+            style={{ maskType: 'luminance' }}
+            maskUnits="userSpaceOnUse"
+            x="14"
+            y="0"
+            width="484"
+            height="512"
+          >
+            <path d="M14 0h484v512H14V0z" fill="#fff" />
+          </mask>
+          <g mask="url(#prefix__a)">
+            <mask
+              id="prefix__b"
+              style={{ maskType: 'luminance' }}
+              maskUnits="userSpaceOnUse"
+              x="14"
+              y="0"
+              width="484"
+              height="512"
+            >
+              <path d="M14 0h484v512H14V0z" fill="#fff" />
+            </mask>
+            <g mask="url(#prefix__b)">
+              <path
+                d="M496 86l-18 272L312 0l184 86zM380 438l-124 72-126-72 24-62h202l24 62zM256 136l64 160H190l66-160zM32 358L14 86 198 0 32 358z"
+                fill="url(#prefix__paint0_linear_9_19)"
+              />
+              <path
+                d="M496 86l-18 272L312 0l184 86zM380 438l-124 72-126-72 24-62h202l24 62zM256 136l64 160H190l66-160zM32 358L14 86 198 0 32 358z"
+                fill="url(#prefix__paint1_linear_9_19)"
+              />
+            </g>
+          </g>
+        </g>
+        <defs>
+          <linearGradient
+            id="prefix__paint0_linear_9_19"
+            x1="120.4"
+            y1="463.8"
+            x2="504"
+            y2="281.4"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#E40035" />
+            <stop offset="0.2" stopColor="#F60A48" />
+            <stop offset="0.4" stopColor="#F20755" />
+            <stop offset="0.5" stopColor="#DC087D" />
+            <stop offset="0.7" stopColor="#9717E7" />
+            <stop offset="1" stopColor="#6C00F5" />
+          </linearGradient>
+          <linearGradient
+            id="prefix__paint1_linear_9_19"
+            x1="103"
+            y1="61.4"
+            x2="354"
+            y2="348"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#FF31D9" />
+            <stop offset="1" stopColor="#FF5BE1" stopOpacity="0" />
+          </linearGradient>
+          <clipPath id="prefix__clip0_9_19">
+            <path fill="#fff" transform="translate(14)" d="M0 0h484v512H0z" />
+          </clipPath>
+        </defs>
       </svg>
     ),
     figCaption: "Angular"
@@ -337,14 +397,74 @@ export const frontEndLogos = [
   {
     href: "https://angular.dev/",
     svg: (
-      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 48 48">
-        <path fill="#bdbdbd" d="M23.933 2L3 9.285 6.308 36.408 23.955 46 41.693 36.278 45 9.156z"></path>
-        <path fill="#b71c1c" d="M42.818 10.527L24 4.135 24 43.695 39.832 35.017z"></path>
-        <path fill="#dd2c00" d="M23.941 4.115L5.181 10.644 8.168 35.143 23.951 43.721 24 43.695 24 4.135z"></path>
-        <path fill="#bdbdbd" d="M24 5.996L24 15.504 32.578 34 36.987 34z"></path>
-        <path fill="#eee" d="M11.013 34L15.422 34 24 15.504 24 5.996z"></path>
-        <path fill="#bdbdbd" d="M24 24H30V28H24z"></path>
-        <path fill="#eee" d="M18 24H24V28H18z"></path>
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <g clipPath="url(#prefix__clip0_9_19)">
+          <mask
+            id="prefix__a"
+            style={{ maskType: 'luminance' }}
+            maskUnits="userSpaceOnUse"
+            x="14"
+            y="0"
+            width="484"
+            height="512"
+          >
+            <path d="M14 0h484v512H14V0z" fill="#fff" />
+          </mask>
+          <g mask="url(#prefix__a)">
+            <mask
+              id="prefix__b"
+              style={{ maskType: 'luminance' }}
+              maskUnits="userSpaceOnUse"
+              x="14"
+              y="0"
+              width="484"
+              height="512"
+            >
+              <path d="M14 0h484v512H14V0z" fill="#fff" />
+            </mask>
+            <g mask="url(#prefix__b)">
+              <path
+                d="M496 86l-18 272L312 0l184 86zM380 438l-124 72-126-72 24-62h202l24 62zM256 136l64 160H190l66-160zM32 358L14 86 198 0 32 358z"
+                fill="url(#prefix__paint0_linear_9_19)"
+              />
+              <path
+                d="M496 86l-18 272L312 0l184 86zM380 438l-124 72-126-72 24-62h202l24 62zM256 136l64 160H190l66-160zM32 358L14 86 198 0 32 358z"
+                fill="url(#prefix__paint1_linear_9_19)"
+              />
+            </g>
+          </g>
+        </g>
+        <defs>
+          <linearGradient
+            id="prefix__paint0_linear_9_19"
+            x1="120.4"
+            y1="463.8"
+            x2="504"
+            y2="281.4"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#E40035" />
+            <stop offset="0.2" stopColor="#F60A48" />
+            <stop offset="0.4" stopColor="#F20755" />
+            <stop offset="0.5" stopColor="#DC087D" />
+            <stop offset="0.7" stopColor="#9717E7" />
+            <stop offset="1" stopColor="#6C00F5" />
+          </linearGradient>
+          <linearGradient
+            id="prefix__paint1_linear_9_19"
+            x1="103"
+            y1="61.4"
+            x2="354"
+            y2="348"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#FF31D9" />
+            <stop offset="1" stopColor="#FF5BE1" stopOpacity="0" />
+          </linearGradient>
+          <clipPath id="prefix__clip0_9_19">
+            <path fill="#fff" transform="translate(14)" d="M0 0h484v512H0z" />
+          </clipPath>
+        </defs>
       </svg>
     ),
     figCaption: "Angular"

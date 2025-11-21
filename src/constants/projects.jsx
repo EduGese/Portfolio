@@ -6,12 +6,13 @@ export const projects = [
         image: '/assets/taskManager2.jpg',
         descriptionEn: 'This Ionic 6 Angular Android app empowers you to manage tasks offline. Create, edit, mark tasks complete, and delete them. View pending and completed tasks in separate lists, and track deadlines with a calendar view',
         descriptionEs: 'Esta aplicación Android Ionic 6 Angular te permite administrar tareas sin conexión. Crea, edita, marca tareas como completadas y elimínalas. Visualiza las tareas pendientes y completadas en listas separadas, y realiza un seguimiento de las fechas límite con una vista de calendario',
-        technologies: [logosLanguages[2], logosLanguages[3], logosLanguages[1], logosFrameworks[1], logosTools[0], logosDatabase[1]],
+        technologies: [logosLanguages[2], logosLanguages[3], logosFrameworks[0], logosLanguages[1], logosFrameworks[1], logosTools[0], logosDatabase[1]],
         ghLink: 'https://github.com/EduGese/Task-Manager',
         demoLink: 'https://github.com/user-attachments/assets/2b04ef06-d5c1-4606-a3b3-526bda4ed2be',
         websiteLink: null,
         gif: '/assets/gifs/taskManager2.gif',
         gifOrientation: 'portrait',
+        deepWiki: 'https://deepwiki.com/EduGese/Task-Manager/1-overview'
     },
     {
         name: 'ScreenPulse - FrontApp',
