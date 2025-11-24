@@ -14,6 +14,7 @@ import { TechnologiesAlertDialogSlide } from './components/TechnologiesAlertDial
 import { EducationAlertDialogSlide } from './components/EducationAlertDialogSlide';
 import { CertificatesCard } from './components/CertificatesCard';
 import { LanguagesCard } from './components/LanguagesCard';
+import { TechStackCard } from'./components/TechStackCard';
 
 import PersonIcon from '@mui/icons-material/Person';
 import WorkIcon from '@mui/icons-material/Work';
@@ -91,11 +92,6 @@ function App() {
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'center',
-            backgroundColor: 'rgba(255, 255, 255, 0.844)',
-            backdropFilter: 'grayscale(100%)  blur(px)',
-            '@media (max-width: 1024px) and (orientation:landscape)': {
-              paddingTop: '0',
-            },
 
 
           }}>
@@ -187,6 +183,7 @@ function App() {
               }} className='home-title-container'>
 
                 <Typography variant='h1' sx={{
+                  color:'var(--light)',
                   fontSize: { xs: '5vh', sm: '5.5vh' }, fontWeight: 'Bold', alignItems: {
                     xs: 'space-around',
                     sm: 'center',
@@ -214,7 +211,7 @@ function App() {
                   margin: '0 20px',
                   border: '1px solid black'
                 }} />
-                <Typography variant='h1' color='text.secondary' sx={{ fontSize: '4vh', fontWeight: 'Bold' }}>
+                <Typography variant='h1'  sx={{ color:'var(--accent)',fontSize: '4vh', fontWeight: 'Bold' }}>
                   {visibleText.role}
                 </Typography>
 
@@ -223,7 +220,7 @@ function App() {
                     width: '200px',
                     textAlign: 'center'
                   }}>
-                  <Typography variant='h6' sx={{ fontFamily: " 'Poppins', sans-serif", fontWeight: 'Bold' }}>
+                  <Typography variant='h6' sx={{ color:'var(--light)',fontFamily: " 'Poppins', sans-serif", fontWeight: 'Bold' }}>
                     MEAN + MySQL
                   </Typography>
                   <HomeStackLogoContainer />
@@ -239,8 +236,8 @@ function App() {
                 alignItems: 'center',
                 paddingTop: '40px'
               }}>
-                <EmailIcon color='warning' sx={{ fontSize: '40px' }} />
-                <Typography variant="body1" color='text.secondary' sx={{ fontSize: '18px', fontStyle: 'italic' }}>
+                <EmailIcon  sx={{color:'var(--accent)', fontSize: '40px' }} />
+                <Typography variant="body1"  sx={{color:'var(--accent)', fontSize: '18px', fontStyle: 'italic' }}>
                   eddugonz@gmail.com
                 </Typography>
               </Box>
@@ -252,9 +249,9 @@ function App() {
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
-              }}> <LocationOnIcon sx={{ fontSize: '20px', verticalAlign: 'middle', marginRight: '5px' }} />
-                <Typography variant="body1" color='text.secondary' sx={{ fontSize: '18px', fontStyle: 'italic' }}>
-                 {visibleText.personalLocation}
+              }}> <LocationOnIcon sx={{color:'var(--accent)', fontSize: '20px', verticalAlign: 'middle', marginRight: '5px' }} />
+                <Typography variant="body1"  sx={{ color:'var(--light)', fontSize: '18px', fontStyle: 'italic' }}>
+                  {visibleText.personalLocation}
                 </Typography>
               </Box>
               <Box sx={{
@@ -269,32 +266,30 @@ function App() {
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'space-evenly',
-                alignItems:{ xs: 'start', sm: 'start', md: 'center', lg: 'center', xl: 'center'   },
+                alignItems: { xs: 'start', sm: 'start', md: 'center', lg: 'center', xl: 'center' },
                 padding: { xs: '20px', sm: '20px', md: '0', lg: '20px' }
               }} className="home-buttons-container">
                 <Box component="a" href="#contact" sx={{ textDecoration: 'none' }}>
-                  <Button variant="outlined" color="warning" startIcon={<PersonIcon />}
+                  <Button variant="outlined" startIcon={<PersonIcon />}
                     sx={{
-                      width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
+                      color:'var(--accent)',borderColor:'var(--accent)', backgroundColor:'var(--dark)', width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
                       '&:hover': {
-                        backgroundColor: (theme) => theme.palette.warning.main,
-                        color: '#fff',
-                        borderColor: (theme) => theme.palette.warning.main
+                        backgroundColor: 'var(--accent)',
+                        color: 'var(--dark)',
                       }
                     }}>
                     {visibleText.buttonContact}
                   </Button>
                 </Box>
                 <Box >
-                  <Button variant="outlined" color="warning" startIcon={<RemoveRedEyeIcon />}
+                  <Button variant="outlined" startIcon={<RemoveRedEyeIcon />}
                     sx={{
-                      width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
+                      color:'var(--accent)',borderColor:'var(--accent)', backgroundColor:'var(--dark)', width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
                       '&:hover': {
-                        backgroundColor: (theme) => theme.palette.warning.main,
-                        color: '#fff',
-                        borderColor: (theme) => theme.palette.warning.main
+                        backgroundColor: 'var(--accent)',
+                        color: 'var(--dark)',
                       }
-                    }} onClick={openFile}>
+                    }}>
                     CV
                   </Button>
                 </Box>
@@ -443,7 +438,7 @@ function App() {
                       {visibleText.companies.company2.achivements}
 
                     </Typography>
-                    <Link href="#projects" color='warning'>{visibleText.companies.company2.linkProjectsText}</Link>
+                    <Link href="#projects" sx={{color: 'var(--primary)'}}>{visibleText.companies.company2.linkProjectsText}</Link>
                   </Box>
                 </Box>
                 <Box sx={{
@@ -597,7 +592,13 @@ function App() {
           </Box>
         </section>
         <section id="technologies" className='technologies'>
-          <Typography sx={{ textAlign: 'center', paddingTop: { xs: '85px', sm: '85px', md: '85px', lg: '150px', xl: '85px' }, fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' } }} >
+          <Typography sx={{
+            textAlign: 'center',
+            color: 'var(--accent)',
+            paddingTop: { xs: '85px', sm: '85px', md: '85px', lg: '150px', xl: '85px' },
+            fontWeight: 'bold',
+            typography: { xs: 'h4', sm: 'h3', xl: 'h2' }
+          }} >
             <strong>{visibleText.technologies}</strong>
           </Typography>
 
@@ -614,138 +615,23 @@ function App() {
               justifyContent="center"
               alignItems="flex-start"
             >
-              <Grid
-                size={{ xs: 10, sm: 10, md: 10, lg: 5, xl: 5 }}
-              >
-                <Paper
-                  elevation={3}
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '20px',
-                    height: '100%',
-                    minHeight: '300px',
-                    flexGrow: 1,
-                    borderRadius: '50px',
-                    backgroundColor: '#FAFAFA',
-                    '@media (max-width: 1024px) and (orientation:landscape)': {
-                      minHeight: '0',
-                    },
-                  }}
-                >
-                  <Typography variant="h5" component="h5">
-                    Front-End
-                  </Typography>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flexDirection: 'row',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      flexWrap: 'wrap',
-                      gap: '20px',
-                      paddingTop: '20px',
-                      '@media (max-width: 1024px) and (orientation:landscape)': {
-                        gap: '50px',
-                      },
-                    }}
-                  >
-                    {frontEndLogos.map((logo, index) => (
-                      <LogoContainer key={index} href={logo.href} svg={logo.svg} figCaption={logo.figCaption} transition={true} />
-                    ))}
-                  </Box>
-                </Paper>
-              </Grid>
+            
+              <TechStackCard
+                title="Front-End"
+                logos={frontEndLogos}
+              />
 
-              <Grid
-                size={{ xs: 10, sm: 10, md: 10, lg: 5, xl: 5 }}
-              >
-                <Paper
-                  elevation={3}
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '20px',
-                    height: '100%',
-                    minHeight: '300px',
-                    flexGrow: 1,
-                    borderRadius: '50px',
-                    backgroundColor: '#FAFAFA',
-                    '@media (max-width: 1024px) and (orientation:landscape)': {
-                      minHeight: '0',
-                    },
-                  }}
-                >
-                  <Typography variant="h5" component="h5">
-                    Back-End
-                  </Typography>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flexDirection: 'row',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      flexWrap: 'wrap',
-                      gap: '20px',
-                      paddingTop: '20px',
-                      '@media (max-width: 1024px) and (orientation:landscape)': {
-                        gap: '50px',
-                      },
-                    }}
-                  >
-                    {backEndLogos.map((logo, index) => (
-                      <LogoContainer key={index} href={logo.href} svg={logo.svg} figCaption={logo.figCaption} transition={true} />
-                    ))}
-                  </Box>
-                </Paper>
-              </Grid>
+              <TechStackCard
+                title="Back-End"
+                logos={backEndLogos}
+              />
 
-              <Grid
-                size={{ xs: 10, sm: 10, md: 10, lg: 5, xl: 5 }}
-              >
-                <Paper
-                  elevation={3}
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '20px',
-                    minHeight: '200px',
-                    borderRadius: '50px',
-                    backgroundColor: '#FAFAFA',
-                    '@media (max-width: 1024px) and (orientation:landscape)': {
-                      minHeight: '0',
-                    },
-                  }}
-                >
-                  <Typography variant="h5" component="h5">
-                    {visibleText.tools}
-                  </Typography>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flexDirection: 'row',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      flexWrap: 'wrap',
-                      gap: '20px',
-                      paddingTop: '20px',
-                      '@media (max-width: 1024px) and (orientation:landscape)': {
-                        gap: '50px',
-                      },
-                    }}
-                  >
-                    {toolsLogos.map((logo, index) => (
-                      <LogoContainer key={index} href={logo.href} svg={logo.svg} figCaption={logo.figCaption} transition={true} />
-                    ))}
-                  </Box>
-                </Paper>
-              </Grid>
+              <TechStackCard
+                title={visibleText.tools}
+                logos={toolsLogos}
+                minHeight="200px"
+                enableFlexGrow={false}
+              />
             </Grid>
             <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
               <TechnologiesAlertDialogSlide visibleText={visibleText} />
@@ -755,7 +641,7 @@ function App() {
         </section>
 
         <section id="projects" className='projects-section'>
-          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' } }} >
+          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' }, color:'var(--dark)' }} >
             <strong>{visibleText.projectsTitle}</strong>
           </Typography>
 
@@ -802,15 +688,15 @@ function App() {
               <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                 <Button
                   variant="outlined"
-                  color="warning"
+                  
                   startIcon={<UnfoldMoreIcon />}
                   onClick={showAllProjects}
                   sx={{
-                    margin: '20px auto', borderRadius: '50px', transition: 'all 0.5s ease',
-                    '&:hover': {
-                      backgroundColor: (theme) => theme.palette.warning.main,
-                      color: '#fff',
-                      borderColor: (theme) => theme.palette.warning.main
+                    color:'var(--primary)', backgroundColor:'var(--ligth)',
+                      margin: '20px auto', borderRadius: '50px', transition: 'all 0.5s ease',
+                      '&:hover': {
+                        backgroundColor: 'var(--primary)',
+                        color: 'var(--light)',
                     }
                   }}
                 >
@@ -825,15 +711,14 @@ function App() {
                 <Box component="a" href="#projects" sx={{ textDecoration: 'none' }}>
                   <Button
                     variant="outlined"
-                    color="warning"
                     startIcon={<UnfoldLessIcon />}
                     onClick={showLessProjects}
                     sx={{
+                      color:'var(--primary)', backgroundColor:'var(--ligth)',
                       margin: '20px auto', borderRadius: '50px', transition: 'all 0.5s ease',
                       '&:hover': {
-                        backgroundColor: (theme) => theme.palette.warning.main,
-                        color: '#fff',
-                        borderColor: (theme) => theme.palette.warning.main
+                        backgroundColor: 'var(--primary)',
+                        color: 'var(--light)',
                       }
                     }}
                   >

@@ -1,5 +1,5 @@
- /* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+ :root {
+   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -10,6 +10,22 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
-
+  -moz-osx-font-smoothing: grayscale; */
+   --primary: #2563eb;
+   /* Azul profesional */
+   --secondary: #7c3aed;
+   /* Púrpura creativo */
+   --accent: #06d6a0;
+   /* Verde llamativo */
+   --dark: #101820;
+   /* Fondo oscuro */
+   --card-dark-1: #1a202c;
+   /* Ligeramente más claro que --dark */
+   --card-dark-2: #2d3748;
+   /* Para contraste medio */
+   --light: #f8fafc;
+   /* --light: #e9eae4; */
+   /* Fondo claro */
+   --textLight: #334155;
+   /* Texto principal */
+ }

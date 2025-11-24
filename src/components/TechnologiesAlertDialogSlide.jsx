@@ -27,12 +27,18 @@ export const TechnologiesAlertDialogSlide = ({visibleText}) => {
 
   return (
     <React.Fragment>
-      <Button variant="outlined" color="warning" sx={{ borderRadius: '50px', transition: 'all 0.5s ease',
-              '&:hover': {
-                backgroundColor: (theme) => theme.palette.warning.main,
-                color: '#fff',
-                borderColor: (theme) => theme.palette.warning.main
-              }}} onClick={handleClickOpen}>
+      <Button variant="outlined"  sx={{ borderRadius: '50px', transition: 'all 0.5s ease', color:'var(--accent)', borderColor: 'var(--accent)',
+              // '&:hover': {
+              //   backgroundColor: (theme) => theme.palette.warning.main,
+              //   color: '#fff',
+              //   borderColor: (theme) => theme.palette.warning.main
+              // }
+                            '&:hover': {
+                backgroundColor: 'var(--accent)',
+                color: 'var(--dark)',
+                borderColor: 'var(--accent)'
+              }
+              }} onClick={handleClickOpen}>
         {visibleText.techDialogButtonTitle}
       </Button>
       <Dialog
