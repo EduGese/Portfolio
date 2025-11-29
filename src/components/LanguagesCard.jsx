@@ -13,7 +13,7 @@ export const LanguagesCard = ({language}) => {
             flag: 'https://flagcdn.com/w320/gb.png', 
             languageEn: 'English',
             languageEs: 'Inglés',
-            levelEn: 'Advance',
+            levelEn: 'Advanced',
             levelEs: 'Avanzado'
         }
     ];

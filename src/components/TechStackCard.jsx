@@ -34,7 +34,7 @@ export const TechStackCard = ({
           component="h5" 
           sx={{ 
             backgroundColor: "#33303002", 
-             color: 'var(--accent)',
+            color: 'var(--accent)',
             borderRadius: "50px", 
             padding: "5px 10px", 
             textAlign: "center", 

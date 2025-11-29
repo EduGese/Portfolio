@@ -24,7 +24,7 @@ export const CertificatesCard = ({language}) =>{
             <Paper  sx={{ width: '100%', borderRadius: '50px', margin: '0 20px ', padding: '20px', backgroundColor: '#FAFAFA' }}>
               <Box
               >
-                <Typography variant="h6" color='warning' sx={{ fontWeight: 'bold', borderRadius: '50px', textAlign: 'center',  padding: '10px' }}>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', borderRadius: '50px', textAlign: 'center',  padding: '10px',color:'var(--textLight)' }}>
                    {language === 'en' ? 'Courses/Certificates' : 'Cursos/Certificados'} 
                 </Typography>
               </Box>
@@ -32,7 +32,7 @@ export const CertificatesCard = ({language}) =>{
                 {certificates.map((certificate, index) => (
                   <React.Fragment key={certificate.id}>
                     <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start', mb: 2 }}>
-                      <Typography variant="subtitle1" sx={{ color: 'primary.primary', fontWeight: 'bold' }}>
+                      <Typography variant="subtitle1" sx={{ color:'var(--textLight)', fontWeight: 'bold' }}>
                         {language === 'en' ? certificate.titleEn : certificate.titleEs}
                       </Typography>
                       <Typography variant="body2" sx={{ color: 'text.primary' }}>

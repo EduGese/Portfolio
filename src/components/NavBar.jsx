@@ -1,47 +1,81 @@
-import React, { useState, useEffect } from 'react';
-// import logo from '../assets/resetImage.png';
-// import '../css/navBar.css';
+import { useState, useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
 
 export const NavBar = ({ language, handleLanguageToggle, texts }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
   const spanishFlag = 'https://flagcdn.com/w320/es.png';
   const englishFlag = 'https://flagcdn.com/w320/gb.png';
 
-  const handleLinkClick = () => {
+  const handleNavAction = (section = '') => {
+    if (section) setActiveSection(section);
     setIsMenuOpen(false);
+    document.body.classList.remove('no-scroll');
   };
+
+
+  const handleHomeClick = () => {
+    setActiveSection('home');
+    setIsMenuOpen(false);
+    document.body.classList.remove('no-scroll');
+    window.location.href = '#home';
+  };
+
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.classList.add('no-scroll');
-    } else {
-      document.body.classList.remove('no-scroll');
-    }
-    return () => {
-      document.body.classList.remove('no-scroll');
-    };
+    document.body.classList.toggle('no-scroll', isMenuOpen);
   }, [isMenuOpen]);
+
+
+  const FlagAvatar = ({ display }) => (
+    <Avatar
+      onClick={handleLanguageToggle}
+      src={language === 'es' ? englishFlag : spanishFlag}
+      alt={language === 'es' ? 'Change to English' : 'Change to Spanish'}
+      sx={{ width: '24px', height: '24px', display, cursor: 'pointer' }}
+    />
+  );
+
+  const navLinks = [
+    { href: '#about', text: texts.about },
+    { href: '#technologies', text: texts.technologies },
+    { href: '#projects', text: texts.projects },
+    { href: '#education', text: texts.education },
+    { href: '#contact', text: texts.contact }
+  ];
 
   return (
     <nav>
-      <Avatar src='\assets\avataaars.png' onClick={() => { window.location.href = '#home'; handleLinkClick() }}/>
-      <Avatar onClick={handleLanguageToggle}  src={language === 'es' ? englishFlag : spanishFlag}
-        alt={language === 'es' ? 'Change to English' : 'Change to Spanish'}
-        sx={{ width: '24px', height: '24px' , display:{ xs: 'block', sm: 'block', md: 'none'}}}/>
-       
+      <Avatar
+        src='/assets/avataaars.png'
+        onClick={handleHomeClick}
+        sx={{ cursor: 'pointer' }}
+      />
+
+
+      <FlagAvatar display={{ xs: 'block', sm: 'block', md: 'none' }} />
+
       <div className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <i className="fas fa-bars"></i>
       </div>
+
       <ul className={isMenuOpen ? 'menu-open' : ''}>
-        <li onClick={handleLinkClick}><a href="#about">{texts.about}</a></li>
-        <li onClick={handleLinkClick}><a href="#technologies">{texts.technologies}</a></li>
-        <li onClick={handleLinkClick}><a href="#projects">{texts.projects}</a></li>
-        <li onClick={handleLinkClick}><a href="#education">{texts.education}</a></li>
-        <li onClick={handleLinkClick}><a href="#contact">{texts.contact}</a></li>
+        {navLinks.map((link) => {
+          const section = link.href.replace('#', '');
+          return (
+            <li key={section} onClick={() => handleNavAction(section)}>
+              <a
+                href={link.href}
+                className={activeSection === section ? 'active' : ''}
+              >
+                {link.text}
+              </a>
+            </li>
+          );
+        })}
       </ul>
-      <Avatar onClick={handleLanguageToggle}  src={language === 'es' ? englishFlag : spanishFlag}
-        alt={language === 'es' ? 'Change to English' : 'Change to Spanish'}
-        sx={{ width: '24px', height: '24px' , display:{ xs: 'none', sm: 'none', md: 'block'}}}/>
+
+      <FlagAvatar display={{ xs: 'none', sm: 'none', md: 'block' }} />
     </nav>
   );
 };

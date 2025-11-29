@@ -143,7 +143,7 @@ export default function ProjectCard({ name, image, description, technologies, gh
           sm: '200px'
         }
       }}>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="div" sx={{color:'var(--textLight)'}}>
           {name}
         </Typography>
         <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'justify' }}>

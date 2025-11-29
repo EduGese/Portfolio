@@ -289,7 +289,7 @@ function App() {
                         backgroundColor: 'var(--accent)',
                         color: 'var(--dark)',
                       }
-                    }}>
+                    }} onClick={openFile}>
                     CV
                   </Button>
                 </Box>
@@ -641,7 +641,7 @@ function App() {
         </section>
 
         <section id="projects" className='projects-section'>
-          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' }, color:'var(--dark)' }} >
+          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' }, color:'var(--textLight)' }} >
             <strong>{visibleText.projectsTitle}</strong>
           </Typography>
 
@@ -731,7 +731,7 @@ function App() {
         </section>
 
         <section id="education" className='education'>
-          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' } }}>
+          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' }, color:'var(--textLight)' }} >
             <strong>{visibleText.educationTitle}</strong>
           </Typography>
           <Box sx={{
@@ -781,7 +781,7 @@ function App() {
               alignItems: 'center',
               minHeight: { xs: '80vh', sm: '80vh', md: '80vh', lg: '80vh' },
               padding: { xs: '40px 20px', sm: '60px 40px' },
-              background: 'linear-gradient(to bottom, white 0%, #fAfAfA 50%, white 100%)',
+              // background: 'linear-gradient(to bottom, white 0%, #fAfAfA 50%, white 100%)',
             }}
           >
             <Box sx={{

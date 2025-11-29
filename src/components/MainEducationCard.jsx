@@ -37,10 +37,10 @@ export const MainEducationCard = ({language}) => {
       
 
       <Box sx={{ textAlign: { xs: 'center', sm: 'left' }, width: '100%' }}>
-        <Typography variant="h6" sx={{ fontSize: '20px', fontWeight: 'bold' }}>
+        <Typography variant="h6" sx={{ fontSize: '20px', fontWeight: 'bold', color:'var(--textLight)' }}>
           {language === 'en' ? education.titleEn : education.titleEs}
         </Typography>
-        <Typography variant="body1" sx={{ color: 'text.primary' }}>
+        <Typography variant="body1" sx={{ color:'var(--textLight)' }}>
           {education.center}
         </Typography>
         <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block' }}>
