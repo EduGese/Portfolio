@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import './App.css'
 import { LogoContainer } from './components/LogoContainer';
-import { NavBar } from './components/NavBar';
-import { ProfilePicture } from './components/ProfilePic';
+import { NavBar } from './components/navBar/NavBar';
+import { ProfilePicture } from './components/profilePic/ProfilePic';
 import ProjectCard from './components/ProjectCard'
 import { MainEducationCard } from './components/MainEducationCard';
 import { EmailCard } from './components/EmailCard';
@@ -14,7 +14,7 @@ import { TechnologiesAlertDialogSlide } from './components/TechnologiesAlertDial
 import { EducationAlertDialogSlide } from './components/EducationAlertDialogSlide';
 import { CertificatesCard } from './components/CertificatesCard';
 import { LanguagesCard } from './components/LanguagesCard';
-import { TechStackCard } from'./components/TechStackCard';
+import { TechStackCard } from './components/TechStackCard';
 
 import PersonIcon from '@mui/icons-material/Person';
 import WorkIcon from '@mui/icons-material/Work';
@@ -183,7 +183,7 @@ function App() {
               }} className='home-title-container'>
 
                 <Typography variant='h1' sx={{
-                  color:'var(--light)',
+                  color: 'var(--light)',
                   fontSize: { xs: '5vh', sm: '5.5vh' }, fontWeight: 'Bold', alignItems: {
                     xs: 'space-around',
                     sm: 'center',
@@ -201,17 +201,17 @@ function App() {
                 }}
                 >Eduardo González Seco
                 </Typography>
-                <Avatar src='/assets/profile-picture3.png' sx={{
+                <Avatar variant="rounded" src='/assets/profile-picture3.png' sx={{
                   display: {
                     lg: 'none',
                     xl: 'none'
                   },
-                  width: '20vh',
-                  height: '20vh',
+                  width: '15vh',
+                  height: '15vh',
                   margin: '0 20px',
-                  border: '1px solid black'
+                 border: '1px solid var(--accent)'
                 }} />
-                <Typography variant='h1'  sx={{ color:'var(--accent)',fontSize: '4vh', fontWeight: 'Bold' }}>
+                <Typography variant='h1' sx={{ color: 'var(--accent)', fontSize: '4vh', fontWeight: 'Bold' }}>
                   {visibleText.role}
                 </Typography>
 
@@ -220,7 +220,7 @@ function App() {
                     width: '200px',
                     textAlign: 'center'
                   }}>
-                  <Typography variant='h6' sx={{ color:'var(--light)',fontFamily: " 'Poppins', sans-serif", fontWeight: 'Bold' }}>
+                  <Typography variant='h6' sx={{ color: 'var(--light)', fontFamily: " 'Poppins', sans-serif", fontWeight: 'Bold' }}>
                     MEAN + MySQL
                   </Typography>
                   <HomeStackLogoContainer />
@@ -236,8 +236,8 @@ function App() {
                 alignItems: 'center',
                 paddingTop: '40px'
               }}>
-                <EmailIcon  sx={{color:'var(--accent)', fontSize: '40px' }} />
-                <Typography variant="body1"  sx={{color:'var(--accent)', fontSize: '18px', fontStyle: 'italic' }}>
+                <EmailIcon sx={{ color: 'var(--accent)', fontSize: '40px' }} />
+                <Typography variant="body1" sx={{ color: 'var(--accent)', fontSize: '18px', fontStyle: 'italic' }}>
                   eddugonz@gmail.com
                 </Typography>
               </Box>
@@ -249,8 +249,8 @@ function App() {
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
-              }}> <LocationOnIcon sx={{color:'var(--accent)', fontSize: '20px', verticalAlign: 'middle', marginRight: '5px' }} />
-                <Typography variant="body1"  sx={{ color:'var(--light)', fontSize: '18px', fontStyle: 'italic' }}>
+              }}> <LocationOnIcon sx={{ color: 'var(--accent)', fontSize: '20px', verticalAlign: 'middle', marginRight: '5px' }} />
+                <Typography variant="body1" sx={{ color: 'var(--light)', fontSize: '18px', fontStyle: 'italic' }}>
                   {visibleText.personalLocation}
                 </Typography>
               </Box>
@@ -272,7 +272,7 @@ function App() {
                 <Box component="a" href="#contact" sx={{ textDecoration: 'none' }}>
                   <Button variant="outlined" startIcon={<PersonIcon />}
                     sx={{
-                      color:'var(--accent)',borderColor:'var(--accent)', backgroundColor:'var(--dark)', width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
+                      color: 'var(--accent)', borderColor: 'var(--accent)', backgroundColor: 'var(--dark)', width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
                       '&:hover': {
                         backgroundColor: 'var(--accent)',
                         color: 'var(--dark)',
@@ -284,7 +284,7 @@ function App() {
                 <Box >
                   <Button variant="outlined" startIcon={<RemoveRedEyeIcon />}
                     sx={{
-                      color:'var(--accent)',borderColor:'var(--accent)', backgroundColor:'var(--dark)', width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
+                      color: 'var(--accent)', borderColor: 'var(--accent)', backgroundColor: 'var(--dark)', width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
                       '&:hover': {
                         backgroundColor: 'var(--accent)',
                         color: 'var(--dark)',
@@ -438,7 +438,7 @@ function App() {
                       {visibleText.companies.company2.achivements}
 
                     </Typography>
-                    <Link href="#projects" sx={{color: 'var(--primary)'}}>{visibleText.companies.company2.linkProjectsText}</Link>
+                    <Link href="#projects" sx={{ color: 'var(--primary)' }}>{visibleText.companies.company2.linkProjectsText}</Link>
                   </Box>
                 </Box>
                 <Box sx={{
@@ -615,7 +615,7 @@ function App() {
               justifyContent="center"
               alignItems="flex-start"
             >
-            
+
               <TechStackCard
                 title="Front-End"
                 logos={frontEndLogos}
@@ -641,7 +641,7 @@ function App() {
         </section>
 
         <section id="projects" className='projects-section'>
-          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' }, color:'var(--textLight)' }} >
+          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' }, color: 'var(--textLight)' }} >
             <strong>{visibleText.projectsTitle}</strong>
           </Typography>
 
@@ -688,15 +688,15 @@ function App() {
               <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                 <Button
                   variant="outlined"
-                  
+
                   startIcon={<UnfoldMoreIcon />}
                   onClick={showAllProjects}
                   sx={{
-                    color:'var(--primary)', backgroundColor:'var(--ligth)',
-                      margin: '20px auto', borderRadius: '50px', transition: 'all 0.5s ease',
-                      '&:hover': {
-                        backgroundColor: 'var(--primary)',
-                        color: 'var(--light)',
+                    color: 'var(--primary)', backgroundColor: 'var(--ligth)',
+                    margin: '20px auto', borderRadius: '50px', transition: 'all 0.5s ease',
+                    '&:hover': {
+                      backgroundColor: 'var(--primary)',
+                      color: 'var(--light)',
                     }
                   }}
                 >
@@ -714,7 +714,7 @@ function App() {
                     startIcon={<UnfoldLessIcon />}
                     onClick={showLessProjects}
                     sx={{
-                      color:'var(--primary)', backgroundColor:'var(--ligth)',
+                      color: 'var(--primary)', backgroundColor: 'var(--ligth)',
                       margin: '20px auto', borderRadius: '50px', transition: 'all 0.5s ease',
                       '&:hover': {
                         backgroundColor: 'var(--primary)',
@@ -731,7 +731,7 @@ function App() {
         </section>
 
         <section id="education" className='education'>
-          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' }, color:'var(--textLight)' }} >
+          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' }, color: 'var(--textLight)' }} >
             <strong>{visibleText.educationTitle}</strong>
           </Typography>
           <Box sx={{
@@ -773,34 +773,9 @@ function App() {
         </section>
 
         <section id="contact" className='contact'>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: { xs: 'column', sm: 'column', md: 'row' },
-              justifyContent: 'center',
-              alignItems: 'center',
-              minHeight: { xs: '80vh', sm: '80vh', md: '80vh', lg: '80vh' },
-              padding: { xs: '40px 20px', sm: '60px 40px' },
-              // background: 'linear-gradient(to bottom, white 0%, #fAfAfA 50%, white 100%)',
-            }}
-          >
-            <Box sx={{
-              flex: 1,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginRight: { md: '0px' },
-              textAlign: 'center'
-            }}>
-
-              <EmailCard visibleText={visibleText} />
-              <ContactLinks />
-            </Box>
-          </Box>
+          <EmailCard visibleText={visibleText} />
+          <ContactLinks />
         </section>
-
-
 
         <footer className='footer'>
           <Footer visibleText={visibleText} />

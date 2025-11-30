@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
+import './navBar.css'
 
 export const NavBar = ({ language, handleLanguageToggle, texts }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,12 +16,12 @@ export const NavBar = ({ language, handleLanguageToggle, texts }) => {
   };
 
 
-  const handleHomeClick = () => {
-    setActiveSection('home');
-    setIsMenuOpen(false);
-    document.body.classList.remove('no-scroll');
-    window.location.href = '#home';
-  };
+  // const handleHomeClick = () => {
+  //   setActiveSection('home');
+  //   setIsMenuOpen(false);
+  //   document.body.classList.remove('no-scroll');
+  //   window.location.href = '#home';
+  // };
 
   useEffect(() => {
     document.body.classList.toggle('no-scroll', isMenuOpen);
@@ -37,6 +38,7 @@ export const NavBar = ({ language, handleLanguageToggle, texts }) => {
   );
 
   const navLinks = [
+    { href: '#home', text: texts.home },
     { href: '#about', text: texts.about },
     { href: '#technologies', text: texts.technologies },
     { href: '#projects', text: texts.projects },
@@ -46,11 +48,11 @@ export const NavBar = ({ language, handleLanguageToggle, texts }) => {
 
   return (
     <nav>
-      <Avatar
-        src='/assets/avataaars.png'
-        onClick={handleHomeClick}
-        sx={{ cursor: 'pointer' }}
-      />
+      {/* <Avatar
+        // src='/assets/avataaars.png'
+        // onClick={handleHomeClick}
+        // sx={{ cursor: 'pointer' }}
+      /> */}
 
 
       <FlagAvatar display={{ xs: 'block', sm: 'block', md: 'none' }} />
@@ -59,7 +61,7 @@ export const NavBar = ({ language, handleLanguageToggle, texts }) => {
         <i className="fas fa-bars"></i>
       </div>
 
-      <ul className={isMenuOpen ? 'menu-open' : ''}>
+      <ul className={isMenuOpen ? 'menu-open' : 'menu-close'}>
         {navLinks.map((link) => {
           const section = link.href.replace('#', '');
           return (

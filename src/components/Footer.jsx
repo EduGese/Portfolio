@@ -13,8 +13,6 @@ export const Footer = ({ visibleText }) => {
         justifyContent: 'center',
         textAlign: 'center',
         padding: '20px',
-        // marginTop: '20px',
-        // backgroundColor: 'background.default',
       }}
     >
       <Box sx={{

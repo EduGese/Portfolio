@@ -1,0 +1,15 @@
+/*profilePic*/
+.pic-frame {
+  border: 5px solid var(--accent);
+  border-radius: 8px;
+
+}
+
+.profile-pic {
+
+}
+
+.profile-pic:hover {
+  --_i: 10%;
+  filter: grayscale(0);
+}
