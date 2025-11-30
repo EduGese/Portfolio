@@ -7,11 +7,6 @@ export const ProfilePicture = () => {
             <div className="pic-frame">
                 <img className="profile-pic" src={profilePicture} alt="Profile Picture" />
             </div>
-
         </>
-
-
-
-
     )
 }
