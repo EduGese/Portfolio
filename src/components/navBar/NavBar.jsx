@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
-import './NavBar.css'
+import './navBar.css'
 
 export const NavBar = ({ language, handleLanguageToggle, texts }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
