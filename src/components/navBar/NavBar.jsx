@@ -15,14 +15,6 @@ export const NavBar = ({ language, handleLanguageToggle, texts }) => {
     document.body.classList.remove('no-scroll');
   };
 
-
-  // const handleHomeClick = () => {
-  //   setActiveSection('home');
-  //   setIsMenuOpen(false);
-  //   document.body.classList.remove('no-scroll');
-  //   window.location.href = '#home';
-  // };
-
   useEffect(() => {
     document.body.classList.toggle('no-scroll', isMenuOpen);
   }, [isMenuOpen]);
@@ -48,12 +40,6 @@ export const NavBar = ({ language, handleLanguageToggle, texts }) => {
 
   return (
     <nav>
-      {/* <Avatar
-        // src='/assets/avataaars.png'
-        // onClick={handleHomeClick}
-        // sx={{ cursor: 'pointer' }}
-      /> */}
-
 
       <FlagAvatar display={{ xs: 'block', sm: 'block', md: 'none' }} />
 
