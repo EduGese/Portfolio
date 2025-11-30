@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
-import styles from './NavBar.module.css'; // ← Cambiado a CSS Modules
+import './NavBar.css'
 
 export const NavBar = ({ language, handleLanguageToggle, texts }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,16 +15,10 @@ export const NavBar = ({ language, handleLanguageToggle, texts }) => {
     document.body.classList.remove('no-scroll');
   };
 
-  const handleHomeClick = () => {
-    setActiveSection('home');
-    setIsMenuOpen(false);
-    document.body.classList.remove('no-scroll');
-    window.location.href = '#home';
-  };
-
   useEffect(() => {
     document.body.classList.toggle('no-scroll', isMenuOpen);
   }, [isMenuOpen]);
+
 
   const FlagAvatar = ({ display }) => (
     <Avatar
@@ -45,27 +39,22 @@ export const NavBar = ({ language, handleLanguageToggle, texts }) => {
   ];
 
   return (
-    <nav className={styles.nav}> 
-      <Avatar
-        src='/assets/avataaars.png'
-        onClick={handleHomeClick}
-        sx={{ cursor: 'pointer' }}
-      />
+    <nav>
 
       <FlagAvatar display={{ xs: 'block', sm: 'block', md: 'none' }} />
 
-      <div className={styles.menuIcon} onClick={() => setIsMenuOpen(!isMenuOpen)}> 
+      <div className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <i className="fas fa-bars"></i>
       </div>
 
-      <ul className={isMenuOpen ? styles.menuOpen : styles.menuClose}> 
+      <ul className={isMenuOpen ? 'menu-open' : 'menu-close'}>
         {navLinks.map((link) => {
           const section = link.href.replace('#', '');
           return (
             <li key={section} onClick={() => handleNavAction(section)}>
               <a
                 href={link.href}
-                className={activeSection === section ? styles.active : ''}
+                className={activeSection === section ? 'active' : ''}
               >
                 {link.text}
               </a>

@@ -1,5 +1,5 @@
 import profilePicture from "/assets/profile-picture3.png"
-import './profilePic.css'
+import './ProfilePic.css'
 
 export const ProfilePicture = () => {
     return (
