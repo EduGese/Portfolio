@@ -1,23 +1,28 @@
 import * as React from 'react';
-import { mainEducation} from '../constants/education';
+import { mainEducation } from '../constants/education';
 import { Box, Paper, Typography, Avatar } from '@mui/material';
 
 
-export const MainEducationCard = ({language}) => {
+export const MainEducationCard = ({
+  language,
+  backgroundColor,
+  titleFontColor,
+  contentTextColor }) => {
   const education = mainEducation[0];
   return (
-    <Paper  sx={{ 
-      width: '100%', 
-      maxWidth: '560px', 
-      borderRadius: '50px', 
-      margin: '20px 0', 
-      padding: '20px', 
-      display: 'flex', 
+    <Paper  elevation={24} sx={{
+      width: '100%',
+      maxWidth: '560px',
+       borderRadius: '10px',
+      margin: '20px 0',
+      padding: '20px',
+      display: 'flex',
       flexDirection: { xs: 'column', sm: 'row' },
       alignItems: 'center',
       justifyContent: 'center',
       gap: '20px',
-      backgroundColor: '#FAFAFA' 
+      backgroundColor: backgroundColor,
+      border: '1px solid var(--purple-background)'
     }}>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <a href={education.link}>
@@ -32,21 +37,21 @@ export const MainEducationCard = ({language}) => {
             }}
           />
         </a>
-        
+
       </Box>
-      
+
 
       <Box sx={{ textAlign: { xs: 'center', sm: 'left' }, width: '100%' }}>
-        <Typography variant="h6" sx={{ fontSize: '20px', fontWeight: 'bold', color:'var(--textLight)' }}>
+        <Typography variant="h6" sx={{ fontSize: '20px', fontWeight: 'bold', color: titleFontColor }}>
           {language === 'en' ? education.titleEn : education.titleEs}
         </Typography>
-        <Typography variant="body1" sx={{ color:'var(--textLight)' }}>
+        <Typography variant="body1" sx={{ color: backgroundColor }}>
           {education.center}
         </Typography>
-        <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block' }}>
+        <Typography variant="caption" sx={{ color: titleFontColor, display: 'block' }}>
           {education.date} | {language === 'en' ? education.locationEn : education.locationEs}
         </Typography>
-        <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary', textAlign:'justify' }}>
+        <Typography variant="body2" sx={{ marginTop: '10px', color: contentTextColor, textAlign: 'justify' }}>
           {language === 'en' ? education.descriptionEn : education.descriptionEs}
         </Typography>
       </Box>

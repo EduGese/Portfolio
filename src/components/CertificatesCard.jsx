@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Paper, List, ListItem, Typography, Divider} from '@mui/material';
 import { certificates } from '../constants/education';
 
-export const CertificatesCard = ({language}) =>{
+export const CertificatesCard = ({language, backgroundColor, titleFontColor, contentTextColor}) =>{
 
     return(
         <Box sx={{
@@ -21,10 +21,10 @@ export const CertificatesCard = ({language}) =>{
             justifyContent: 'center',
             flexGrow: 1,
           }}>
-            <Paper  sx={{ width: '100%', borderRadius: '50px', margin: '0 20px ', padding: '20px', backgroundColor: '#FAFAFA' }}>
+            <Paper  elevation={24}  sx={{ width: '100%',  borderRadius: '10px', margin: '0 20px ', padding: '20px', border: '1px solid var(--purple-background)',  backgroundColor: backgroundColor }}>
               <Box
               >
-                <Typography variant="h6" sx={{ fontWeight: 'bold', borderRadius: '50px', textAlign: 'center',  padding: '10px',color:'var(--textLight)' }}>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', borderRadius: '50px', textAlign: 'center',  padding: '10px',color: titleFontColor }}>
                    {language === 'en' ? 'Courses/Certificates' : 'Cursos/Certificados'} 
                 </Typography>
               </Box>
@@ -32,13 +32,13 @@ export const CertificatesCard = ({language}) =>{
                 {certificates.map((certificate, index) => (
                   <React.Fragment key={certificate.id}>
                     <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start', mb: 2 }}>
-                      <Typography variant="subtitle1" sx={{ color:'var(--textLight)', fontWeight: 'bold' }}>
+                      <Typography variant="subtitle1" sx={{ color:titleFontColor, fontWeight: 'bold' }}>
                         {language === 'en' ? certificate.titleEn : certificate.titleEs}
                       </Typography>
-                      <Typography variant="body2" sx={{ color: 'text.primary' }}>
+                      <Typography variant="body2" sx={{ color: contentTextColor }}>
                         {certificate.center}
                       </Typography>
-                      <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+                      <Typography variant="caption" sx={{ color: contentTextColor }}>
                         {certificate.date}
                         {language === 'en' ? certificate.dateEn : certificate.dateEs}
                       </Typography>

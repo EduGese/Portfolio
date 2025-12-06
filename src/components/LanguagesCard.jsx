@@ -1,6 +1,6 @@
 import { Box, Avatar, Typography } from '@mui/material';
 
-export const LanguagesCard = ({language}) => {
+export const LanguagesCard = ({language, titleFontColor}) => {
     const languages = [
         {
             flag: 'https://flagcdn.com/w320/es.png', 
@@ -56,10 +56,10 @@ export const LanguagesCard = ({language}) => {
                         src={lang.flag}
                         sx={{ width: '40px', height: '40px' }}
                     />
-                    <Typography variant="h6">
+                    <Typography variant="h6" sx={{ color: titleFontColor }}>
                         {language === 'en' ? lang.languageEn : lang.languageEs}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    <Typography variant="body2" sx={{ color: titleFontColor }}>
                         {language === 'en' ? lang.levelEn : lang.levelEs}
                     </Typography>
                 </Box>

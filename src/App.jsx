@@ -155,16 +155,16 @@ function App() {
               },
 
               '@media (min-width: 1367px) and (max-width: 1920px)': {
-                height: '70vh',
+                height: '80vh',
               }
             }} >
               <Box sx={{
                 height: {
-                  xs: '70vh',
-                  sm: '40vh',
-                  md: '60%',
-                  lg: '60%',
-                  xl: '60%'
+                  xs: '100vh',
+                  sm: '100vh',
+                  md: '100vh',
+                  lg: '100vh',
+                  xl: '100vh'
                 },
                 display: 'flex',
                 flexDirection: 'column',
@@ -201,32 +201,32 @@ function App() {
                 }}
                 >Eduardo González Seco
                 </Typography>
-                <Avatar variant="rounded" src='/assets/profile-picture3.png' sx={{
-                  display: {
-                    lg: 'none',
-                    xl: 'none'
-                  },
-                  width: '15vh',
-                  height: '15vh',
-                  margin: '0 20px',
-                 border: '1px solid var(--accent)'
-                }} />
+
                 <Typography variant='h1' sx={{ color: 'var(--accent)', fontSize: '4vh', fontWeight: 'Bold' }}>
                   {visibleText.role}
                 </Typography>
 
                 <Box
                   sx={{
-                    width: '200px',
+                    width: '300px',
                     textAlign: 'center'
                   }}>
-                  <Typography variant='h6' sx={{ color: 'var(--light)', fontFamily: " 'Poppins', sans-serif", fontWeight: 'Bold' }}>
+                  <Typography variant='h5' sx={{ color: 'var(--light)', fontFamily: " 'Poppins', sans-serif", fontWeight: 'Bold' }}>
                     MEAN + MySQL
                   </Typography>
                   <HomeStackLogoContainer />
                 </Box>
               </Box>
-
+              <Avatar variant="rounded" src='/assets/profile-picture3.png' sx={{
+                display: {
+                  lg: 'none',
+                  xl: 'none'
+                },
+                width: '15vh',
+                height: '25vh',
+                margin: '0 20px',
+                border: '1px solid var(--accent)'
+              }} />
               <Box sx={{
                 height: '20%',
                 width: '100%',
@@ -237,7 +237,7 @@ function App() {
                 paddingTop: '40px'
               }}>
                 <EmailIcon sx={{ color: 'var(--accent)', fontSize: '40px' }} />
-                <Typography variant="body1" sx={{ color: 'var(--accent)', fontSize: '18px', fontStyle: 'italic' }}>
+                <Typography variant="body1" sx={{ color: 'var(--light)', fontSize: '18px', fontStyle: 'italic' }}>
                   eddugonz@gmail.com
                 </Typography>
               </Box>
@@ -266,31 +266,36 @@ function App() {
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'space-evenly',
-                alignItems: { xs: 'start', sm: 'start', md: 'center', lg: 'center', xl: 'center' },
+                alignItems:{
+                  xs:'start',
+                  sm: 'center',
+                  md: 'center',
+                  lg: 'end'
+                }, 
                 padding: { xs: '20px', sm: '20px', md: '0', lg: '20px' }
               }} className="home-buttons-container">
                 <Box component="a" href="#contact" sx={{ textDecoration: 'none' }}>
-                  <Button variant="outlined" startIcon={<PersonIcon />}
+                  <Button variant="outlined"
                     sx={{
-                      color: 'var(--accent)', borderColor: 'var(--accent)', backgroundColor: 'var(--dark)', width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
+                      color: 'var(--light)', borderColor: 'var(--light)', backgroundColor: 'var(--dark)', borderRadius: '10px', width: '150px', margin: '0 5px ', transition: 'all 0.5s ease',
                       '&:hover': {
-                        backgroundColor: 'var(--accent)',
-                        color: 'var(--dark)',
+                        backgroundColor: 'var(--purple-background)',
+                        color: 'var(--light)',
                       }
                     }}>
-                    {visibleText.buttonContact}
+                    <Typography variant='button'>{visibleText.buttonContact}</Typography>
                   </Button>
                 </Box>
                 <Box >
-                  <Button variant="outlined" startIcon={<RemoveRedEyeIcon />}
+                  <Button variant="outlined"
                     sx={{
-                      color: 'var(--accent)', borderColor: 'var(--accent)', backgroundColor: 'var(--dark)', width: '150px', margin: '0 5px ', borderRadius: '50px', transition: 'all 0.5s ease',
+                      color: 'var(--light)', borderColor: 'var(--light)', backgroundColor: 'var(--dark)', borderRadius: '10px', width: '150px', margin: '0 5px ', transition: 'all 0.5s ease',
                       '&:hover': {
-                        backgroundColor: 'var(--accent)',
-                        color: 'var(--dark)',
+                        backgroundColor: 'var(--purple-background)',
+                        color: 'var(--light)',
                       }
                     }} onClick={openFile}>
-                    CV
+                    <Typography variant='button'>CV</Typography>
                   </Button>
                 </Box>
               </Box>
@@ -336,12 +341,12 @@ function App() {
 
               }}>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <PersonIcon />
-                <Typography variant="h5" sx={{ marginLeft: '1rem' }}>{visibleText.presentationTitle}</Typography>
+                <PersonIcon sx={{ color: 'var(--accent)' }} />
+                <Typography variant="h5" sx={{ marginLeft: '1rem', color: 'var(--accent)' }}>{visibleText.presentationTitle}</Typography>
               </Box>
               <Divider sx={{ margin: '5px 0 5px 0', width: '50%' }} />
               <Box sx={{ textAlign: 'justify', width: '100%' }}>
-                <Typography sx={{ fontSize: { xl: '1rem' } }} variant="overline">
+                <Typography sx={{ fontSize: { xl: '1rem' }, color: 'var(--text-tertiary)' }} variant="body1">
                   {visibleText.presentation}
                 </Typography>
               </Box>
@@ -383,8 +388,8 @@ function App() {
                   margin: '0 auto',
                 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'start' }}>
-                  <WorkIcon />
-                  <Typography variant="h5" sx={{ marginLeft: '1rem', }}>{visibleText.experience}</Typography>
+                  <WorkIcon sx={{ color: 'var(--accent)' }} />
+                  <Typography variant="h5" sx={{ marginLeft: '1rem', color: 'var(--accent)' }}>{visibleText.experience}</Typography>
                 </Box>
                 <Divider sx={{ margin: '5px 0 5px 0', width: '50%' }} />
                 <Box sx={{
@@ -416,7 +421,7 @@ function App() {
                       <Avatar src={visibleText.companies.company2.logo} sx={{ marginRight: '5px', width: 50, height: 50, border: '1px solid Gainsboro' }} />
                       <Typography variant="body1">{visibleText.companies.company2.name}
                         <Typography variant="body2"
-                          sx={{ color: 'text.secondary' }}>{visibleText.companies.company2.location} ({visibleText.companies.company2.modality})</Typography>
+                        >{visibleText.companies.company2.location} ({visibleText.companies.company2.modality})</Typography>
                       </Typography>
                     </Box>
                     <Typography variant="body2" sx={{ fontStyle: 'italic' }}>{visibleText.companies.company2.date}</Typography>
@@ -434,11 +439,10 @@ function App() {
                     textAlign: 'justify'
 
                   }}>
-                    <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary', fontSize: { xl: '1rem' } }}>
+                    <Typography variant="body1" sx={{ marginTop: '10px', fontSize: { xl: '1rem' }, color: 'var(--text-tertiary)' }}>
                       {visibleText.companies.company2.achivements}
-
                     </Typography>
-                    <Link href="#projects" sx={{ color: 'var(--primary)' }}>{visibleText.companies.company2.linkProjectsText}</Link>
+                    <Link href="#projects" sx={{ color: 'var(--accent)' }}>{visibleText.companies.company2.linkProjectsText}</Link>
                   </Box>
                 </Box>
                 <Box sx={{
@@ -468,7 +472,7 @@ function App() {
                     </Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                       <Avatar src='/assets/timeStamp.jfif' sx={{ marginRight: '5px', width: 50, height: 50, border: '1px solid Gainsboro' }} />
-                      <Typography variant="body1">{visibleText.companies.company1.name}<Typography variant="body2" sx={{ color: 'text.secondary' }}>{visibleText.companies.company1.location} ({visibleText.companies.company1.modality})</Typography> </Typography>
+                      <Typography variant="body1" sx={{ color: 'var(--text-secondary)' }}>{visibleText.companies.company1.name}<Typography variant="body2" sx={{ color: 'var(--text-secondary)' }}>{visibleText.companies.company1.location} ({visibleText.companies.company1.modality})</Typography> </Typography>
                     </Box>
                     <Typography variant="body2" sx={{ fontStyle: 'italic' }}>{visibleText.companies.company1.date}</Typography>
                   </Box>
@@ -485,7 +489,7 @@ function App() {
                     textAlign: 'justify'
 
                   }}>
-                    <Typography variant="body2" sx={{ marginTop: '10px', color: 'text.secondary', fontSize: { xl: '1rem' } }}>
+                    <Typography variant="body2" sx={{ marginTop: '10px', fontSize: { xl: '1rem' }, color: 'var(--text-tertiary)' }}>
                       {visibleText.companies.company1.achivements}
                     </Typography>
                   </Box>
@@ -515,7 +519,7 @@ function App() {
               gap: '30px',
             }}>
               <Paper
-                elevation={3}
+                elevation={24}
                 sx={{
                   width: {
                     xs: '100%',
@@ -524,15 +528,16 @@ function App() {
                     lg: '100%',
                     xl: '100%'
                   },
-                  borderRadius: '50px',
+                  borderRadius: '10px',
+                  border: '1px solid var(--purple-background)',
                   margin: '0 auto',
-                  backgroundColor: '#FAFAFA'
+                  backgroundColor: 'var(--dark)'
                 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '5px' }}>
-                  <LocalLibraryIcon sx={{ display: { xs: 'none', sm: 'block' } }} />
-                  <Typography variant="h5" sx={{ marginLeft: '1rem' }}>{visibleText.learning}</Typography>
+                  <LocalLibraryIcon sx={{ display: { xs: 'none', sm: 'block' }, color: 'var(--accent)' }} />
+                  <Typography variant="h5" sx={{ marginLeft: '1rem', color: 'var(--accent)' }}>{visibleText.learning}</Typography>
                 </Box>
-                <Divider sx={{ margin: '5px auto 5px auto', width: '60%' }} />
+                <Divider sx={{ margin: '5px auto 5px auto', width: '60%', }} />
 
                 <Box sx={{
                   padding: '10px', display: 'flex', flexDirection: {
@@ -557,7 +562,7 @@ function App() {
 
 
                   }}>
-                    <Typography variant="h6" sx={{ textAlign: 'center' }}>
+                    <Typography variant="h6" sx={{ textAlign: 'center', color: 'var(--light)' }}>
                       Angular Signals
                     </Typography>
                     <Box sx={{ textAlign: 'center' }}>
@@ -577,7 +582,7 @@ function App() {
                     paddingRight: '10px',
                     paddingBottom: '10px',
                   }}>
-                    <Typography variant="h6" sx={{ textAlign: 'center' }}>
+                    <Typography variant="h6" sx={{ textAlign: 'center', color: 'var(--light)' }}>
                       Storybook
                     </Typography>
                     <Box sx={{ textAlign: 'center' }}>
@@ -633,15 +638,15 @@ function App() {
                 enableFlexGrow={false}
               />
             </Grid>
-            <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+            {/* <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
               <TechnologiesAlertDialogSlide visibleText={visibleText} />
-            </Box>
+            </Box> */}
 
           </Box>
         </section>
 
         <section id="projects" className='projects-section'>
-          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' }, color: 'var(--textLight)' }} >
+          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' }, color: 'var(--accent)' }} >
             <strong>{visibleText.projectsTitle}</strong>
           </Typography>
 
@@ -678,6 +683,10 @@ function App() {
                     swaggerDoc={project.swaggerDoc}
                     deepWiki={project.deepWiki}
                     storybookLink={project.storybookLink}
+                    backgroundColor={'var(--card-dark-1)'}
+                    titleFontColor={'var(--text-primary)'}
+                    contentTextColor={'var(--text-tertiary)'}
+                    dividerColor={'var(--text-tertiary)'}
                   />
                 </motion.div>
               ))}
@@ -692,15 +701,14 @@ function App() {
                   startIcon={<UnfoldMoreIcon />}
                   onClick={showAllProjects}
                   sx={{
-                    color: 'var(--primary)', backgroundColor: 'var(--ligth)',
-                    margin: '20px auto', borderRadius: '50px', transition: 'all 0.5s ease',
+                    color: 'var(--light)', borderColor: 'var(--light)', backgroundColor: 'var(--dark)', borderRadius: '10px', width: '150px', margin: '0 5px ', transition: 'all 0.5s ease',
                     '&:hover': {
-                      backgroundColor: 'var(--primary)',
+                      backgroundColor: 'var(--purple-background)',
                       color: 'var(--light)',
                     }
                   }}
                 >
-                  {visibleText.buttonShowAll}
+                  <Typography variant='button'>{visibleText.buttonShowAll}</Typography>
                 </Button>
               </Box>
             )
@@ -713,16 +721,16 @@ function App() {
                     variant="outlined"
                     startIcon={<UnfoldLessIcon />}
                     onClick={showLessProjects}
+
                     sx={{
-                      color: 'var(--primary)', backgroundColor: 'var(--ligth)',
-                      margin: '20px auto', borderRadius: '50px', transition: 'all 0.5s ease',
+                      color: 'var(--light)', borderColor: 'var(--light)', backgroundColor: 'var(--dark)', borderRadius: '10px', width: '150px', margin: '0 5px ', transition: 'all 0.5s ease',
                       '&:hover': {
-                        backgroundColor: 'var(--primary)',
+                        backgroundColor: 'var(--purple-background)',
                         color: 'var(--light)',
                       }
                     }}
                   >
-                    {visibleText.buttonCollapse}
+                    <Typography variant='button'>{visibleText.buttonCollapse}</Typography>
                   </Button>
                 </Box>
               </Box>
@@ -731,7 +739,7 @@ function App() {
         </section>
 
         <section id="education" className='education'>
-          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' }, color: 'var(--textLight)' }} >
+          <Typography sx={{ textAlign: 'center', paddingTop: '75px', fontWeight: 'bold', typography: { xs: 'h4', sm: 'h3', xl: 'h2' }, color: 'var(--accent)' }} >
             <strong>{visibleText.educationTitle}</strong>
           </Typography>
           <Box sx={{
@@ -764,11 +772,24 @@ function App() {
               justifyContent: 'center',
               flexGrow: 1
             }}>
-              <MainEducationCard language={language} />
-              <LanguagesCard language={language} />
+              <MainEducationCard
+                language={language}
+                backgroundColor={'var(--card-dark-1)'}
+                titleFontColor={'var(--text-primary)'}
+                contentTextColor={'var(--text-tertiary)'}
+              />
+              <LanguagesCard
+                language={language}
+                titleFontColor={'var(--text-primary)'}
+              />
               <EducationAlertDialogSlide language={language} />
             </Box>
-            <CertificatesCard language={language} />
+            <CertificatesCard
+              language={language}
+              backgroundColor={'var(--card-dark-1)'}
+              titleFontColor={'var(--text-primary)'}
+              contentTextColor={'var(--text-tertiary)'}
+            />
           </Box>
         </section>
 

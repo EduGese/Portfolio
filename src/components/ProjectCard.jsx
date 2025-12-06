@@ -20,7 +20,22 @@ import Tooltip from '@mui/material/Tooltip';
 
 
 
-export default function ProjectCard({ name, image, description, technologies, ghLink, demoLink, websiteLink, gif, swaggerDoc, deepWiki, storybookLink }) {
+export default function ProjectCard({
+  name,
+  image,
+  description,
+  technologies,
+  ghLink,
+  demoLink,
+  websiteLink,
+  gif,
+  swaggerDoc,
+  deepWiki,
+  storybookLink,
+  backgroundColor,
+  titleFontColor,
+  contentTextColor,
+  dividerColor }) {
   const [isHovered, setIsHovered] = React.useState(false);
   const [gifUrl, setGifUrl] = React.useState(gif);
 
@@ -111,14 +126,15 @@ export default function ProjectCard({ name, image, description, technologies, gh
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
-      margin: '10px',
+      // margin: '10px',
       boxSizing: 'border-box',
-      borderRadius: '50px',
-      backgroundColor: '#FAFAFA',
+      borderRadius: '10px',
+      border: '1px solid var(--purple-background)',
+      backgroundColor: backgroundColor,
       flex: '1 1 calc(100% - 20px)',
       transition: 'box-shadow 0.3s ease-in-out',
       '&:hover': {
-        boxShadow: 8,
+        boxShadow: 24,
       },
       '@media (min-width: 600px)': {
         flex: '1 1 calc(50% - 20px)',
@@ -143,10 +159,10 @@ export default function ProjectCard({ name, image, description, technologies, gh
           sm: '200px'
         }
       }}>
-        <Typography gutterBottom variant="h5" component="div" sx={{color:'var(--textLight)'}}>
+        <Typography gutterBottom variant="h5" component="div" sx={{ color: titleFontColor }}>
           {name}
         </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'justify' }}>
+        <Typography variant="body2" sx={{ color: contentTextColor, textAlign: 'justify' }}>
           {description}
         </Typography>
       </CardContent>
@@ -179,8 +195,7 @@ export default function ProjectCard({ name, image, description, technologies, gh
         <Divider sx={{
           width: '100%',
           margin: '10px 0',
-          color: 'rgba(0, 0, 0, 0.6)',
-          fontSize: '14px'
+          color: dividerColor,          fontSize: '14px'
         }}>
           +info
         </Divider>

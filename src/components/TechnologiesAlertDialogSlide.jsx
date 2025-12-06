@@ -14,7 +14,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="left" ref={ref} {...props} />;
 });
 
-export const TechnologiesAlertDialogSlide = ({visibleText}) => {
+export const TechnologiesAlertDialogSlide = ({ visibleText }) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -27,18 +27,13 @@ export const TechnologiesAlertDialogSlide = ({visibleText}) => {
 
   return (
     <React.Fragment>
-      <Button variant="outlined"  sx={{ borderRadius: '50px', transition: 'all 0.5s ease', color:'var(--accent)', borderColor: 'var(--accent)',
-              // '&:hover': {
-              //   backgroundColor: (theme) => theme.palette.warning.main,
-              //   color: '#fff',
-              //   borderColor: (theme) => theme.palette.warning.main
-              // }
-                            '&:hover': {
-                backgroundColor: 'var(--accent)',
-                color: 'var(--dark)',
-                borderColor: 'var(--accent)'
-              }
-              }} onClick={handleClickOpen}>
+      <Button variant="outlined" sx={{
+        color: 'var(--light)', borderColor: 'var(--light)', backgroundColor: 'var(--dark)', borderRadius: '10px', width: '150px', margin: '0 5px ', transition: 'all 0.5s ease',
+        '&:hover': {
+          backgroundColor: 'var(--purple-background)',
+          color: 'var(--light)',
+        }
+      }} onClick={handleClickOpen}>
         {visibleText.techDialogButtonTitle}
       </Button>
       <Dialog

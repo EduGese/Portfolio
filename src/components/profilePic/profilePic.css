@@ -1,9 +1,7 @@
 .pic-frame {
-  border: 5px solid var(--accent);
-  border-radius: 8px;
-
-}
-.profile-pic:hover {
-  --_i: 10%;
-  filter: grayscale(0);
+  mask-image: radial-gradient(
+  ellipse at center,
+  #101820 30%,
+  transparent 70%
+);
 }
