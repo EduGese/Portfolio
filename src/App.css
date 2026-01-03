@@ -164,7 +164,7 @@ a {
 
   .home {
     flex-direction: column;
-    height: auto;
+    height: 100dvh;
   }
 
   /* .home img {
