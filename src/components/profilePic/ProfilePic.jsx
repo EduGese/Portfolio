@@ -10,15 +10,15 @@ export const ProfilePicture = () => {
                 sx={{
                     width: '100%',
                     maxWidth: {
-                        xs: '250px',
-                        sm: '340px',
+                        xs: '200px',
+                        sm: '240px',
                         md: '350px',
                         lg: '400px',
                         xl: '450px'
                     },
                     height: {
-                        xs: '350px',
-                        sm: '440px',
+                        xs: '300px',
+                        sm: '340px',
                         md: '450px',
                         lg: '500px',
                         xl: '550px'
