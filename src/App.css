@@ -164,7 +164,7 @@ a {
 
   .home {
     flex-direction: column;
-    height: 100dvh;
+    height: auto;
   }
 
   /* .home img {
@@ -195,7 +195,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100dvh;
+    height: 100vh;
     padding: 0;
     margin: 0
   }
