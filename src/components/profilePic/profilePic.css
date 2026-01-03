@@ -1,7 +1,6 @@
 .pic-frame {
-  mask-image: radial-gradient(
-  ellipse at center,
-  #101820 30%,
-  transparent 70%
-);
+  mask-image: radial-gradient(ellipse at center,
+      #101820 30%,
+      transparent 70%);
+
 }

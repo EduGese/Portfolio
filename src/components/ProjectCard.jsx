@@ -92,7 +92,7 @@ export default function ProjectCard({
       label: 'Storybook',
       icon: <AutoStoriesIcon style={{ width: 24, height: 24 }} />,
       customStyle: {
-        borderRadius: 50,
+        borderRadius: 10,
         transition: 'all 0.3s ease',
         color: pink[500],
         borderColor: pink[500],
@@ -181,31 +181,43 @@ export default function ProjectCard({
           padding: '8px 0',
         }}>
           {technologies.map((tech, index) => (
-            <a href={tech.href} key={index} >
-              <Tooltip title={tech.figCaption} placement="top" arrow>
-                <figure style={{ margin: '0 5px', width: '30px', height: '30px' }}>
-                  {tech.svg}
-                </figure>
-              </Tooltip>
+            // <a href={tech.href} key={index} >
+            <Tooltip title={tech.figCaption} placement="top" arrow>
+              <figure style={{ margin: '0 5px', width: '30px', height: '30px', filter: 'opacity(70%)' }}>
+                {tech.svg}
+              </figure>
+            </Tooltip>
 
-            </a>
+            // </a>
 
           ))}
         </Box>
         <Divider sx={{
           width: '100%',
           margin: '10px 0',
-          color: dividerColor,          fontSize: '14px'
+          color: dividerColor, fontSize: '14px'
         }}>
           +info
         </Divider>
 
-        <ButtonGroup size="small" aria-label="Small button group" sx={{ borderRadius: 50 }}>
+        <ButtonGroup size="small" aria-label="Small button group" sx={{
+          '& .MuiButton-root': {
+            borderRadius: 0, 
+          },
+          '& .MuiButton-root:first-of-type': {
+            borderTopLeftRadius: 10,
+            borderBottomLeftRadius: 10,
+          },
+          '& .MuiButton-root:last-of-type': {
+            borderTopRightRadius: 10,
+            borderBottomRightRadius: 10,
+          }
+        }}>
           {buttonConfigs.map((config) => {
             if (!config.prop) return null;
 
             const baseStyle = {
-              borderRadius: 50,
+              borderRadius: 0,
               transition: 'all 0.3s ease',
             };
 

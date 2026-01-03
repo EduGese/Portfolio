@@ -217,7 +217,7 @@ function App() {
                   <HomeStackLogoContainer />
                 </Box>
               </Box>
-              <Avatar variant="rounded" src='/assets/profile-picture3.png' sx={{
+              {/* <Avatar variant="rounded" src='/assets/profile-picture3.png' sx={{
                 display: {
                   lg: 'none',
                   xl: 'none'
@@ -226,7 +226,34 @@ function App() {
                 height: '25vh',
                 margin: '0 20px',
                 border: '1px solid var(--accent)'
-              }} />
+              }} /> */}
+              {/*               
+              <Box sx={{
+                display:{
+                  md: 'block',
+                  lg: 'none',
+                }
+              }}>
+                <ProfilePicture></ProfilePicture>
+              </Box> */}
+
+
+
+              <Box
+                sx={{
+                  display: {
+                    xs: 'flex',
+                    sm: 'flex',
+                    md: 'flex',
+                    lg: 'none',
+                    xl: 'none'
+                  },
+
+                  
+                }}>
+                <ProfilePicture></ProfilePicture>
+
+              </Box>
               <Box sx={{
                 height: '20%',
                 width: '100%',
@@ -234,7 +261,11 @@ function App() {
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingTop: '40px'
+                paddingTop: {
+                  sm: '0px',
+                  md: '90px',
+
+                },
               }}>
                 <EmailIcon sx={{ color: 'var(--accent)', fontSize: '40px' }} />
                 <Typography variant="body1" sx={{ color: 'var(--light)', fontSize: '18px', fontStyle: 'italic' }}>
@@ -266,12 +297,12 @@ function App() {
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'space-evenly',
-                alignItems:{
-                  xs:'start',
+                alignItems: {
+                  xs: 'start',
                   sm: 'center',
                   md: 'center',
                   lg: 'end'
-                }, 
+                },
                 padding: { xs: '20px', sm: '20px', md: '0', lg: '20px' }
               }} className="home-buttons-container">
                 <Box component="a" href="#contact" sx={{ textDecoration: 'none' }}>
@@ -542,7 +573,7 @@ function App() {
                 <Box sx={{
                   padding: '10px', display: 'flex', flexDirection: {
                     xs: 'column',
-                    sm: 'column',
+                    sm: 'row',
                     md: 'column',
                     lg: 'row',
                     xl: 'row'
