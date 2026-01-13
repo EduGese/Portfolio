@@ -20,7 +20,22 @@ import Tooltip from '@mui/material/Tooltip';
 
 
 
-export default function ProjectCard({ name, image, description, technologies, ghLink, demoLink, websiteLink, gif, swaggerDoc, deepWiki, storybookLink }) {
+export default function ProjectCard({
+  name,
+  image,
+  description,
+  technologies,
+  ghLink,
+  demoLink,
+  websiteLink,
+  gif,
+  swaggerDoc,
+  deepWiki,
+  storybookLink,
+  backgroundColor,
+  titleFontColor,
+  contentTextColor,
+  dividerColor }) {
   const [isHovered, setIsHovered] = React.useState(false);
   const [gifUrl, setGifUrl] = React.useState(gif);
 
@@ -77,7 +92,7 @@ export default function ProjectCard({ name, image, description, technologies, gh
       label: 'Storybook',
       icon: <AutoStoriesIcon style={{ width: 24, height: 24 }} />,
       customStyle: {
-        borderRadius: 50,
+        borderRadius: 10,
         transition: 'all 0.3s ease',
         color: pink[500],
         borderColor: pink[500],
@@ -111,14 +126,15 @@ export default function ProjectCard({ name, image, description, technologies, gh
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
-      margin: '10px',
+      // margin: '10px',
       boxSizing: 'border-box',
-      borderRadius: '50px',
-      backgroundColor: '#FAFAFA',
+      borderRadius: '10px',
+      border: '1px solid var(--purple-background)',
+      backgroundColor: backgroundColor,
       flex: '1 1 calc(100% - 20px)',
       transition: 'box-shadow 0.3s ease-in-out',
       '&:hover': {
-        boxShadow: 8,
+        boxShadow: 24,
       },
       '@media (min-width: 600px)': {
         flex: '1 1 calc(50% - 20px)',
@@ -143,10 +159,10 @@ export default function ProjectCard({ name, image, description, technologies, gh
           sm: '200px'
         }
       }}>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="div" sx={{ color: titleFontColor }}>
           {name}
         </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'justify' }}>
+        <Typography variant="body2" sx={{ color: contentTextColor, textAlign: 'justify' }}>
           {description}
         </Typography>
       </CardContent>
@@ -165,32 +181,43 @@ export default function ProjectCard({ name, image, description, technologies, gh
           padding: '8px 0',
         }}>
           {technologies.map((tech, index) => (
-            <a href={tech.href} key={index} >
-              <Tooltip title={tech.figCaption} placement="top" arrow>
-                <figure style={{ margin: '0 5px', width: '30px', height: '30px' }}>
-                  {tech.svg}
-                </figure>
-              </Tooltip>
+            // <a href={tech.href} key={index} >
+            <Tooltip title={tech.figCaption} placement="top" arrow>
+              <figure style={{ margin: '0 5px', width: '30px', height: '30px', filter: 'opacity(70%)' }}>
+                {tech.svg}
+              </figure>
+            </Tooltip>
 
-            </a>
+            // </a>
 
           ))}
         </Box>
         <Divider sx={{
           width: '100%',
           margin: '10px 0',
-          color: 'rgba(0, 0, 0, 0.6)',
-          fontSize: '14px'
+          color: dividerColor, fontSize: '14px'
         }}>
           +info
         </Divider>
 
-        <ButtonGroup size="small" aria-label="Small button group" sx={{ borderRadius: 50 }}>
+        <ButtonGroup size="small" aria-label="Small button group" sx={{
+          '& .MuiButton-root': {
+            borderRadius: 0, 
+          },
+          '& .MuiButton-root:first-of-type': {
+            borderTopLeftRadius: 10,
+            borderBottomLeftRadius: 10,
+          },
+          '& .MuiButton-root:last-of-type': {
+            borderTopRightRadius: 10,
+            borderBottomRightRadius: 10,
+          }
+        }}>
           {buttonConfigs.map((config) => {
             if (!config.prop) return null;
 
             const baseStyle = {
-              borderRadius: 50,
+              borderRadius: 0,
               transition: 'all 0.3s ease',
             };
 

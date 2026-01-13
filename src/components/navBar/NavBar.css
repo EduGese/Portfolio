@@ -1,5 +1,5 @@
 nav {
-  background: #ffffff72;
+  background: var(--dark);
   height: 80px;
   width: 100%;
   position: fixed;
@@ -29,7 +29,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #151A23;
+  color: var(--light);
   font-size: 17px;
   padding: 7px 13px;
   border-radius: 50px;
@@ -39,7 +39,7 @@ nav ul li a {
 
 nav a.active,
 nav a:hover {
-  color: #ed6c02;
+  color: var(--accent);
 }
 
 nav a {
@@ -55,7 +55,7 @@ nav a::before {
   position: absolute;
   width: 0%;
   height: 2px;
-  background-color: #ed6c02;
+  background-color: var(--accent);
   bottom: -5px;
   left: 50%;
   transition: all 0.3s ease-in-out;
@@ -70,8 +70,11 @@ nav a:hover::before {
 .menu-icon {
   display: none;
   font-size: 30px;
-  color: #151A23;
+  color: var(--light);
   cursor: pointer;
+}
+.menu-close{
+  margin: 0 auto;
 }
 
 @media (max-width: 1024px) {
@@ -85,8 +88,10 @@ nav a:hover::before {
     top: 80px;
     right: -100%;
     width: 100%;
-    height: calc(100vh - 80px);
-    background: #151A23;
+    height: calc(100vh - 70px);
+    background-color: #151a23;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(50px);
     text-align: center;
     transition: right 0.3s ease;
     align-items: center;
@@ -109,5 +114,63 @@ nav a:hover::before {
     color: #fff;
     display: block;
     width: 100%;
+  }
+
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  nav ul.menu-open li {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  nav ul.menu-open li:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  nav ul.menu-open li:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  nav ul.menu-open li:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  nav ul.menu-open li:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  nav ul.menu-open li:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+
+  nav ul.menu-open li:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+@media (max-width: 1024px) and (orientation:landscape) {
+  nav ul {
+
+    height: calc(100vh - 50px);
+    justify-content: start;
+  }
+    nav ul li a {
+   
+    margin: -5px;
+  }
+
+  nav ul li {
+    margin: 0;
   }
 }

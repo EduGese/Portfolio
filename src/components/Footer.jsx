@@ -13,8 +13,6 @@ export const Footer = ({ visibleText }) => {
         justifyContent: 'center',
         textAlign: 'center',
         padding: '20px',
-        marginTop: '20px',
-        backgroundColor: 'background.default',
       }}
     >
       <Box sx={{
@@ -22,8 +20,8 @@ export const Footer = ({ visibleText }) => {
         alignItems: 'center',
         justifyContent: 'space-between'
       }}>
-        <Typography variant="body2" align="center">{visibleText.footerText.part1} </Typography>
-        <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', margin: '0 5px ' }}>
+        <Typography variant="body2" align="center" sx={{color:'var(--light)'}}>{visibleText.footerText.part1} </Typography>
+        <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', margin: '0 5px ',color:'var(--light)' }}>
           <a href="https://es.react.dev/">
             <img
               src="/assets/react.svg"
@@ -40,16 +38,8 @@ export const Footer = ({ visibleText }) => {
             />
           </a>
         </Box>
-        <Typography variant="body2" align="center"> {visibleText.footerText.part2} Eduardo González Seco</Typography>
+        <Typography variant="body2" align="center" sx={{color:'var(--light)'}}> {visibleText.footerText.part2} Eduardo González Seco</Typography>
       </Box>
-      {/*<Link
-        href="https://github.com/EduGese/Portfolio"
-        sx={{ marginTop: '10px', display: 'block', textDecoration: 'none' }}
-      >
-        <Typography variant="body2">
-          {visibleText.footerLink}
-        </Typography>
-      </Link>*/}
     </Box>
   )
 }

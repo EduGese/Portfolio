@@ -1,19 +1,7 @@
 import { logosLanguages, logosFrameworks, logosDatabase, logosTools, toolsLogos, frontEndLogos } from './logo'
 
 export const projects = [
-    {
-        name: 'Task Manager',
-        image: '/assets/taskManager2.jpg',
-        descriptionEn: 'This Ionic 6 Angular Android app empowers you to manage tasks offline. Create, edit, mark tasks complete, and delete them. View pending and completed tasks in separate lists, and track deadlines with a calendar view',
-        descriptionEs: 'Esta aplicación Android Ionic 6 Angular te permite administrar tareas sin conexión. Crea, edita, marca tareas como completadas y elimínalas. Visualiza las tareas pendientes y completadas en listas separadas, y realiza un seguimiento de las fechas límite con una vista de calendario',
-        technologies: [logosLanguages[2], logosLanguages[3], logosFrameworks[0], logosLanguages[1], logosFrameworks[1], logosTools[0], logosDatabase[1]],
-        ghLink: 'https://github.com/EduGese/Task-Manager',
-        demoLink: 'https://github.com/user-attachments/assets/2b04ef06-d5c1-4606-a3b3-526bda4ed2be',
-        websiteLink: null,
-        gif: '/assets/gifs/taskManager2.gif',
-        gifOrientation: 'portrait',
-        deepWiki: 'https://deepwiki.com/EduGese/Task-Manager/1-overview'
-    },
+
     {
         name: 'ScreenPulse - FrontApp',
         image: '/assets/projects/screenPulseFrontApp3.png',
@@ -32,7 +20,7 @@ export const projects = [
         image: '/assets/projects/screenPulseFrontApp3.png',
         descriptionEn: 'Backend application built with Node.js and Express using TypeScript for robust typing. It serves as the REST API integrated into the ScreenPulse-frontApp application',
         descriptionEs: 'Aplicación backend construida con Node.js y Express utilizando TypeScript para un tipado fuerte y robusto. Sirve como API REST integrada en la aplicación ScreenPulse-frontApp',
-        technologies: [logosFrameworks[2], logosLanguages[1], logosDatabase[2], logosTools[3], logosTools[2]],
+        technologies: [logosFrameworks[2], logosFrameworks[3], logosLanguages[1], logosDatabase[2], logosTools[3], logosTools[2]],
         ghLink: 'https://github.com/EduGese/ScreenPulse-backend-Api',
         demoLink: null,
         websiteLink: null,
@@ -40,6 +28,19 @@ export const projects = [
         gif: '/assets/gifs/screenPulse.gif',
         gifOrientation: 'landscape',
         deepWiki: 'https://deepwiki.com/EduGese/ScreenPulse-backend-Api/1-overview'
+    },
+    {
+        name: 'Task Manager',
+        image: '/assets/taskManager2.jpg',
+        descriptionEn: 'This Ionic 6 Angular Android app empowers you to manage tasks offline. Create, edit, mark tasks complete, and delete them. View pending and completed tasks in separate lists, and track deadlines with a calendar view',
+        descriptionEs: 'Esta aplicación Android Ionic 6 Angular te permite administrar tareas sin conexión. Crea, edita, marca tareas como completadas y elimínalas. Visualiza las tareas pendientes y completadas en listas separadas, y realiza un seguimiento de las fechas límite con una vista de calendario',
+        technologies: [logosLanguages[2], logosLanguages[3], logosFrameworks[0], logosLanguages[1], logosFrameworks[1], logosTools[0], logosDatabase[1]],
+        ghLink: 'https://github.com/EduGese/Task-Manager',
+        demoLink: 'https://github.com/user-attachments/assets/2b04ef06-d5c1-4606-a3b3-526bda4ed2be',
+        websiteLink: null,
+        gif: '/assets/gifs/taskManager2.gif',
+        gifOrientation: 'portrait',
+        deepWiki: 'https://deepwiki.com/EduGese/Task-Manager/1-overview'
     },
     {
         name: 'The-Weather-App',
@@ -81,7 +82,7 @@ export const projects = [
         name: 'EGS-Photography',
         image: '/assets/projects/EGS-Photography.png',
         descriptionEn: 'A conceptual mockup of a photography website, designed to showcase the visual style and user interactions. While interactive elements such as a search bar and shopping cart are included, they do not have any backend functionality ',
-        descriptionEs:'Maqueta conceptual de un sitio web de fotografía, diseñado para mostrar el estilo visual y las interacciones del usuario. Si bien se incluyen elementos interactivos como una barra de búsqueda y un carrito de compras, estos no tienen ninguna funcionalidad de backend',
+        descriptionEs: 'Maqueta conceptual de un sitio web de fotografía, diseñado para mostrar el estilo visual y las interacciones del usuario. Si bien se incluyen elementos interactivos como una barra de búsqueda y un carrito de compras, estos no tienen ninguna funcionalidad de backend',
         technologies: [logosLanguages[2], logosLanguages[3], logosFrameworks[5]],
         ghLink: 'https://github.com/EduGese/EGS-Photography',
         demoLink: null,

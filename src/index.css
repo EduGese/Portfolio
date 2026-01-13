@@ -1,5 +1,5 @@
- /* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+ :root {
+   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -10,6 +10,53 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
+  -moz-osx-font-smoothing: grayscale; */
+   --primary: #2563eb;
+   /* Azul profesional */
+   --secondary: #7c3aed;
+   /* Púrpura creativo */
+   /* --accent: #06d6a0; */
+   /* --accent: #0AFDF4; */
+   /* Verde llamativo */
+   --dark: #101820;
+   /* --dark: #1A1A33; */
+   /* Fondo oscuro */
+   --card-dark-1: #1a202c;
+   /* Ligeramente más claro que --dark */
+   --card-dark-2: #2d3748;
+   /* Para contraste medio */
+   --light: #f8fafc;
+   /* --light: #EAD4DC; */
+   /* Fondo claro */
+   --textLight: #334155;
+   /* Texto principal */
+   --dark2: #101820;
 
+
+
+
+
+
+   /*Nueva paleta*/
+
+   --purple-background: #4A2477;
+   --dark: #101820;
+   --card-dark-1: #1a202c;
+   --accent: #F637E3;
+
+   
+
+   /* NUEVOS: Escala de grises para jerarquía de texto */
+   --text-primary: #f8fafc;
+   /* Texto más importante (100% contraste) */
+   --text-secondary: #e2e8f0;
+   /* Texto secundario (90% contraste) */
+   --text-tertiary: #a39fa9;
+   /* Texto terciario (75% contraste) */
+   --text-muted: #94a3b8;
+   /* Texto muted/placeholder (60% contraste) */
+
+   /* Opcional: Para borders y separadores sutiles */
+   --border-light: rgba(248, 250, 252, 0.1);
+   --border-medium: rgba(248, 250, 252, 0.2);
+ }
