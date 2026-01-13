@@ -1,7 +1,6 @@
 // import * as React from 'react';
 import { useState } from 'react';
 import './App.css'
-import { LogoContainer } from './components/LogoContainer';
 import { NavBar } from './components/navBar/NavBar';
 import { ProfilePicture } from './components/profilePic/ProfilePic';
 import ProjectCard from './components/ProjectCard'
@@ -10,8 +9,6 @@ import { EmailCard } from './components/EmailCard';
 import { Footer } from './components/Footer';
 import { ContactLinks } from './components/ContactLinks';
 import { HomeStackLogoContainer } from './components/HomeStackLogoContainer';
-import { TechnologiesAlertDialogSlide } from './components/TechnologiesAlertDialogSlide';
-import { EducationAlertDialogSlide } from './components/EducationAlertDialogSlide';
 import { CertificatesCard } from './components/CertificatesCard';
 import { LanguagesCard } from './components/LanguagesCard';
 import { TechStackCard } from './components/TechStackCard';
@@ -22,7 +19,6 @@ import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
 import UnfoldLessIcon from '@mui/icons-material/UnfoldLess';
 import EmailIcon from '@mui/icons-material/Email';
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 import { frontEndLogos, backEndLogos, toolsLogos } from './constants/logo';
@@ -93,8 +89,16 @@ function App() {
             flexDirection: 'row',
             justifyContent: 'center',
 
-
+            // Para landscape en dispositivos móviles
+            '@media (max-width: 1024px) and (orientation: landscape)': {
+              flexDirection: 'row', // Mantén la distribución horizontal como en desktop
+              justifyContent: 'space-around',
+              alignItems: 'center',
+              paddingTop: '60px',
+            },
           }}>
+
+            {/* Imagen de perfil - contenedor principal */}
             <Box className="home-img-container"
               sx={{
                 display: {
@@ -122,19 +126,57 @@ function App() {
                   xl: '30%'
                 },
                 margin: '20px 180px',
+
+                // Muestra en landscape de móviles/tablets
+                '@media (max-width: 1024px) and (orientation: landscape)': {
+                  display: 'flex',
+                  height: '70vh',
+                  width: '30%',
+                  margin: '20px',
+                  justifyContent: 'center',
+                },
+
+                // Landscape específico para pantallas más pequeñas
+                '@media (max-width: 900px) and (orientation: landscape)': {
+                  height: '60vh',
+                  width: '35%',
+                  margin: '10px',
+                },
               }}>
-              <ProfilePicture></ProfilePicture>
+              <ProfilePicture />
             </Box>
 
+            {/* Contenido principal */}
             <Box sx={{
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
-              width: '50%',
-              height: '80vh',
+              width: {
+                xs: '100%',
+                sm: '100%',
+                md: '100%',
+                lg: '50%',
+                xl: '50%'
+              },
+              height: {
+                xs: '80vh',
+                sm: '80vh',
+                md: '80vh',
+                lg: '80vh',
+                xl: '80vh'
+              },
               marginTop: 'auto',
               marginBottom: 'auto',
+
+              // Ajustes para landscape
+              '@media (max-width: 1024px) and (orientation: landscape)': {
+                width: '60%',
+                height: '80vh',
+                justifyContent: 'space-evenly',
+                margin: '0',
+              },
+
               '@media (max-width: 400px)': {
                 height: '10vh',
                 marginTop: '15px',
@@ -145,6 +187,14 @@ function App() {
                 width: '100%',
                 textAlign: 'center',
                 margin: '10px 0 0 0',
+
+                // Para landscape específico en móviles pequeños
+                '@media (orientation: landscape)': {
+                  height: '80vh',
+                  flexDirection: 'row',
+                  flexWrap: 'wrap',
+                  justifyContent: 'center',
+                },
               },
 
               '@media (min-width: 640px) and (max-width: 1024px)': {
@@ -152,12 +202,20 @@ function App() {
                 width: '100%',
                 textAlign: 'center',
                 margin: 0,
+
+                // Landscape para tablets
+                '@media (orientation: landscape)': {
+                  height: '80vh',
+                  width: '60%',
+                },
               },
 
               '@media (min-width: 1367px) and (max-width: 1920px)': {
                 height: '80vh',
               }
             }} >
+
+              {/* Contenedor del título */}
               <Box sx={{
                 height: {
                   xs: '100vh',
@@ -180,11 +238,23 @@ function App() {
                   sm: '100px',
                 },
                 alignItems: 'center',
+
+                // Ajustes para landscape
+                '@media (max-width: 1024px) and (orientation: landscape)': {
+                  height: '50%',
+                  marginTop: '0',
+                  justifyContent: 'center',
+                },
               }} className='home-title-container'>
 
                 <Typography variant='h1' sx={{
                   color: 'var(--light)',
-                  fontSize: { xs: '5vh', sm: '5.5vh' }, fontWeight: 'Bold', alignItems: {
+                  fontSize: {
+                    xs: '5vh',
+                    sm: '5.5vh',
+                  },
+                  fontWeight: 'Bold',
+                  alignItems: {
                     xs: 'space-around',
                     sm: 'center',
                     md: 'center',
@@ -198,62 +268,90 @@ function App() {
                     lg: '0',
                     xl: '0'
                   },
-                }}
-                >Eduardo González Seco
+
+                  // Para landscape
+                  '@media (max-width: 1024px) and (orientation: landscape)': {
+                    fontSize: '4vh',
+                    padding: '0 0 10px 0',
+                  },
+                }}>
+                  Eduardo González Seco
                 </Typography>
 
-                <Typography variant='h1' sx={{ color: 'var(--accent)', fontSize: '4vh', fontWeight: 'Bold' }}>
+                <Typography variant='h1' sx={{
+                  color: 'var(--accent)',
+                  fontSize: {
+                    xs: '4vh',
+                    sm: '4vh',
+                    md: '4vh',
+                    lg: '4vh',
+                    xl: '4vh',
+                  },
+                  fontWeight: 'Bold',
+
+                  // Para landscape
+                  '@media (max-width: 1024px) and (orientation: landscape)': {
+                    fontSize: '3vh',
+                  },
+                }}>
                   {visibleText.role}
                 </Typography>
 
-                <Box
-                  sx={{
-                    width: '300px',
-                    textAlign: 'center'
+                <Box sx={{
+                  width: {
+                    xs: '300px',
+                    sm: '300px',
+                    md: '300px',
+                    lg: '300px',
+                    xl: '300px'
+                  },
+                  textAlign: 'center',
+
+                  // Para landscape
+                  '@media (max-width: 1024px) and (orientation: landscape)': {
+                    width: '250px',
+                    margin: '10px 0',
+                  },
+                }}>
+                  <Typography variant='h5' sx={{
+                    color: 'var(--light)',
+                    fontFamily: "'Poppins', sans-serif",
+                    fontWeight: 'Bold',
+                    fontSize: {
+                      xs: '1rem',
+                      sm: '1.2rem',
+
+                      // Para landscape
+                      '@media (max-width: 1024px) and (orientation: landscape)': {
+                        fontSize: '1rem',
+                      },
+                    },
                   }}>
-                  <Typography variant='h5' sx={{ color: 'var(--light)', fontFamily: " 'Poppins', sans-serif", fontWeight: 'Bold' }}>
                     MEAN + MySQL
                   </Typography>
                   <HomeStackLogoContainer />
                 </Box>
               </Box>
-              {/* <Avatar variant="rounded" src='/assets/profile-picture3.png' sx={{
+
+              {/* Imagen de perfil para móviles/tablets */}
+              <Box sx={{
                 display: {
+                  xs: 'flex',
+                  sm: 'flex',
+                  md: 'flex',
                   lg: 'none',
                   xl: 'none'
                 },
-                width: '15vh',
-                height: '25vh',
-                margin: '0 20px',
-                border: '1px solid var(--accent)'
-              }} /> */}
-              {/*               
-              <Box sx={{
-                display:{
-                  md: 'block',
-                  lg: 'none',
-                }
+
+                // Oculta en landscape ya que se muestra en el contenedor principal
+                '@media (max-width: 1024px) and (orientation: landscape)': {
+                  display: 'none',
+                },
               }}>
-                <ProfilePicture></ProfilePicture>
-              </Box> */}
-
-
-
-              <Box
-                sx={{
-                  display: {
-                    xs: 'flex',
-                    sm: 'flex',
-                    md: 'flex',
-                    lg: 'none',
-                    xl: 'none'
-                  },
-
-                  
-                }}>
-                <ProfilePicture></ProfilePicture>
-
+                <ProfilePicture />
               </Box>
+
+              {/* Email */}
               <Box sx={{
                 height: '20%',
                 width: '100%',
@@ -264,14 +362,44 @@ function App() {
                 paddingTop: {
                   sm: '0px',
                   md: '90px',
+                },
 
+                // Para landscape
+                '@media (max-width: 1024px) and (orientation: landscape)': {
+                  height: '15%',
+                  paddingTop: '0',
                 },
               }}>
-                <EmailIcon sx={{ color: 'var(--accent)', fontSize: '40px' }} />
-                <Typography variant="body1" sx={{ color: 'var(--light)', fontSize: '18px', fontStyle: 'italic' }}>
+                <EmailIcon sx={{
+                  color: 'var(--accent)',
+                  fontSize: {
+                    xs: '30px',
+                    sm: '40px',
+
+                    // Para landscape
+                    '@media (max-width: 1024px) and (orientation: landscape)': {
+                      fontSize: '30px',
+                    },
+                  }
+                }} />
+                <Typography variant="body1" sx={{
+                  color: 'var(--light)',
+                  fontSize: {
+                    xs: '16px',
+                    sm: '18px',
+
+                    // Para landscape
+                    '@media (max-width: 1024px) and (orientation: landscape)': {
+                      fontSize: '16px',
+                    },
+                  },
+                  fontStyle: 'italic'
+                }}>
                   eddugonz@gmail.com
                 </Typography>
               </Box>
+
+              {/* Ubicación */}
               <Box sx={{
                 paddingTop: '10px',
                 height: '10%',
@@ -280,11 +408,45 @@ function App() {
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
-              }}> <LocationOnIcon sx={{ color: 'var(--accent)', fontSize: '20px', verticalAlign: 'middle', marginRight: '5px' }} />
-                <Typography variant="body1" sx={{ color: 'var(--light)', fontSize: '18px', fontStyle: 'italic' }}>
+
+                // Para landscape
+                '@media (max-width: 1024px) and (orientation: landscape)': {
+                  height: '10%',
+                  paddingTop: '0',
+                },
+              }}>
+                <LocationOnIcon sx={{
+                  color: 'var(--accent)',
+                  fontSize: {
+                    xs: '18px',
+                    sm: '20px',
+
+                    // Para landscape
+                    '@media (max-width: 1024px) and (orientation: landscape)': {
+                      fontSize: '18px',
+                    },
+                  },
+                  verticalAlign: 'middle',
+                  marginRight: '5px'
+                }} />
+                <Typography variant="body1" sx={{
+                  color: 'var(--light)',
+                  fontSize: {
+                    xs: '16px',
+                    sm: '18px',
+
+                    // Para landscape
+                    '@media (max-width: 1024px) and (orientation: landscape)': {
+                      fontSize: '16px',
+                    },
+                  },
+                  fontStyle: 'italic'
+                }}>
                   {visibleText.personalLocation}
                 </Typography>
               </Box>
+
+              {/* Botones */}
               <Box sx={{
                 height: '100%',
                 width: {
@@ -303,12 +465,38 @@ function App() {
                   md: 'center',
                   lg: 'end'
                 },
-                padding: { xs: '20px', sm: '20px', md: '0', lg: '20px' }
+                padding: {
+                  xs: '20px',
+                  sm: '20px',
+                  md: '0',
+                  lg: '20px'
+                },
+
+                // Para landscape
+                '@media (max-width: 1024px) and (orientation: landscape)': {
+                  height: '25%',
+                  alignItems: 'center',
+                  padding: '10px 0',
+                },
               }} className="home-buttons-container">
                 <Box component="a" href="#contact" sx={{ textDecoration: 'none' }}>
                   <Button variant="outlined"
                     sx={{
-                      color: 'var(--light)', borderColor: 'var(--light)', backgroundColor: 'var(--dark)', borderRadius: '10px', width: '150px', margin: '0 5px ', transition: 'all 0.5s ease',
+                      color: 'var(--light)',
+                      borderColor: 'var(--light)',
+                      backgroundColor: 'var(--dark)',
+                      borderRadius: '10px',
+                      width: {
+                        xs: '140px',
+                        sm: '150px',
+
+                        // Para landscape
+                        '@media (max-width: 1024px) and (orientation: landscape)': {
+                          width: '140px',
+                        },
+                      },
+                      margin: '0 5px ',
+                      transition: 'all 0.5s ease',
                       '&:hover': {
                         backgroundColor: 'var(--purple-background)',
                         color: 'var(--light)',
@@ -317,22 +505,37 @@ function App() {
                     <Typography variant='button'>{visibleText.buttonContact}</Typography>
                   </Button>
                 </Box>
-                <Box >
+                <Box>
                   <Button variant="outlined"
                     sx={{
-                      color: 'var(--light)', borderColor: 'var(--light)', backgroundColor: 'var(--dark)', borderRadius: '10px', width: '150px', margin: '0 5px ', transition: 'all 0.5s ease',
+                      color: 'var(--light)',
+                      borderColor: 'var(--light)',
+                      backgroundColor: 'var(--dark)',
+                      borderRadius: '10px',
+                      width: {
+                        xs: '140px',
+                        sm: '150px',
+
+                        // Para landscape
+                        '@media (max-width: 1024px) and (orientation: landscape)': {
+                          width: '140px',
+                        },
+                      },
+                      margin: '0 5px ',
+                      transition: 'all 0.5s ease',
                       '&:hover': {
                         backgroundColor: 'var(--purple-background)',
                         color: 'var(--light)',
                       }
-                    }} onClick={openFile}>
+                    }}
+                    onClick={openFile}>
                     <Typography variant='button'>CV</Typography>
                   </Button>
                 </Box>
               </Box>
             </Box>
           </Box>
-        </section >
+        </section>
         <section id="about" className="about">
           <Box
             sx={{
