@@ -21,7 +21,7 @@ export const CertificatesCard = ({language, backgroundColor, titleFontColor, con
             justifyContent: 'center',
             flexGrow: 1,
           }}>
-            <Paper  elevation={24}  sx={{ width: '100%',  borderRadius: '10px', margin: '0 20px ', padding: '20px', border: '1px solid var(--purple-background)',  backgroundColor: backgroundColor }}>
+            <Paper  elevation={24}  sx={{ width: '100%',  borderRadius: '10px', margin: '20px ', padding: '20px', border: '1px solid var(--purple-background)',  backgroundColor: backgroundColor }}>
               <Box
               >
                 <Typography variant="h6" sx={{ fontWeight: 'bold', borderRadius: '50px', textAlign: 'center',  padding: '10px',color: titleFontColor }}>

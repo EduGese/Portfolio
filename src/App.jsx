@@ -555,7 +555,7 @@ function App() {
                   width: {
                     xs: '100%',
                     sm: '70%',
-                    md: '100%',
+                    md: '70%',
                     lg: '100%',
                     xl: '100%'
                   },
@@ -574,7 +574,7 @@ function App() {
                   padding: '10px', display: 'flex', flexDirection: {
                     xs: 'column',
                     sm: 'row',
-                    md: 'column',
+                    md: 'row',
                     lg: 'row',
                     xl: 'row'
                   }
@@ -813,7 +813,7 @@ function App() {
                 language={language}
                 titleFontColor={'var(--text-primary)'}
               />
-              <EducationAlertDialogSlide language={language} />
+              {/* <EducationAlertDialogSlide language={language} /> */}
             </Box>
             <CertificatesCard
               language={language}
