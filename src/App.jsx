@@ -540,13 +540,13 @@ function App() {
           <Box
             sx={{
               paddingTop: '70px',
-              height: {
-                xs: '100%',
-                sm: '100vh',
-                md: '100vh',
-                lg: '100vh',
-                xl: '100vh'
-              },
+              // height: {
+              //   xs: '100%',
+              //   sm: '100vh',
+              //   md: '100vh',
+              //   lg: '100vh',
+              //   xl: '100vh'
+              // },
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-evenly',
@@ -764,7 +764,7 @@ function App() {
                   },
                   borderRadius: '10px',
                   border: '1px solid var(--purple-background)',
-                  margin: '0 auto',
+                  margin: '20px auto',
                   backgroundColor: 'var(--dark)'
                 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '5px' }}>
